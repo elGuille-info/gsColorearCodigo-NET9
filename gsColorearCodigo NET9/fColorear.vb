@@ -359,6 +359,7 @@ Public Class fColorear
         ' NO usar el valor de indentar, que se lía
         ' ya que tiene las etiquetas <span.
         Me.rtEditor.Text = Colorear.RTFaSPAN(Me.rtEditor.Rtf,
+                                             chkUsarTemaOscuro.Checked,
                                              0,
                                              Me.chkQuitarEspacios.Checked)
         guardarTEMP(Me.rtEditor.Text)

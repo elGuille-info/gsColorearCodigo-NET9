@@ -562,6 +562,7 @@ Public NotInheritable Class Colorear
     ''' <param name="texto">
     ''' El texto con el formato RTF a convertir
     ''' </param>
+    ''' <param name="usarTemaOscuro">True para colorear con tema oscuro</param>
     ''' <param name="indentar">
     ''' </param>
     ''' <param name="quitarEspaciosIniciales">
@@ -582,7 +583,10 @@ Public NotInheritable Class Colorear
     ''' Para no complicar las cosas, se usarán esos mismos colores
     ''' creando la definición de esos colores y usándolos en los span
     ''' </remarks>
-    Public Shared Function RTFaSPAN(texto As String, indentar As Integer, quitarEspaciosIniciales As Boolean) As String
+    Public Shared Function RTFaSPAN(texto As String,
+                                    usarTemaOscuro As Boolean,
+                                    indentar As Integer,
+                                    quitarEspaciosIniciales As Boolean) As String
 
         Dim sb As New StringBuilder
         ' Convertir los <, > & en códigos HTML
@@ -595,7 +599,7 @@ Public NotInheritable Class Colorear
             lineas = texto.Split(vbCrLf.ToCharArray, StringSplitOptions.RemoveEmptyEntries)
         ElseIf texto.IndexOf(vbCr) > -1 Then
             lineas = texto.Split(vbCr.ToCharArray, StringSplitOptions.RemoveEmptyEntries)
-        ElseIf texto.IndexOf(vblf) > -1 Then
+        ElseIf texto.IndexOf(vbLf) > -1 Then
             lineas = texto.Split(vbLf.ToCharArray, StringSplitOptions.RemoveEmptyEntries)
         Else
             Throw New Exception("Parece que 'texto' no tiene retornos de carro para crear el array lineas().")
@@ -914,8 +918,9 @@ Public NotInheritable Class Colorear
         Return PreTag & texto & "</pre>"
     End Function
 
-    Public Shared Function RTFaSPAN(texto As String) As String
-        Return RTFaSPAN(texto, 0, False)
+    ' Esta función no se utiliza en el proyecto de gsColorearCodigo
+    Public Shared Function RTFaSPAN(texto As String, usarTemaOscuro As Boolean) As String
+        Return RTFaSPAN(texto, usarTemaOscuro, 0, False)
     End Function
 
     ''' <summary>
