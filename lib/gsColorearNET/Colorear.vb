@@ -664,6 +664,7 @@ Public NotInheritable Class Colorear
 
             j += 1
         Next
+
         '' guardarlos en formato hexadecimal
         'For Each m As Match In mc 're.Matches(texto)
         '    colores(j) = CInt(m.Groups("r").Value.Substring(4)).ToString("X2") &
@@ -2041,8 +2042,8 @@ Public NotInheritable Class Colorear
 
         ' Selector de botones superior
         sb.AppendLine("<div class='selector-codigo'>")
-        sb.AppendLine("    <button onclick=""cambiarCodigo(this, 'claro')"" class='btn-codigo activo'>☀️ Modo Claro</button>")
-        sb.AppendLine("    <button onclick=""cambiarCodigo(this, 'oscuro')"">🌙 Modo Oscuro</button>")
+        sb.AppendLine("    <button onclick='cambiarCodigoGlobal(this, ""oscuro"")'>🌙 Modo Oscuro</button>")
+        sb.AppendLine("    <button onclick='cambiarCodigoGlobal(this, ""claro"")'>☀️ Modo Claro</button>")
         sb.AppendLine("</div>")
 
         sb.AppendLine("<div class='contenedor-codigo-dual'>")
