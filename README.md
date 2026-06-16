@@ -3,11 +3,11 @@
 
 Utilidad para colorear código y generar código HTML para usar en publicaciones WEB. Usando gsColorearNET para .NET Standard 2.0. (para .NET 9.0  revisión del 16/Jun/2026)
 
-<br>
+&nbsp;
 
 Si quieres ver **el artículo relacionado con este repositorio**, pulsa en este enlace: [**gsColorearCodigo NET9**](https://www.elguillemola.com/gscolorearcodigo-net9).
 
-<br>
+&nbsp;
 
 ## Lo que hemos hecho la IA de Google (Gemini) y un servidor
 
