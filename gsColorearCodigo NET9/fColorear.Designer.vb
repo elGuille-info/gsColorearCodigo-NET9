@@ -23,6 +23,7 @@ Partial Class fColorear
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(fColorear))
         statusInfo = New ToolStripStatusLabel()
         mnuFic = New ToolStripMenuItem()
         mnuFicAbrir = New ToolStripMenuItem()
@@ -97,6 +98,7 @@ Partial Class fColorear
         Label11 = New Label()
         menuStrip1 = New MenuStrip()
         mnuSintax = New ToolStripMenuItem()
+        mnuSintaxObtenerCodigoDualHTML = New ToolStripMenuItem()
         mnuSintaxSep1 = New ToolStripSeparator()
         mnuSintax_Ninguno = New ToolStripMenuItem()
         mnuSintax_dotNet = New ToolStripMenuItem()
@@ -131,7 +133,6 @@ Partial Class fColorear
         statusStrip1 = New StatusStrip()
         statusSintax = New ToolStripStatusLabel()
         toolTip1 = New ToolTip(components)
-        mnuSintaxObtenerCodigoDualHTML = New ToolStripMenuItem()
         TabControl1.SuspendLayout()
         tpPrincipal.SuspendLayout()
         GroupBox1.SuspendLayout()
@@ -915,6 +916,12 @@ Partial Class fColorear
         mnuSintax.Size = New Size(87, 29)
         mnuSintax.Text = "&Sintaxis"
         ' 
+        ' mnuSintaxObtenerCodigoDualHTML
+        ' 
+        mnuSintaxObtenerCodigoDualHTML.Name = "mnuSintaxObtenerCodigoDualHTML"
+        mnuSintaxObtenerCodigoDualHTML.Size = New Size(335, 34)
+        mnuSintaxObtenerCodigoDualHTML.Text = "Obtener Codigo Dual HTML"
+        ' 
         ' mnuSintaxSep1
         ' 
         mnuSintaxSep1.Name = "mnuSintaxSep1"
@@ -1156,12 +1163,6 @@ Partial Class fColorear
         statusSintax.Text = "VB"
         statusSintax.ToolTipText = " El lenguaje seleccionado para colorear "
         ' 
-        ' mnuSintaxObtenerCodigoDualHTML
-        ' 
-        mnuSintaxObtenerCodigoDualHTML.Name = "mnuSintaxObtenerCodigoDualHTML"
-        mnuSintaxObtenerCodigoDualHTML.Size = New Size(335, 34)
-        mnuSintaxObtenerCodigoDualHTML.Text = "Obtener Codigo Dual HTML"
-        ' 
         ' fColorear
         ' 
         AllowDrop = True
@@ -1173,6 +1174,7 @@ Partial Class fColorear
         Controls.Add(toolStrip1)
         Controls.Add(TabControl1)
         Controls.Add(menuStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(4, 5, 4, 5)
         MaximizeBox = False
         MaximumSize = New Size(2276, 1629)
