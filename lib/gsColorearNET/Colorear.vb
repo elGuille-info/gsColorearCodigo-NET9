@@ -441,6 +441,13 @@ Public NotInheritable Class Colorear
     End Property
 
     Private Shared _PreTag As String = PreTagPre
+
+    ''' <summary>
+    ''' El tag del principio del código
+    ''' Si es tema claro dejarlo simplemente como &lt;pre>
+    ''' Si es tema oscuro debe contener el código del color de fondo
+    ''' </summary>
+    ''' <returns></returns>
     Public Shared Property PreTag() As String
         Get
             Return _PreTag
@@ -617,13 +624,53 @@ Public NotInheritable Class Colorear
         ReDim colores(0 To mc.Count)
         j = 1
         colores(0) = ""
-        ' guardarlos en formato hexadecimal
+
+        ' guardarlos en formato hexadecimal (Adaptado para Modo Oscuro)
         For Each m As Match In mc 're.Matches(texto)
-            colores(j) = CInt(m.Groups("r").Value.Substring(4)).ToString("X2") &
-                             CInt(m.Groups("g").Value.Substring(6)).ToString("X2") &
-                             CInt(m.Groups("b").Value.Substring(5)).ToString("X2")
+            ' 1. Extraer el valor hexadecimal original en mayúsculas (Formato "RRGGBB")
+            Dim hexOriginal As String = CInt(m.Groups("r").Value.Substring(4)).ToString("X2") &
+                                CInt(m.Groups("g").Value.Substring(6)).ToString("X2") &
+                                CInt(m.Groups("b").Value.Substring(5)).ToString("X2")
+
+            ' 2. Si el CheckBox está marcado, pasamos el valor por el traductor
+            If usarTemaOscuro Then
+                Select Case hexOriginal
+                    Case "0000FF" ' Azul estándar (Keywords: Dim, Public, Class...)
+                        colores(j) = "569CD6" ' Cian brillante (Modo oscuro)
+
+                    Case "008000" ' Verde estándar (Comentarios)
+                        colores(j) = "57A64A" ' Verde claro (Modo oscuro)
+
+                    Case "007F00", "228B22" ' Otras variantes de verde
+                        colores(j) = "608B4E"
+
+                    Case "A31515" ' Marrón/Rojo (Cadenas de texto / Strings)
+                        colores(j) = "D69D85" ' Salmón/Marrón claro
+
+                    Case "000000" ' Texto normal, variables, operadores
+                        colores(j) = "DCDCDC" ' Gris claro / Blanco hueso
+
+                    Case "2B91AF" ' Azul verdoso (Tipos de datos: Integer, Form...)
+                        colores(j) = "4EC9B0" ' Turquesa/Verde agua
+
+                    Case Else
+                        ' Si es un color que no tenemos mapeado, mantenemos el original
+                        colores(j) = hexOriginal
+                End Select
+            Else
+                ' Si la casilla NO está marcada, se queda con el comportamiento claro de siempre
+                colores(j) = hexOriginal
+            End If
+
             j += 1
         Next
+        '' guardarlos en formato hexadecimal
+        'For Each m As Match In mc 're.Matches(texto)
+        '    colores(j) = CInt(m.Groups("r").Value.Substring(4)).ToString("X2") &
+        '                     CInt(m.Groups("g").Value.Substring(6)).ToString("X2") &
+        '                     CInt(m.Groups("b").Value.Substring(5)).ToString("X2")
+        '    j += 1
+        'Next
 
         ' Los colores 1 a colores.length -1 definen los colores     (12/Sep/20)
         '   \cf1 verde  (comentarios)

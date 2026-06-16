@@ -57,7 +57,7 @@ Public Class fAcercaDe
         ' La descripción, tomar solo el final                   (11/Sep/20)
         Dim descAttr = ensamblado.GetCustomAttributes(GetType(System.Reflection.AssemblyDescriptionAttribute), False)
         Dim desc = If(descAttr.Length > 0, TryCast(descAttr(0), System.Reflection.AssemblyDescriptionAttribute).Description,
-                                                "(para .NET 9.0 revisión del 15/Jun/2026)")
+                                                "(para .NET 9.0 revisión del 16/Jun/2026)")
         desc = desc.Substring(desc.IndexOf("(para .NET"))
 
         labelTitulo.Text = producto
