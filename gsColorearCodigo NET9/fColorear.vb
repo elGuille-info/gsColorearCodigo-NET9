@@ -64,6 +64,9 @@ Imports gsColorearNET
 
 Public Class fColorear
 
+
+    Private tsbSintaxObtenerCodigoDualHTML As ToolStripMenuItem
+
     ''' <summary>
     ''' El menú de tsbSintax correspondiente a mnuSintaxColorearEnRTF
     ''' </summary>
@@ -391,6 +394,11 @@ Public Class fColorear
                                 DirectCast(tsi, ToolStripMenuItem),
                                 AddressOf convertirDeRTF)
                 Me.tsbSintax.DropDownItems.Add(tsbSintaxColorearDeRTF)
+            ElseIf tsi Is mnuSintaxObtenerCodigoDualHTML Then
+                tsbSintaxObtenerCodigoDualHTML = clonarToolStripMenuItem(
+                                DirectCast(tsi, ToolStripMenuItem),
+                                AddressOf mnuSintaxObtenerCodigoDualHTML_Click)
+                Me.tsbSintax.DropDownItems.Add(tsbSintaxColorearDeRTF)
             ElseIf TypeOf tsi Is ToolStripMenuItem Then
                 Me.tsbSintax.DropDownItems.Add(clonarToolStripMenuItem(
                                 DirectCast(tsi, ToolStripMenuItem),
@@ -421,6 +429,8 @@ Public Class fColorear
         tsit.Name = "mnuVerRTF"
         tsit = rtContext.Items.Add("Colorear desde RTF", Nothing, AddressOf convertirDeRTF)
         tsit.Name = "mnuColorearDeRTF"
+        tsit = rtContext.Items.Add("Obtener código dual HTMLF", Nothing, AddressOf mnuSintaxObtenerCodigoDualHTML_Click)
+        tsit.Name = "mnuObtenerCodigoDualHTML"
         AddHandler rtContext.Opening, AddressOf mnuEdi_Opening
         rtEditor.ContextMenuStrip = rtContext
 
@@ -941,6 +951,69 @@ Public Class fColorear
         Else
             ficTmp &= "\gsColorearCodigo.htm"
         End If
+
+        Dim textoProcesado = s
+
+        ' 2. ¡EL TRUCO DUAL! Si detectamos que es el código interactivo, envolvemos el HTML y metemos JS compatible
+        If textoProcesado.Contains("contenedor-codigo-dual") Then
+            Dim sbCompleto As New System.Text.StringBuilder()
+
+            ' Forzamos cabeceras completas para que el WebBrowser active el modo estándar
+            sbCompleto.AppendLine("<!DOCTYPE html>")
+            sbCompleto.AppendLine("<html>")
+            sbCompleto.AppendLine("<head>")
+            sbCompleto.AppendLine("    <meta http-equiv='X-UA-Compatible' content='IE=edge' />") ' ¡Clave para evitar errores de script!
+            sbCompleto.AppendLine("    <meta charset='utf-8'>")
+            sbCompleto.AppendLine("    <style>")
+            sbCompleto.AppendLine("        body { font-family: sans-serif; margin: 20px; }")
+            sbCompleto.AppendLine("        .selector-codigo { display: flex; gap: 8px; margin-bottom: 5px; justify-content: flex-end; max-width: 92%; margin-left: auto; margin-right: auto; }")
+            sbCompleto.AppendLine("        .selector-codigo button { background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; }")
+            sbCompleto.AppendLine("        .selector-codigo button.activo { background-color: #0f172a; color: #ffffff; border-color: #0f172a; }")
+            sbCompleto.AppendLine("    </style>")
+            sbCompleto.AppendLine("</head>")
+            sbCompleto.AppendLine("<body>")
+
+            ' Metemos el código de las cajas que ya tenías procesado
+            sbCompleto.AppendLine(textoProcesado)
+
+            ' JavaScript con sintaxis antigua (usando 'var' y bucles tradicionales) compatible con WebBrowser
+            sbCompleto.AppendLine("<script>")
+            sbCompleto.AppendLine("function cambiarCodigo(boton, modo) {")
+            sbCompleto.AppendLine("    var contenedorBotones = boton.parentElement;")
+            sbCompleto.AppendLine("    var contenedorDual = contenedorBotones.nextElementSibling;")
+            sbCompleto.AppendLine("    if (!contenedorDual || !contenedorDual.className.indexOf('contenedor-codigo-dual') === -1) return;")
+            sbCompleto.AppendLine("    ")
+            sbCompleto.AppendLine("    var botones = contenedorBotones.getElementsByTagName('button');")
+            sbCompleto.AppendLine("    for (var i = 0; i < botones.length; i++) {")
+            sbCompleto.AppendLine("        botones[i].className = '';")
+            sbCompleto.AppendLine("    }")
+            sbCompleto.AppendLine("    boton.className = 'activo';")
+            sbCompleto.AppendLine("    ")
+            sbCompleto.AppendLine("    var divs = contenedorDual.getElementsByTagName('div');")
+            sbCompleto.AppendLine("    var versionClara = null; var versionOscura = null;")
+            sbCompleto.AppendLine("    for (var j = 0; j < divs.length; j++) {")
+            sbCompleto.AppendLine("        if (divs[j].className.indexOf('codigo-claro') !== -1) versionClara = divs[j];")
+            sbCompleto.AppendLine("        if (divs[j].className.indexOf('codigo-oscuro') !== -1) versionOscura = divs[j];")
+            sbCompleto.AppendLine("    }")
+            sbCompleto.AppendLine("    ")
+            sbCompleto.AppendLine("    if (modo === 'oscuro') {")
+            sbCompleto.AppendLine("        if (versionClara) versionClara.style.display = 'none';")
+            sbCompleto.AppendLine("        if (versionOscura) versionOscura.style.display = 'block';")
+            sbCompleto.AppendLine("    } else {")
+            sbCompleto.AppendLine("        if (versionClara) versionClara.style.display = 'block';")
+            sbCompleto.AppendLine("        if (versionOscura) versionOscura.style.display = 'none';")
+            sbCompleto.AppendLine("    }")
+            sbCompleto.AppendLine("}")
+            sbCompleto.AppendLine("</script>")
+
+            sbCompleto.AppendLine("</body>")
+            sbCompleto.AppendLine("</html>")
+
+            ' Sustituimos el texto original por el HTML completo con esteroides
+            textoProcesado = sbCompleto.ToString()
+
+            s = textoProcesado
+        End If
         Using sw As New System.IO.StreamWriter(ficTmp, False, System.Text.Encoding.UTF8)
             ' Aquí si incluir el style
             sw.WriteLine("<style>pre{{font-family:{0}; font-size:{1}.0pt;}}</style>",
@@ -950,7 +1023,8 @@ Public Class fColorear
         End Using
         ' En C# y en algunos otros los espacios                 (20/Ago/06)
         ' los convierte en &nbsp; al pegar
-        Me.rtEditor.Text = s.Replace("&nbsp;", " ")
+
+        'Me.rtEditor.Text = s.Replace("&nbsp;", " ")
         Me.WebBrowser1.Navigate(New Uri(ficTmp))
 
         Me.statusInfo.Text = "Código coloreado. Pulsa en el Navegador para verlo o pégalo en una página HTML."
@@ -1497,4 +1571,35 @@ Public Class fColorear
         Me.FileVersion = fvi.FileVersion
     End Sub
 
+    Private Sub mnuSintaxObtenerCodigoDualHTML_Click(sender As Object, e As EventArgs) Handles mnuSintaxObtenerCodigoDualHTML.Click
+        ' Convertir el código RTF en coloreado de SPAN
+        Me.statusInfo.Text = "Coloreando el código..."
+        Me.statusStrip1.Refresh()
+
+        If String.IsNullOrEmpty(rtEditor.Rtf) = False _
+                AndAlso rtEditor.Rtf.TrimStart().StartsWith("{\rtf") Then
+            textoSin = Me.rtEditor.Rtf
+        Else
+            textoSin = Me.rtEditor.Text
+            Me.statusInfo.Text = "El código debe estar en formato RTF."
+            Me.statusStrip1.Refresh()
+            Exit Sub
+        End If
+        Me.btnTextoNormal.Enabled = True
+
+        ' Para colorear en la misma ventana
+        ' NO usar el valor de indentar, que se lía
+        ' ya que tiene las etiquetas <span.
+        'Me.rtEditor.Text = Colorear.RTFaSPAN(Me.rtEditor.Rtf,
+        '                                     chkUsarTemaOscuro.Checked,
+        '                                     0,
+        '                                     Me.chkQuitarEspacios.Checked)
+
+        Dim htmlDualFinal As String = Colorear.ObtenerCodigoDualHTML(Me.rtEditor.Rtf)
+        Me.rtEditor.Text = htmlDualFinal
+
+        guardarTEMP(Me.rtEditor.Text)
+        Me.statusStrip1.Refresh()
+
+    End Sub
 End Class

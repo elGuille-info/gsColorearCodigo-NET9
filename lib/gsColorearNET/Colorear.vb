@@ -1,61 +1,61 @@
-'------------------------------------------------------------------------------
+Ôªø'------------------------------------------------------------------------------
 ' Clase definida en la biblioteca para .NET Standard 2.0            (10/Sep/20)
 ' Basada en gsColorear y gsColorearCore
 '
 '
 #Region " Comentarios sobre las versiones anteriores a .NET Standard 2.0 "
 '------------------------------------------------------------------------------
-' Clase para colorear el cÛdigo                                     (27/Nov/05)
-' Este cÛdigo lo tenÌa antes en el formulario gsEditorVB
+' Clase para colorear el c√≥digo                                     (27/Nov/05)
+' Este c√≥digo lo ten√≠a antes en el formulario gsEditorVB
 '
 ' Nota del 25/Ago/06:
-' El problema del <pre> es que no usa <br> para el cambio de lÌnea,
-' por eso al copiar de una p·gina Web y pegarlo en un editor,
-' suele pegarse como una sola lÌnea y queda mal.
+' El problema del <pre> es que no usa <br> para el cambio de l√≠nea,
+' por eso al copiar de una p√°gina Web y pegarlo en un editor,
+' suele pegarse como una sola l√≠nea y queda mal.
 ' Voy a probar haciendo ese cambio en el propio formulario que muestra
-' el cÛdigo en lugar de en esta clase.
+' el c√≥digo en lugar de en esta clase.
 '
-' VersiÛn 1.0.3.n
+' Versi√≥n 1.0.3.n
 ' Revisiones:
 '   3.11    31/Mar  Corregido bug en los \cf0\}\par
-'   3.12    31/Mar  Se usa el <pre> de la configuraciÛn
+'   3.12    31/Mar  Se usa el <pre> de la configuraci√≥n
 '   3.13    06/Abr  \viewkind4 puede terminar con \par
 '
-'   3.16    28/Jul  AÒado nuevas palabras a ~C#, VB y dotNet (y quito ASC y DESC)
-'   3.18    28/Jul  Quito los espacios despuÈs de color
+'   3.16    28/Jul  A√±ado nuevas palabras a ~C#, VB y dotNet (y quito ASC y DESC)
+'   3.18    28/Jul  Quito los espacios despu√©s de color
 '
-' De la versiÛn de VS2005
+' De la versi√≥n de VS2005
 ' 2018:
 '   4.0     21/11   Uso el .NET 4.7.2
 '   5.0     08/Dic  Modificaciones al colorear desde RTF
-'   5.1     08/Dic  AÒado GO a SQL.txt
+'   5.1     08/Dic  A√±ado GO a SQL.txt
 '
-' De la versiÛn de Vs2008
+' De la versi√≥n de Vs2008
 ' 1.0.5.0   21/Nov/18   Compilado para .NET 4.7.2
-' 1.0.6.0   05/Ene/19   AÒado un RichTextbox para usar con
-'                       la funciÛn ColorearCodigoRtf
-'                       AÒado Infer a VB y dotnet
+' 1.0.6.0   05/Ene/19   A√±ado un RichTextbox para usar con
+'                       la funci√≥n ColorearCodigoRtf
+'                       A√±ado Infer a VB y dotnet
 ' 1.0.6.1   05/Ene/19   Quito el Form1 con el control RichTextBox
 '
 ' 1.0.6.2   08/Ene/19   Para unificar VS2005 y VS2008
-' 1.0.6.3   08/Ene/19   HabÌa que llamar a AsignarPalabrasClave
+' 1.0.6.3   08/Ene/19   Hab√≠a que llamar a AsignarPalabrasClave
 '                       Desde ColorearCodigo se comprueba si hay que llamarlo
 '
 ' UTILIZAR solo la de VS2008
 '
 ' 1.0.0.0   02/Sep/20   Compilada para .NET Core 5.0 
 '           05/Sep/20   Lo cambio a .NET Core 3.1
-' 1.0.0.1   09/Sep/20   Si hay comillas dobles despuÈs de un comentario, 
+' 1.0.0.1   09/Sep/20   Si hay comillas dobles despu√©s de un comentario, 
 '                       no colorear la cadena
-' 1.0.0.2   10/Sep/20   AÒado colores oscuros (para el fondo oscuro)
-'                       Con mÈtodos para indicar los 3 colores: (esto a˙n no est·)
+' 1.0.0.2   10/Sep/20   A√±ado colores oscuros (para el fondo oscuro)
+'                       Con m√©todos para indicar los 3 colores: (esto a√∫n no est√°)
 '                       Claro, Oscuro y Personalizado
 '------------------------------------------------------------------------------
 #End Region
 '
 ' Versiones para .NET Standard 2.0
 ' 1.0.0.0   10/Sep/20   Compilada para .NET Standard 2.0
-' 1.0.0.1   11/Sep/20   Cambio la funciÛn Version
+' 1.0.0.1   11/Sep/20   Cambio la funci√≥n Version
 '                       La DLL debe estar compilada con nombre seguro
 '                       al menos para que funcione en .NET Framework.
 ' Publicado en NuGet:
@@ -63,34 +63,34 @@
 ' 1.0.0.2               Usando el paquete de NuGet no encuentra los archivos
 '                       de las palabras claves.
 '                       Las convierto en cadenas fijas.
-' 1.0.0.3               La versiÛn 1.0.0.3 no existe, pasÈ de la .2 a la .4
+' 1.0.0.3               La versi√≥n 1.0.0.3 no existe, pas√© de la .2 a la .4
 ' 1.0.0.4 y .5          12/Sep/20   
-'                       DefiniciÛn del paquete para publicar en NuGet
-'                       Mejoras en el cÛdigo para colorear desde RTF
-' 1.0.0.6   13/Sep/20   Reviso el cÛdigo de todas las clases
+'                       Definici√≥n del paquete para publicar en NuGet
+'                       Mejoras en el c√≥digo para colorear desde RTF
+' 1.0.0.6   13/Sep/20   Reviso el c√≥digo de todas las clases
 '                       y donde puedo uso inferencia de tipos, quito los ByVal,
-'                       declaro las variables lo m·s cerca de su uso
-'                       y optimizo un poco el cÛdigo.
-' 1.0.0.7   16/Sep/20   Cambio la funciÛn vb.Split para que no quite
-'                       las lÌneas vacÌas si no se indica expresamente.
-' 1.0.0.8   17/Sep/20   Se quedaba alg˙n \f0 al final del cÛdigo.
+'                       declaro las variables lo m√°s cerca de su uso
+'                       y optimizo un poco el c√≥digo.
+' 1.0.0.7   16/Sep/20   Cambio la funci√≥n vb.Split para que no quite
+'                       las l√≠neas vac√≠as si no se indica expresamente.
+' 1.0.0.8   17/Sep/20   Se quedaba alg√∫n \f0 al final del c√≥digo.
 ' 1.0.0.9               Ya no se quedaba el \f0 pero
-'                       al colorear desde RTF aÒadÌa lÌneas en blanco de m·s.
-' 1.0.0.10  18/Sep/20   AÒado init, record y with a las palabras clave de C#
-'           19/Sep/20   AÒado when (de C# 8.0)
+'                       al colorear desde RTF a√±ad√≠a l√≠neas en blanco de m√°s.
+' 1.0.0.10  18/Sep/20   A√±ado init, record y with a las palabras clave de C#
+'           19/Sep/20   A√±ado when (de C# 8.0)
 ' 1.0.0.11  21/Sep/20   Cambio el reemplazo (en el texto) de vbCrLf por vbCr
-'                       para que no cree lÌneas extras en blanco al mostrarlo en un RichTextBox.
-'                       Cambio la versiÛn del paquete de NuGet para que tenga la misma versiÛn que FileVersion.
-' 1.0.0.12  22/Sep/20   Se quedÛ ˙n vbLf perdido y no se mostraban los cambios de lÌnea en ColorearCodigo
-' 1.0.0.13              SeguÌa dejando lÌneas extras si quitar espacios iniciales estaba marcado
-' 1.0.0.14  24/Oct/20   El problema de dejar las lÌneas en blanco era por el tipo de retorno de carro
-'                       que se ve que varÌa de fichero a fichero.
-' 1.0.0.15  25/Oct/20   ComprobaciÛn de que al colorear en RTF el texto tenga retornos de carro.
-'                       Comprobar si en ColorearCodigo hay que comprobar cÛmo dividir las lÌneas.
-' 1.0.0.16  28/Oct/20   ComprobaciÛn de que haya varios \lang y \line como cambio de lÌnea.
+'                       para que no cree l√≠neas extras en blanco al mostrarlo en un RichTextBox.
+'                       Cambio la versi√≥n del paquete de NuGet para que tenga la misma versi√≥n que FileVersion.
+' 1.0.0.12  22/Sep/20   Se qued√≥ √∫n vbLf perdido y no se mostraban los cambios de l√≠nea en ColorearCodigo
+' 1.0.0.13              Segu√≠a dejando l√≠neas extras si quitar espacios iniciales estaba marcado
+' 1.0.0.14  24/Oct/20   El problema de dejar las l√≠neas en blanco era por el tipo de retorno de carro
+'                       que se ve que var√≠a de fichero a fichero.
+' 1.0.0.15  25/Oct/20   Comprobaci√≥n de que al colorear en RTF el texto tenga retornos de carro.
+'                       Comprobar si en ColorearCodigo hay que comprobar c√≥mo dividir las l√≠neas.
+' 1.0.0.16  28/Oct/20   Comprobaci√≥n de que haya varios \lang y \line como cambio de l√≠nea.
 '
 '
-' ©Guillermo 'guille' Som, 2005-2007, 2018-2020
+' ¬©Guillermo 'guille' Som, 2005-2007, 2018-2020
 '------------------------------------------------------------------------------
 Option Strict On
 Option Infer On
@@ -104,7 +104,7 @@ Imports System.Text.RegularExpressions
 
 ' NOTA 26/Ago/2006
 ' ================
-' Todas las clases que estÈn en esta misma DLL
+' Todas las clases que est√©n en esta misma DLL
 ' deben estar dentro del mismo espacio de nombres
 ' con idea de que no haya conflictos con otras DLL.
 '
@@ -132,11 +132,11 @@ Public NotInheritable Class Colorear
         ''' </summary>
         Simple = 1
         ''' <summary>
-        ''' Solo colorea los comentarios m˙ltiples
+        ''' Solo colorea los comentarios m√∫ltiples
         ''' </summary>
         Multiple = 2
         ''' <summary>
-        ''' Colorea los comentarios simples y m˙ltiples
+        ''' Colorea los comentarios simples y m√∫ltiples
         ''' </summary>
         Todos = 3
         ''' <summary>
@@ -146,15 +146,15 @@ Public NotInheritable Class Colorear
     End Enum
 
     ''' <summary>
-    ''' Formatos en los que se puede colorear el cÛdigo
+    ''' Formatos en los que se puede colorear el c√≥digo
     ''' </summary>
     Public Enum FormatosColoreado
         ''' <summary>
-        ''' Genera el cÛdigo coloreado en RTF
+        ''' Genera el c√≥digo coloreado en RTF
         ''' </summary>
         RTF
         ''' <summary>
-        ''' Genera el cÛdigo coloreado en HTML
+        ''' Genera el c√≥digo coloreado en HTML
         ''' </summary>
         HTML
     End Enum
@@ -177,14 +177,14 @@ Public NotInheritable Class Colorear
     Private Shared sintaxCase As Boolean
 
     ''' <summary>
-    ''' Si se comprueba may˙sculas / min˙sculas
+    ''' Si se comprueba may√∫sculas / min√∫sculas
     ''' en las palabras clave.
     ''' </summary>
     Public Shared SyntaxCaseSensitive As Boolean
 
-    ' Ni las comillas dobles ni los retornos se evaluar·n
-    ' ya que se hacen por separado, por tanto no es necesario que estÈn aquÌ
-    ' Ni algunos otros, asÌ que dejaremos los que sint·cticamente son v·lidos
+    ' Ni las comillas dobles ni los retornos se evaluar√°n
+    ' ya que se hacen por separado, por tanto no es necesario que est√©n aqu√≠
+    ' Ni algunos otros, as√≠ que dejaremos los que sint√°cticamente son v√°lidos
 
     ''' <summary>
     ''' Los separadores de palabras
@@ -207,7 +207,7 @@ Public NotInheritable Class Colorear
 
     ' Color de las clases en C#                                     (08/Feb/07)
     Public Const ColorClasesPre As String = "&H2B91AF"
-    Public Const PreTagPre As String = "<pre>"
+    Public Const PreTagPre As String = "<pre style=""background-color:white;font-size:medium;"">"
 
     ' Para colores oscuros                                          (10/Sep/20)
     Public Const ColorInstruccionesOscuroPre As String = "&H569cd6"
@@ -225,7 +225,7 @@ Public NotInheritable Class Colorear
     '
     Private Shared _FuenteTam As String = FuenteTamPre
     ''' <summary>
-    ''' TamaÒo de la fuente
+    ''' Tama√±o de la fuente
     ''' </summary>
     Public Shared Property FuenteTam() As String
         Get
@@ -443,9 +443,9 @@ Public NotInheritable Class Colorear
     Private Shared _PreTag As String = PreTagPre
 
     ''' <summary>
-    ''' El tag del principio del cÛdigo
+    ''' El tag del principio del c√≥digo
     ''' Si es tema claro dejarlo simplemente como &lt;pre>
-    ''' Si es tema oscuro debe contener el cÛdigo del color de fondo
+    ''' Si es tema oscuro debe contener el c√≥digo del color de fondo
     ''' </summary>
     ''' <returns></returns>
     Public Shared Property PreTag() As String
@@ -459,7 +459,7 @@ Public NotInheritable Class Colorear
 
     Private Shared _PreFinTag As String = PreFinTagPre
     ''' <summary>
-    ''' El tag de final del cÛdigo.
+    ''' El tag de final del c√≥digo.
     ''' De forma predeterminada es &lt;/pre&gt;
     ''' </summary>
     ''' <value>Cadena con el tag a asignar</value>
@@ -498,16 +498,16 @@ Public NotInheritable Class Colorear
     End Property
 
     ''' <summary>
-    ''' Carga las palabras clave en la colecciÛn
+    ''' Carga las palabras clave en la colecci√≥n
     ''' </summary>
     ''' <remarks>
     ''' Si el fichero de palabras no existe,
-    ''' se usar·n las palabras definidas en el programa,
-    ''' que pueden ser genÈricas (dotnet), de C#, VB o Java
+    ''' se usar√°n las palabras definidas en el programa,
+    ''' que pueden ser gen√©ricas (dotnet), de C#, VB o Java
     ''' Rev. 30/Nov: 
-    '''     AÒado: F# y SQL
+    '''     A√±ado: F# y SQL
     ''' Rev 18/Dic:
-    '''     AÒado: VB6
+    '''     A√±ado: VB6
     '''     Modifico el de CPP
     ''' </remarks>
     Public Shared Sub AsignarPalabrasClave()
@@ -517,7 +517,7 @@ Public NotInheritable Class Colorear
         ' En principio usar las instrucciones de los recursos   (26/Nov/05)
         For Each le As Lenguajes In System.Enum.GetValues(GetType(Lenguajes))
 
-            ' Seleccionar solo los que est·n en los recursos
+            ' Seleccionar solo los que est√°n en los recursos
             Dim palabras = LangKeyWords(le)
 
             If palabras IsNot Nothing Then
@@ -529,13 +529,13 @@ Public NotInheritable Class Colorear
     ''' <summary>
     ''' Busca una palabra completa
     ''' </summary>
-    ''' <param name="sep">Par·metro por referencia en el que se incluir· el separador hallado</param>
+    ''' <param name="sep">Par√°metro por referencia en el que se incluir√° el separador hallado</param>
     ''' <returns>Devuelve la palabra hallada</returns>
     ''' <remarks>
-    ''' En realidad busca cualquier cosa que estÈ entre separadores.
-    ''' Si devuelve una cadena y el separador est· vacÌo es que es la ˙ltima palabra.
+    ''' En realidad busca cualquier cosa que est√© entre separadores.
+    ''' Si devuelve una cadena y el separador est√° vac√≠o es que es la √∫ltima palabra.
     ''' Debe estar declarada la variable lineaCompleta,
-    ''' que inicialmente tendr· el texto a examinar.
+    ''' que inicialmente tendr√° el texto a examinar.
     ''' </remarks>
     Private Shared Function buscarToken(ByRef sep As String) As String
         ' Buscar cada token en el texto incluido en lineaCompleta
@@ -544,8 +544,8 @@ Public NotInheritable Class Colorear
         Dim res As String
         Dim i = lineaCompleta.IndexOfAny(Separadores.ToCharArray())
         If i > -1 Then
-            ' Lo que haya hasta esa posiciÛn es un token
-            ' salvo que sea la posiciÛn cero
+            ' Lo que haya hasta esa posici√≥n es un token
+            ' salvo que sea la posici√≥n cero
             sep = lineaCompleta.Substring(i, 1)
             If i = 0 Then
                 lineaCompleta = lineaCompleta.Substring(i + 1)
@@ -580,15 +580,15 @@ Public NotInheritable Class Colorear
     ''' <remarks>
     ''' 08/Feb/2007
     ''' El formato debe ser como el usado por el control RichText
-    ''' en la segunda lÌnea tendr· la info de los colores usados:
+    ''' en la segunda l√≠nea tendr√° la info de los colores usados:
     ''' {\colortbl ;
     ''' \red128\green128\blue128; Gris
     ''' \red0\green128\blue0; Verde
     ''' \red0\green0\blue255; Azul
     ''' \red43\green145\blue175; Cian 
     ''' \red163\green21\blue21;} Rojo
-    ''' Para no complicar las cosas, se usar·n esos mismos colores
-    ''' creando la definiciÛn de esos colores y us·ndolos en los span
+    ''' Para no complicar las cosas, se usar√°n esos mismos colores
+    ''' creando la definici√≥n de esos colores y us√°ndolos en los span
     ''' </remarks>
     Public Shared Function RTFaSPAN(texto As String,
                                     usarTemaOscuro As Boolean,
@@ -596,11 +596,11 @@ Public NotInheritable Class Colorear
                                     quitarEspaciosIniciales As Boolean) As String
 
         Dim sb As New StringBuilder
-        ' Convertir los <, > & en cÛdigos HTML
-        ' NO cambiar \fs para que estÈ en otra lÌnea                (12/Sep/20)
+        ' Convertir los <, > & en c√≥digos HTML
+        ' NO cambiar \fs para que est√© en otra l√≠nea                (12/Sep/20)
         texto = texto.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;")
 
-        ' Comprobar quÈ tipo de cambio de lÌnea tiene               (24/Oct/20)
+        ' Comprobar qu√© tipo de cambio de l√≠nea tiene               (24/Oct/20)
         Dim lineas() As String
         If texto.IndexOf(vbCrLf) > -1 Then
             lineas = texto.Split(vbCrLf.ToCharArray, StringSplitOptions.RemoveEmptyEntries)
@@ -613,7 +613,7 @@ Public NotInheritable Class Colorear
         End If
         'lineas = texto.Split(vbCr.ToCharArray, StringSplitOptions.RemoveEmptyEntries)
 
-        ' La segunda lÌnea ser· la definiciÛn de los colores
+        ' La segunda l√≠nea ser√° la definici√≥n de los colores
         Dim colores() As String
         Dim n As Integer = -1
         Dim j, k As Integer
@@ -627,25 +627,25 @@ Public NotInheritable Class Colorear
 
         ' guardarlos en formato hexadecimal (Adaptado para Modo Oscuro)
         For Each m As Match In mc 're.Matches(texto)
-            ' 1. Extraer el valor hexadecimal original en may˙sculas (Formato "RRGGBB")
+            ' 1. Extraer el valor hexadecimal original en may√∫sculas (Formato "RRGGBB")
             Dim hexOriginal As String = CInt(m.Groups("r").Value.Substring(4)).ToString("X2") &
                                 CInt(m.Groups("g").Value.Substring(6)).ToString("X2") &
                                 CInt(m.Groups("b").Value.Substring(5)).ToString("X2")
 
-            ' 2. Si el CheckBox est· marcado, pasamos el valor por el traductor
+            ' 2. Si el CheckBox est√° marcado, pasamos el valor por el traductor
             If usarTemaOscuro Then
                 Select Case hexOriginal
-                    Case "0000FF" ' Azul est·ndar (Keywords: Dim, Public, Class...)
+                    Case "0000FF" ' Azul est√°ndar (Keywords: Dim, Public, Class...)
                         colores(j) = "569CD6" ' Cian brillante (Modo oscuro)
 
-                    Case "008000" ' Verde est·ndar (Comentarios)
+                    Case "008000" ' Verde est√°ndar (Comentarios)
                         colores(j) = "57A64A" ' Verde claro (Modo oscuro)
 
                     Case "007F00", "228B22" ' Otras variantes de verde
                         colores(j) = "608B4E"
 
-                    Case "A31515" ' MarrÛn/Rojo (Cadenas de texto / Strings)
-                        colores(j) = "D69D85" ' SalmÛn/MarrÛn claro
+                    Case "A31515" ' Marr√≥n/Rojo (Cadenas de texto / Strings)
+                        colores(j) = "D69D85" ' Salm√≥n/Marr√≥n claro
 
                     Case "000000" ' Texto normal, variables, operadores
                         colores(j) = "DCDCDC" ' Gris claro / Blanco hueso
@@ -658,7 +658,7 @@ Public NotInheritable Class Colorear
                         colores(j) = hexOriginal
                 End Select
             Else
-                ' Si la casilla NO est· marcada, se queda con el comportamiento claro de siempre
+                ' Si la casilla NO est√° marcada, se queda con el comportamiento claro de siempre
                 colores(j) = hexOriginal
             End If
 
@@ -679,15 +679,15 @@ Public NotInheritable Class Colorear
         '   \cf4 gris   (comentarios XML)
         '   \cf5 cian   (tipos de C#)
 
-        ' La primera lÌnea v·lida contendr· \viewkind<n> y otros valores de RTF
-        ' tambiÈn incluir· la primera definiciÛn de color, si es que no es normal
-        ' y con toda seguridad acabar· con \fsnn (el tamaÒo * 2 de la fuente)
+        ' La primera l√≠nea v√°lida contendr√° \viewkind<n> y otros valores de RTF
+        ' tambi√©n incluir√° la primera definici√≥n de color, si es que no es normal
+        ' y con toda seguridad acabar√° con \fsnn (el tama√±o * 2 de la fuente)
 
-        ' No sÈ el formato anterior, pero...                    (08/Dic/18)
+        ' No s√© el formato anterior, pero...                    (08/Dic/18)
         ' ahora se ve que es distinto:
-        ' \viewkindN est· en una lÌnea como esta:
+        ' \viewkindN est√° en una l√≠nea como esta:
         '{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
-        ' es decir, despuÈs de \wiewkind4 termina con \uc1
+        ' es decir, despu√©s de \wiewkind4 termina con \uc1
 
         Dim bFinSpan As Boolean = False ' Si se ha puesto </span>
 
@@ -715,14 +715,14 @@ Public NotInheritable Class Colorear
             If String.IsNullOrWhiteSpace(lineas(i)) Then
                 Continue For
             End If
-            ' Puede que tambiÈn esto estÈ en lÌnea diferente        (12/Sep/20)
+            ' Puede que tambi√©n esto est√© en l√≠nea diferente        (12/Sep/20)
             ' {\colortbl
             If lineas(i).TrimStart.Contains("{\colortbl") Then
                 Continue For
             End If
 
             ' Buscar primero el \fs
-            ' ya que en la misma lÌnea puede haber cÛdigo
+            ' ya que en la misma l√≠nea puede haber c√≥digo
             k = lineas(i).IndexOf("\fs")
             Dim c As Integer
             If k > -1 Then
@@ -733,16 +733,16 @@ Public NotInheritable Class Colorear
                     c = CInt(lineas(i).Substring(j + 3, 1))
                     'sColores = colores(c)
 
-                    ' Falla si \fs est· en una lÌnea con cÛdigo     (12/Sep/20)
-                    ' ya que puede haber una lÌnea como:
+                    ' Falla si \fs est√° en una l√≠nea con c√≥digo     (12/Sep/20)
+                    ' ya que puede haber una l√≠nea como:
                     '   End\cf3  \cf2 If\cf0\f2\fs17\par
                     '
-                    ' Se deberÌa corregir esto
+                    ' Se deber√≠a corregir esto
                     ' ya que realmente no es correcto.
 
                     ' buscar \cf0 a partir del primer \cf
                     Dim p = lineas(i).IndexOf("\cf0", j)
-                    ' si est· antes de \fs
+                    ' si est√° antes de \fs
                     If p > -1 AndAlso p < k Then
                         ' y p es mayor que j
                         ' tomar desde el principio hasta p
@@ -752,7 +752,7 @@ Public NotInheritable Class Colorear
                         End If
                     End If
 
-                    ' El cÛdigo RTF debe terminar con "\fsnn "
+                    ' El c√≥digo RTF debe terminar con "\fsnn "
                     j = lineas(i).IndexOf("\fs")
                     If j > -1 Then
                         k = lineas(i).IndexOf(" ", j)
@@ -771,7 +771,7 @@ Public NotInheritable Class Colorear
                     End If
 
                 Else
-                    ' El cÛdigo RTF debe terminar con "\fsnn "
+                    ' El c√≥digo RTF debe terminar con "\fsnn "
                     j = lineas(i).IndexOf("\fs")
                     k = lineas(i).IndexOf(" ", j)
                     ' Comprobar si k es -1                  (06/Abr/07)
@@ -787,16 +787,16 @@ Public NotInheritable Class Colorear
                     End If
                     lineas(i) = lineas(i).Substring(k + 1)
                 End If
-                ' Es posible que todo estÈ en una lÌnea
+                ' Es posible que todo est√© en una l√≠nea
                 ' Si se edita el texto en el editor de la utilidad  (28/Oct/20)
-                ' puede que le aÒada m·s \lang, por ejemplo:
+                ' puede que le a√±ada m√°s \lang, por ejemplo:
                 ' \cf1 Private\cf2  \cf1 Sub\cf2  Button1_Click(sender \cf1 As\cf2  \cf1 Object\cf2 , e \cf1 As\cf2  \cf3 EventArgs\cf2 )\f1\lang1033  _\line\tab\tab\tab\f0\lang3082  \cf1 Handles\cf2  Button1.Click\par
                 '   \cf3 EventArgs\cf2 )\f1\lang1033
                 '    _\line\tab\tab\tab\f0\lang3082  \cf1 Handles\cf2  Button1.Click\par
                 j = lineas(i).IndexOf("\pard\")
                 If j = -1 Then
-                    ' si est· \lang ir· seguido de cifras y un espacio (28/Oct/20)
-                    ' buscar varias instancias en esta lÌnea
+                    ' si est√° \lang ir√° seguido de cifras y un espacio (28/Oct/20)
+                    ' buscar varias instancias en esta l√≠nea
                     j = lineas(i).IndexOf("\lang")
                     Do While j > -1
                         k = lineas(i).IndexOf(" ", j)
@@ -819,28 +819,28 @@ Public NotInheritable Class Colorear
             End If
 
 
-            ' Comprobar si la lÌnea tiene "\f1?\f0 "            (06/Dic/12)
-            ' normalmente con las vocales acentuadas, eÒes, etc.
+            ' Comprobar si la l√≠nea tiene "\f1?\f0 "            (06/Dic/12)
+            ' normalmente con las vocales acentuadas, e√±es, etc.
             ' En ese caso, quitar el \f1 y el \f0 con el espacio
-            ' TambiÈn me he encontrado lÌneas con \f2           (12/Sep/20)
+            ' Tambi√©n me he encontrado l√≠neas con \f2           (12/Sep/20)
             lineas(i) = lineas(i).Replace("\f1", "") '.Replace("\f0 ", "") '.Replace("\f2", "")
             'lineas(i) = lineas(i).Replace("\f0 ", "")
             ' Las que no le siguen un espacio suelen estar al final (17/Sep/20)
-            ' aquÌ dejarlo con el espacio
+            ' aqu√≠ dejarlo con el espacio
             lineas(i) = lineas(i).Replace("\f0 ", "")
 
             ' Se supone que lineas(i) contiene lo que haya que colorear
             ' Dejar de analizar cuando se llegue a: \pard\
             ' Aunque puede que acabe con \lang...
-            ' porque no haya un final de p·rrafo
+            ' porque no haya un final de p√°rrafo
 
             '--------------------------------------------------------------
             ' NOTA del 08/Dic/2018
-            ' No sÈ cÛmo serÌa antes el formato de RTF
-            ' pero ahora despuÈs de \lang hay texto v·lido
+            ' No s√© c√≥mo ser√≠a antes el formato de RTF
+            ' pero ahora despu√©s de \lang hay texto v√°lido
             ' Creo que \lang es: "\langN " donde N puede tener varias cifras
-            ' pero seg˙n parece finaliza con un espacio
-            ' Y esa misma lÌnea empieza con \pard\
+            ' pero seg√∫n parece finaliza con un espacio
+            ' Y esa misma l√≠nea empieza con \pard\
             ' Por ejemplo: 
             ' Creado con TextPad
             '{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
@@ -851,8 +851,8 @@ Public NotInheritable Class Colorear
             '--------------------------------------------------------------
 
             ' Por tanto, si empieza con \pard\ y contiene \langN
-            ' comprobar si hay \par al final y analizar la lÌnea desde
-            ' el espacio despuÈs de \lang hasta el final
+            ' comprobar si hay \par al final y analizar la l√≠nea desde
+            ' el espacio despu√©s de \lang hasta el final
             If lineas(i).TrimStart().StartsWith("\pard\") AndAlso
                         lineas(i).Contains("\lang") Then
                 j = lineas(i).IndexOf("\lang")
@@ -867,19 +867,19 @@ Public NotInheritable Class Colorear
             j = 0
             k = 0
             ' Quitar los \par y cambiarlos por un CrLf
-            ' tambiÈn los caracteres especiales \, { y }
-            ' TODO: El problema es que se coloree una cadena con esos cÛdigos
+            ' tambi√©n los caracteres especiales \, { y }
+            ' TODO: El problema es que se coloree una cadena con esos c√≥digos
             Dim s As String
             ' Cambio el reemplazo de vbCrLf por vbCr                (21/Sep/20)
-            ' para que no cree lÌneas extras en blanco al mostrarlo en un RichTextBox
-            ' \line es un cambio de lÌnea, no de p·rrafo            (28/Oct/20)
+            ' para que no cree l√≠neas extras en blanco al mostrarlo en un RichTextBox
+            ' \line es un cambio de l√≠nea, no de p√°rrafo            (28/Oct/20)
             s = lineas(i).Replace("\par", vbCr).Replace("\line", vbCr) _
                               .Replace("\\", "\") _
                               .Replace("\{", "{") _
                               .Replace("\}", "}")
 
             ' Puede que haya letras acentuadas, etc. en el formato:
-            ' \'NN siendo NN un valor hexa del car·cter
+            ' \'NN siendo NN un valor hexa del car√°cter
             Do
                 k = s.IndexOf("\'")
                 If k > -1 Then
@@ -912,7 +912,7 @@ Public NotInheritable Class Colorear
                         s = ""
                     Else
                         ' Es posible que no haya espacio        (31/Mar/07)
-                        ' despuÈs del \cfN
+                        ' despu√©s del \cfN
                         If s(k + 4) <> " "c Then
                             s = s.Substring(k + 4)
                         Else
@@ -920,7 +920,7 @@ Public NotInheritable Class Colorear
                         End If
                     End If
                 Else
-                    ' AÒadir lo que resta
+                    ' A√±adir lo que resta
                     sb.Append(s)
                     s = ""
                 End If
@@ -937,7 +937,7 @@ Public NotInheritable Class Colorear
 
         texto = sb.ToString
 
-        ' Quitar el ˙ltimo \f0 por el final                         (18/Sep/20)
+        ' Quitar el √∫ltimo \f0 por el final                         (18/Sep/20)
         j = texto.LastIndexOf("\f0")
         If j > -1 Then
             ' No se va a dar este caso, pero...
@@ -948,7 +948,7 @@ Public NotInheritable Class Colorear
             End If
         End If
 
-        ' Quitar los espacios iniciales e indentarlo, si asÌ se indica
+        ' Quitar los espacios iniciales e indentarlo, si as√≠ se indica
         ' El problema es que al tener los <span no lo hace bien
         ' particularmente con los comentarios
         If indentar > 0 OrElse quitarEspaciosIniciales Then
@@ -961,11 +961,11 @@ Public NotInheritable Class Colorear
             texto = indentarQuitarEspacios(texto, indentar, quitarEspaciosIniciales)
         End If
 
-        ' Incluir el <pre indicado en la configuraciÛn          (31/Mar/07)
+        ' Incluir el <pre indicado en la configuraci√≥n          (31/Mar/07)
         Return PreTag & texto & "</pre>"
     End Function
 
-    ' Esta funciÛn no se utiliza en el proyecto de gsColorearCodigo
+    ' Esta funci√≥n no se utiliza en el proyecto de gsColorearCodigo
     Public Shared Function RTFaSPAN(texto As String, usarTemaOscuro As Boolean) As String
         Return RTFaSPAN(texto, usarTemaOscuro, 0, False)
     End Function
@@ -1034,9 +1034,9 @@ Public NotInheritable Class Colorear
             End If
 
         End If
-        ' Al llegar aquÌ, si indentar > 0, siempre ser· True
+        ' Al llegar aqu√≠, si indentar > 0, siempre ser√° True
         If quitarEspaciosIniciales Then
-            ' Comprobar la cantidad de espacios de la primera lÌnea (11/Dic/02)
+            ' Comprobar la cantidad de espacios de la primera l√≠nea (11/Dic/02)
             Dim sangria As Integer = -1
             ' Esto simplemente es para cambiar los tabs por espacios
             If indentar < 1 Then indentar = 4
@@ -1058,25 +1058,25 @@ Public NotInheritable Class Colorear
                 Else
                     s2 = s.Trim
                 End If
-                ' Si es una lÌnea vacia
+                ' Si es una l√≠nea vacia
                 If s2 = "" Then
                     saCodigo(i) = s
                 Else
-                    ' Quitar la sangrÌa inicial, pero dejar las siguientes indentaciones
-                    ' (una vez quitados los espacios de la primera indentaciÛn)
+                    ' Quitar la sangr√≠a inicial, pero dejar las siguientes indentaciones
+                    ' (una vez quitados los espacios de la primera indentaci√≥n)
                     n = s.Length - s.TrimStart.Length
-                    ' para saber si es la primera sangrÌa
+                    ' para saber si es la primera sangr√≠a
                     If sangria = -1 Then
                         sangria = n
                         n = 0
                     Else
-                        ' Si ya est· procesado con los <span,   (08/Feb/07)
+                        ' Si ya est√° procesado con los <span,   (08/Feb/07)
                         ' tener en cuenta las etiquets
                         If n = 0 AndAlso s.StartsWith("</span>") Then
                             n = s.Substring("</span>".Length).Length - s.Substring("</span>".Length).TrimStart.Length
                         End If
                         n -= sangria
-                        ' por si hay alg˙n bloque mal formado       (12/Jun/04)
+                        ' por si hay alg√∫n bloque mal formado       (12/Jun/04)
                         If n < 0 Then n = 0
                     End If
                     If s.StartsWith("</span>") Then
@@ -1090,7 +1090,7 @@ Public NotInheritable Class Colorear
                 End If
             Next
             ' Convertir el array en una cadena
-            ' Se me colÛ un vbLf en vez de vbCr                 (22/Sep/20)
+            ' Se me col√≥ un vbLf en vez de vbCr                 (22/Sep/20)
             texto = String.Join(vbCr, saCodigo).Trim
         End If
 
@@ -1098,22 +1098,22 @@ Public NotInheritable Class Colorear
     End Function
 
     ''' <summary>
-    ''' MÈtodo para colorear el cÛdigo
+    ''' M√©todo para colorear el c√≥digo
     ''' </summary>
     ''' <param name="texto">
-    ''' El cÛdigo a colorear
+    ''' El c√≥digo a colorear
     ''' </param>
     ''' <param name="leng">
     ''' El lenguaje para las instrucciones
     ''' </param>
     ''' <param name="formato">
-    ''' Si se devolver· en formato RTF o HTML
+    ''' Si se devolver√° en formato RTF o HTML
     ''' </param>
     ''' <returns>
     ''' Devuelve el texto ya coloreado</returns>
     ''' <remarks>
-    ''' El formato devuelto ser· RTF para mostrarlo en un RichTextBox en la propiedad Rtf
-    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p·gina HTML.
+    ''' El formato devuelto ser√° RTF para mostrarlo en un RichTextBox en la propiedad Rtf
+    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p√°gina HTML.
     ''' </remarks>
     Public Shared Function ColorearCodigo(texto As String,
                                           leng As Lenguajes,
@@ -1123,7 +1123,7 @@ Public NotInheritable Class Colorear
     End Function
 
     ''' <summary>
-    ''' Colorea el texto indicado asign·ndolo a un control RichTexBox
+    ''' Colorea el texto indicado asign√°ndolo a un control RichTexBox
     ''' y devuelve el contenido Rtf del control.
     ''' Y lo copia en el portapapeles.
     ''' 
@@ -1139,25 +1139,25 @@ Public NotInheritable Class Colorear
     End Function
 
     ''' <summary>
-    ''' MÈtodo para colorear el cÛdigo
+    ''' M√©todo para colorear el c√≥digo
     ''' </summary>
     ''' <param name="texto">
-    ''' El cÛdigo a colorear
+    ''' El c√≥digo a colorear
     ''' </param>
     ''' <param name="leng">
     ''' El lenguaje para las instrucciones
     ''' </param>
     ''' <param name="formato">
-    ''' Si se devolver· en formato RTF o HTML
+    ''' Si se devolver√° en formato RTF o HTML
     ''' </param>
     ''' <param name="asignarCase">
-    ''' Si se cambiar·n las palabras may˙sculas/min˙sculas del lenguaje
+    ''' Si se cambiar√°n las palabras may√∫sculas/min√∫sculas del lenguaje
     ''' </param>
     ''' <returns>
     ''' Devuelve el texto ya coloreado</returns>
     ''' <remarks>
-    ''' El formato devuelto ser· RTF para mostrarlo en un RichTextBox en la propiedad Rtf
-    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p·gina HTML.
+    ''' El formato devuelto ser√° RTF para mostrarlo en un RichTextBox en la propiedad Rtf
+    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p√°gina HTML.
     ''' </remarks>
     Public Shared Function ColorearCodigo(texto As String,
                                           leng As Lenguajes,
@@ -1168,27 +1168,27 @@ Public NotInheritable Class Colorear
     End Function
 
     ''' <summary>
-    ''' MÈtodo para colorear el cÛdigo
+    ''' M√©todo para colorear el c√≥digo
     ''' </summary>
     ''' <param name="texto">
-    ''' El cÛdigo a colorear
+    ''' El c√≥digo a colorear
     ''' </param>
     ''' <param name="leng">
     ''' El lenguaje para las instrucciones
     ''' </param>
     ''' <param name="formato">
-    ''' Si se devolver· en formato RTF o HTML
+    ''' Si se devolver√° en formato RTF o HTML
     ''' </param>
     ''' <param name="asignarCase">
-    ''' Si se cambiar·n las palabras may˙sculas/min˙sculas del lenguaje
+    ''' Si se cambiar√°n las palabras may√∫sculas/min√∫sculas del lenguaje
     ''' </param>
     ''' <param name="indentar">
-    ''' El n˙mero de espacios para indentar autom·ticamente
+    ''' El n√∫mero de espacios para indentar autom√°ticamente
     ''' Cero para no indentar</param>
     ''' <returns>Devuelve el texto ya coloreado</returns>
     ''' <remarks>
-    ''' El formato devuelto ser· RTF para mostrarlo en un RichTextBox en la propiedad Rtf
-    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p·gina HTML.
+    ''' El formato devuelto ser√° RTF para mostrarlo en un RichTextBox en la propiedad Rtf
+    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p√°gina HTML.
     ''' </remarks>
     Public Shared Function ColorearCodigo(texto As String,
                                           leng As Lenguajes,
@@ -1200,30 +1200,30 @@ Public NotInheritable Class Colorear
     End Function
 
     ''' <summary>
-    ''' MÈtodo para colorear el cÛdigo
+    ''' M√©todo para colorear el c√≥digo
     ''' </summary>
     ''' <param name="texto">
-    ''' El cÛdigo a colorear
+    ''' El c√≥digo a colorear
     ''' </param>
     ''' <param name="leng">
     ''' El lenguaje para las instrucciones
     ''' </param>
     ''' <param name="formato">
-    ''' Si se devolver· en formato RTF o HTML
+    ''' Si se devolver√° en formato RTF o HTML
     ''' </param>
     ''' <param name="asignarCase">
-    ''' Si se cambiar·n las palabras may˙sculas/min˙sculas del lenguaje
+    ''' Si se cambiar√°n las palabras may√∫sculas/min√∫sculas del lenguaje
     ''' </param>
     ''' <param name="indentar">
-    ''' El n˙mero de espacios para indentar autom·ticamente
+    ''' El n√∫mero de espacios para indentar autom√°ticamente
     ''' Cero para no indentar</param>
     ''' <param name="quitarEspaciosIniciales">
     ''' Si se deben quitar los espacios iniciales antes de colorear
     ''' </param>
     ''' <returns>Devuelve el texto ya coloreado</returns>
     ''' <remarks>
-    ''' El formato devuelto ser· RTF para mostrarlo en un RichTextBox en la propiedad Rtf
-    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p·gina HTML.
+    ''' El formato devuelto ser√° RTF para mostrarlo en un RichTextBox en la propiedad Rtf
+    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p√°gina HTML.
     ''' </remarks>
     Public Shared Function ColorearCodigo(texto As String,
                                           leng As Lenguajes,
@@ -1237,34 +1237,34 @@ Public NotInheritable Class Colorear
 
 
     ''' <summary>
-    ''' MÈtodo para colorear el cÛdigo
+    ''' M√©todo para colorear el c√≥digo
     ''' </summary>
     ''' <param name="texto">
-    ''' El cÛdigo a colorear
+    ''' El c√≥digo a colorear
     ''' </param>
     ''' <param name="leng">
     ''' El lenguaje para las instrucciones
     ''' </param>
     ''' <param name="formato">
-    ''' Si se devolver· en formato RTF o HTML
+    ''' Si se devolver√° en formato RTF o HTML
     ''' </param>
     ''' <param name="asignarCase">
-    ''' Si se cambiar·n las palabras may˙sculas/min˙sculas del lenguaje
+    ''' Si se cambiar√°n las palabras may√∫sculas/min√∫sculas del lenguaje
     ''' </param>
     ''' <param name="indentar">
-    ''' El n˙mero de espacios para indentar autom·ticamente.
+    ''' El n√∫mero de espacios para indentar autom√°ticamente.
     ''' Cero para no indentar</param>
     ''' <param name="quitarEspaciosIniciales">
     ''' Si se deben quitar los espacios iniciales antes de colorear
     ''' </param>
     ''' <param name="coloreandoTodo">
     ''' Indica si se interpretan todos los comentarios
-    ''' o solo los sencillos o m˙ltiples
+    ''' o solo los sencillos o m√∫ltiples
     ''' </param>
     ''' <returns>Devuelve el texto ya coloreado</returns>
     ''' <remarks>
-    ''' El formato devuelto ser· RTF para mostrarlo en un RichTextBox en la propiedad Rtf
-    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p·gina HTML.
+    ''' El formato devuelto ser√° RTF para mostrarlo en un RichTextBox en la propiedad Rtf
+    ''' o en formato HTML entre tags &lt;pre&gt; para usar en una p√°gina HTML.
     ''' </remarks>
     Public Shared Function ColorearCodigo(texto As String,
                                           leng As Lenguajes,
@@ -1278,7 +1278,7 @@ Public NotInheritable Class Colorear
         lenguaje = leng
         sintaxCase = asignarCase
 
-        ' Comprobar si las palabras claves est·n asignadas      (08/Ene/19)
+        ' Comprobar si las palabras claves est√°n asignadas      (08/Ene/19)
         ' porque eso era lo que me fallaba...
         ' que no estaban asignadas
         If keyW.CountAll = 0 Then
@@ -1305,7 +1305,7 @@ Public NotInheritable Class Colorear
         '------------------------------------------------------------------
         ' Formatear el texto para crearlo en formato RTF o HTML
         '------------------------------------------------------------------
-        ' Este sistema es m·s r·pido que la comprobaciÛn de cada palabra
+        ' Este sistema es m√°s r√°pido que la comprobaci√≥n de cada palabra
         '------------------------------------------------------------------
         ' Los colores son:
         '   \cf0 el normal
@@ -1314,8 +1314,8 @@ Public NotInheritable Class Colorear
         '   \cf3 rojo   (texto entre comillas)
         '   \cf4 gris   (comentarios XML)
         '   \cf5 cian   (tipos de C#)
-        ' DespuÈs de cada \cf? va un espacio
-        ' Cada lÌnea acabar· con \cf0\par
+        ' Despu√©s de cada \cf? va un espacio
+        ' Cada l√≠nea acabar√° con \cf0\par
 
         Dim sbRtf As New StringBuilder
 
@@ -1323,7 +1323,7 @@ Public NotInheritable Class Colorear
             ' Cabecera del fichero RTF
             sbRtf.AppendFormat("{{\rtf1\ansi\ansicpg1252\deff0{{\fonttbl{{\f0\fnil\fcharset0 {0};}}}}", Fuente)
             sbRtf.Append(vbCr)
-            ' DefiniciÛn de los colores a usar
+            ' Definici√≥n de los colores a usar
             ' Incluir el color para las clases/tipos de C#      (08/Feb/07)
             sbRtf.AppendFormat("{{\colortbl ;{0};{1};{2};{3};{4};}}",
                             ColorComentarios, ColorInstrucciones, ColorTexto, ColorDocXML, ColorClases)
@@ -1334,9 +1334,9 @@ Public NotInheritable Class Colorear
 
             ' Ni idea de que es esto, pero...
             '------------------------------------------------------------------
-            ' \viewkind4 es el estilo de visiÛn del documento 4 = normal
+            ' \viewkind4 es el estilo de visi√≥n del documento 4 = normal
             ' \pard Resets to default paragraph properties.
-            ' Para m·s info del formato RTF_ http://www.biblioscape.com/rtf15_spec.htm
+            ' Para m√°s info del formato RTF_ http://www.biblioscape.com/rtf15_spec.htm
             '------------------------------------------------------------------
             sbRtf.AppendFormat("\viewkind4\uc1\pard\lang3082\f0\fs{0} ", CInt(FuenteTam) * 2)
         Else
@@ -1355,7 +1355,7 @@ Public NotInheritable Class Colorear
         ' salvo usar el tipo de letra indicado.
         If lenguaje = Lenguajes.Ninguno Then
             If formato = FormatosColoreado.RTF Then
-                ' En RTF no basta con aÒadir el texto...
+                ' En RTF no basta con a√±adir el texto...
                 arCod = texto.Split(vbCr.ToCharArray)
                 For i1 As Integer = 0 To arCod.Length - 2
                     sbRtf.AppendFormat("{0}\cf0\par{1}", arCod(i1).Replace("\", "\\").Replace("{", "\{").Replace("}", "\}"), vbCr)
@@ -1372,11 +1372,11 @@ Public NotInheritable Class Colorear
         End If
         '
         ' Si hay dobles comillas dobles primero las quitamos,
-        ' cambi·ndolas por un texto que no incluya separadores,
-        ' y que aquÌ no uso directamente, por si coloreo este cÛdigo,
+        ' cambi√°ndolas por un texto que no incluya separadores,
+        ' y que aqu√≠ no uso directamente, por si coloreo este c√≥digo,
         ' Chrw(113) = q
         ' Cuando es SQL las dobles comillas simples,            (16/Ene/07)
-        ' cambiarlas por texto que despuÈs reemplazaremos
+        ' cambiarlas por texto que despu√©s reemplazaremos
         ' Chrw(115) = s
         If formato = FormatosColoreado.RTF Then
             If lenguaje = Lenguajes.SQL Then
@@ -1403,11 +1403,11 @@ Public NotInheritable Class Colorear
         If coloreandoTodo = ComprobacionesRem.Todos Then
             esRemMult = False
         End If
-        ' Para controlar las lÌneas m˙ltiples entre comillas    (16/Ene/07)
+        ' Para controlar las l√≠neas m√∫ltiples entre comillas    (16/Ene/07)
         Dim esMultipleTextoSQL = False
         For i1 As Integer = 0 To arCod.Length - 1
-            ' Por si la ˙ltima lÌnea est· en blanco             (16/Dic/05) 0.40824
-            ' que no aÒada un retorno extra ---------------------v
+            ' Por si la √∫ltima l√≠nea est√° en blanco             (16/Dic/05) 0.40824
+            ' que no a√±ada un retorno extra ---------------------v
             If (arCod(i1) = Nothing OrElse arCod(i1).Length = 0) AndAlso (i1 < arCod.Length - 1) Then
                 If formato = FormatosColoreado.RTF Then
                     sbRtf.AppendFormat("\cf0\par{0}", vbCr)
@@ -1420,11 +1420,11 @@ Public NotInheritable Class Colorear
             Dim arTexto() As String
             Dim esTextoSQL As Boolean = False
             ' Si hay "blancos" al principio, no procesarlos,
-            ' asÌ nos ahorramos comprobar cada uno de los caracteres
-            ' que haya al principio, me imagino que algo m·s r·pido ir·.
+            ' as√≠ nos ahorramos comprobar cada uno de los caracteres
+            ' que haya al principio, me imagino que algo m√°s r√°pido ir√°.
 
             ' Creo que esto hace efectos raros                  (14/Abr/06)
-            ' al menos en los comentarios m˙ltiples
+            ' al menos en los comentarios m√∫ltiples
 
             j = 0
             If j > 0 Then
@@ -1433,7 +1433,7 @@ Public NotInheritable Class Colorear
                 Else
                     sbRtf.Append(arCod(i1).Substring(0, j))
                 End If
-                ' Si hay comillas en comentarios m˙ltiples      (21/Dic/05) 0.40848
+                ' Si hay comillas en comentarios m√∫ltiples      (21/Dic/05) 0.40848
                 ' (cuando tiene espacios delante)
                 If esRemMult Then
                     ReDim arTexto(0)
@@ -1441,11 +1441,11 @@ Public NotInheritable Class Colorear
                     ' Para quitar el flag                       (14/Abr/06)
                     esRemMult = False
                 Else
-                    ' Si es SQL se usar·n comillas simples      (15/Dic/05) 0.40806
+                    ' Si es SQL se usar√°n comillas simples      (15/Dic/05) 0.40806
                     ' para las cadenas.
                     If lenguaje = Lenguajes.SQL Then
                         arTexto = arCod(i1).Substring(j).Split("'"c)
-                        ' En SQL puede empezar la lÌnea por comilla (01/Abr/06)
+                        ' En SQL puede empezar la l√≠nea por comilla (01/Abr/06)
                         If arCod(i1).Substring(j, 1) = "'" Then
                             esTextoSQL = True
                         Else
@@ -1465,15 +1465,15 @@ Public NotInheritable Class Colorear
                     ReDim arTexto(0)
                     arTexto(0) = arCod(i1)
                 Else
-                    ' Si hay comillas en comentarios m˙ltiples      (21/Dic/05) 0.40847
+                    ' Si hay comillas en comentarios m√∫ltiples      (21/Dic/05) 0.40847
                     If esRemMult Then
                         ReDim arTexto(0)
                         arTexto(0) = arCod(i1)
                         ' Para quitar el flag                       (14/Abr/06)
-                        ' Si se quita, no colorea los m˙ltiples     (27/Ago/06)
+                        ' Si se quita, no colorea los m√∫ltiples     (27/Ago/06)
                         'esRemMult = False
                     Else
-                        ' Si es SQL se usar·n comillas simples      (15/Dic/05) 0.40806
+                        ' Si es SQL se usar√°n comillas simples      (15/Dic/05) 0.40806
                         ' para las cadenas
                         If lenguaje = Lenguajes.SQL Then
                             arTexto = arCod(i1).Split("'"c)
@@ -1489,11 +1489,11 @@ Public NotInheritable Class Colorear
                 End If
             End If
             ' Las palabras entre comillas dobles
-            ' El Ìndice 0 ser· el texto hasta la primera comilla doble
-            ' Las lÌneas de Ìndice impar ser·n las que van entre comillas dobles
-            ' (el primer Ìndice es el 0 que se considera par)
+            ' El √≠ndice 0 ser√° el texto hasta la primera comilla doble
+            ' Las l√≠neas de √≠ndice impar ser√°n las que van entre comillas dobles
+            ' (el primer √≠ndice es el 0 que se considera par)
             ' (""""c) ' esto representa una comilla doble
-            ' Pero es m·s evidente si usamos ChrW(34)
+            ' Pero es m√°s evidente si usamos ChrW(34)
 
             If coloreandoTodo = ComprobacionesRem.Todos Then
                 lineaAnt = ""
@@ -1502,7 +1502,7 @@ Public NotInheritable Class Colorear
             j = 0
             For i = 0 To arTexto.Length - 1
                 If j = 0 Then
-                    ' Si la lÌnea est· vacÌa es que habÌa comillas dobles seguidas
+                    ' Si la l√≠nea est√° vac√≠a es que hab√≠a comillas dobles seguidas
                     If arTexto(i) = Nothing AndAlso arTexto(i).Length = 0 Then
                         Continue For
                     End If
@@ -1515,10 +1515,10 @@ Public NotInheritable Class Colorear
                     End If
 
                     ' Comprobar si hay comentarios XML          (27/Nov/05)
-                    ' Esto solo ir· bien si est·n al principio,
-                    ' es decir, que no haya cÛdigo delante.
+                    ' Esto solo ir√° bien si est√°n al principio,
+                    ' es decir, que no haya c√≥digo delante.
                     ' Hay que comprobarlo antes de              (27/Ago/06)
-                    ' los comentario m˙ltiples.
+                    ' los comentario m√∫ltiples.
                     Dim k = -1
                     If ((lenguaje And Lenguajes.CS) = Lenguajes.CS) Then
                         k = lineaCompleta.IndexOf("///")
@@ -1541,30 +1541,30 @@ Public NotInheritable Class Colorear
                                 sbRtf.AppendFormat("{0}{1}{2}", fontGray, lineaCompleta.Substring(0), endFontTag)
                             End If
                         End If
-                        ' Poner el flag de comentario m˙ltiple  (14/Abr/06)
-                        ' °°°NOOOO!!!                           (27/Ago/06)
-                        ' Ya que cada lÌnea de documentaciÛn XML acaba
-                        ' en la misma lÌnea
+                        ' Poner el flag de comentario m√∫ltiple  (14/Abr/06)
+                        ' ¬°¬°¬°NOOOO!!!                           (27/Ago/06)
+                        ' Ya que cada l√≠nea de documentaci√≥n XML acaba
+                        ' en la misma l√≠nea
                         'esRemMult = True
                         Continue For
                     End If
 
                     Dim remMult As String
 
-                    ' Puede que sea un comentario despuÈs de comillas dobles
-                    ' o que toda la lÌnea sea un comentario
+                    ' Puede que sea un comentario despu√©s de comillas dobles
+                    ' o que toda la l√≠nea sea un comentario
                     If esRem Then
                         If formato = FormatosColoreado.RTF Then
                             sbRtf.AppendFormat("\cf1 {0}", lineaCompleta.Replace("\", "\\").Replace("{", "\{").Replace("}", "\}"))
                         Else
                             sbRtf.AppendFormat("{0}{2}{1}", fontGreen, endFontTag, lineaCompleta) '.Substring(0))
                         End If
-                        ' Mientras est· analizando una lÌnea
+                        ' Mientras est√° analizando una l√≠nea
                         ' y era un comentario, no quitar la "marca"
                         'esRem = False
 
                         ' Puede tener el finalizador de         (13/Dic/05)
-                        ' rem m˙ltiple
+                        ' rem m√∫ltiple
                         If esRemMult = False Then Continue For
 
                         Dim k1 = -1
@@ -1590,7 +1590,7 @@ Public NotInheritable Class Colorear
                         End If
                     End If
 
-                    ' Comprobar si hay comentario m˙ltiple      (27/Nov/05)
+                    ' Comprobar si hay comentario m√∫ltiple      (27/Nov/05)
 
                     k = -1
                     If esRemMult = False AndAlso (coloreandoTodo And ComprobacionesRem.Multiple) = ComprobacionesRem.Multiple Then
@@ -1607,7 +1607,7 @@ Public NotInheritable Class Colorear
 
                         If k > -1 Then
                             If k > 0 Then
-                                ' HabrÌa que comprobar el texto que hay delante del /*
+                                ' Habr√≠a que comprobar el texto que hay delante del /*
                                 lineaAnt = lineaCompleta.Substring(k)
                                 lineaCompleta = lineaCompleta.Substring(0, k)
                             Else
@@ -1624,7 +1624,7 @@ Public NotInheritable Class Colorear
                                 End If
 
                                 If k1 > -1 Then
-                                    ' El comentario est· entre k y k1
+                                    ' El comentario est√° entre k y k1
                                     If formato = FormatosColoreado.RTF Then
                                         sbRtf.AppendFormat("\cf1 {0}", lineaCompleta.Substring(k, k1 - k + remMult.Length).Replace("\", "\\").Replace("{", "\{").Replace("}", "\}"))
                                     Else
@@ -1688,9 +1688,9 @@ Public NotInheritable Class Colorear
                     End If
 
                     ' Buscar cada token y comprobar si es una palabra clave
-                    ' TambiÈn se comprobar·n los comentarios
+                    ' Tambi√©n se comprobar√°n los comentarios
                     Dim sep = " "
-                    ' Para los comentarios de una lÌnea de C#   (22/Nov/05)
+                    ' Para los comentarios de una l√≠nea de C#   (22/Nov/05)
                     Dim sepAnt = ""
                     esRem = False
                     While sep <> ""
@@ -1699,15 +1699,15 @@ Public NotInheritable Class Colorear
                         If token = "" AndAlso sep <> "" Then
 
                             ' Comprobar si hay {, } o \         (27/Nov/05)
-                            ' en los comentarios de lÌnea completa
+                            ' en los comentarios de l√≠nea completa
                             If sep = "'" AndAlso (coloreandoTodo And ComprobacionesRem.Simple) = ComprobacionesRem.Simple _
                                 AndAlso (((lenguaje And Lenguajes.VB) = Lenguajes.VB) OrElse lenguaje = Lenguajes.VB6) Then
                                 ' Es un comentario de VB
-                                ' AÒadir lo que queda en la lÌnea
-                                ' En realidad hay que aÒadir lo que resta en total,
-                                ' pero hay que tener en cuenta cuales irÌan entre comillas
-                                ' Al "trocear" lo que estaba entre comillas estar·
-                                ' en los Ìndices impares, porque empieza por cero
+                                ' A√±adir lo que queda en la l√≠nea
+                                ' En realidad hay que a√±adir lo que resta en total,
+                                ' pero hay que tener en cuenta cuales ir√≠an entre comillas
+                                ' Al "trocear" lo que estaba entre comillas estar√°
+                                ' en los √≠ndices impares, porque empieza por cero
                                 For i2 As Integer = i + 1 To arTexto.Length - 1
                                     If i2 Mod 2 = 0 Then
                                         lineaCompleta &= arTexto(i2)
@@ -1735,7 +1735,7 @@ Public NotInheritable Class Colorear
                                 )) _
                                 OrElse ((lenguaje = Lenguajes.SQL AndAlso sep = "-") AndAlso (coloreandoTodo And ComprobacionesRem.Simple) = ComprobacionesRem.Simple) _
                                 Then
-                                ' Comentarios de una lÌnea de C#, Java, F# o SQL
+                                ' Comentarios de una l√≠nea de C#, Java, F# o SQL
                                 If sepAnt = "" Then
                                     sepAnt = sep
                                     Continue While
@@ -1768,7 +1768,7 @@ Public NotInheritable Class Colorear
                                 )) _
                                 OrElse ((lenguaje = Lenguajes.SQL AndAlso sepAnt = "-") AndAlso (coloreandoTodo And ComprobacionesRem.Simple) = ComprobacionesRem.Simple) _
                                 Then
-                                ' Comentarios de una lÌnea de C#, Java, F# o SQL
+                                ' Comentarios de una l√≠nea de C#, Java, F# o SQL
                                 If formato = FormatosColoreado.RTF Then
                                     sbRtf.AppendFormat("\cf0 {0}", sepAnt)
                                 Else
@@ -1815,7 +1815,7 @@ Public NotInheritable Class Colorear
                             End If
 
                             ' Comprobar si sep es {, } o \      (27/Nov/05)
-                            ' Aunque parece que aquÌ no se da
+                            ' Aunque parece que aqu√≠ no se da
                             If formato = FormatosColoreado.RTF Then
                                 If sep = "{" OrElse sep = "}" OrElse sep = "\" Then
                                     sep = "\" & sep
@@ -1824,7 +1824,7 @@ Public NotInheritable Class Colorear
 
                             If sintaxCase Then
                                 ' Si queremos convertir las palabras
-                                ' a may˙sculas y min˙sculas seg˙n se ha definido
+                                ' a may√∫sculas y min√∫sculas seg√∫n se ha definido
                                 If (PalabrasClave.CaseSensitive(lenguaje) AndAlso keyW.Contains(lenguaje, token)) _
                                     OrElse (PalabrasClave.CaseSensitive(lenguaje) = False AndAlso keyW.Contains(lenguaje, token.ToLower())) Then
                                     'If keyW.Contains(lenguaje, token.ToLower()) Then
@@ -1848,7 +1848,7 @@ Public NotInheritable Class Colorear
                                 End If
                             Else
                                 ' Si es case-sensitive          (15/Dic/05)
-                                ' (sensible a may˙sculas/min˙sculas)
+                                ' (sensible a may√∫sculas/min√∫sculas)
                                 If (PalabrasClave.CaseSensitive(lenguaje) AndAlso keyW.Contains(lenguaje, token)) _
                                     OrElse (PalabrasClave.CaseSensitive(lenguaje) = False AndAlso keyW.Contains(lenguaje, token.ToLower())) Then
                                     If formato = FormatosColoreado.RTF Then
@@ -1875,16 +1875,16 @@ Public NotInheritable Class Colorear
                 Else
                     ' Esto va entre comillas dobles
 
-                    ' Si la lÌnea es una cadena vacÌa,
+                    ' Si la l√≠nea es una cadena vac√≠a,
                     ' es que era algo con doble comillas dobles
                     If arTexto(i) = "" Then
                         If i < arTexto.Length Then
                             If lenguaje = Lenguajes.SQL Then
-                                ' En SQL se permiten m˙ltiples  (31/Mar/06)
-                                ' lÌneas entre comillas
+                                ' En SQL se permiten m√∫ltiples  (31/Mar/06)
+                                ' l√≠neas entre comillas
                                 If formato = FormatosColoreado.RTF Then
                                     sbRtf.Append("\cf3 '")
-                                    ' Para que no se siga aÒadiendo el rojo
+                                    ' Para que no se siga a√±adiendo el rojo
                                     esMultipleTextoSQL = False
                                 Else
                                     'sbRtf.AppendFormat("{0}''", fontRed)
@@ -1908,8 +1908,8 @@ Public NotInheritable Class Colorear
                             End If
                         End If
                     Else
-                        ' Pero si habÌa un comentario, no colorearla,
-                        ' aunque esta lÌnea puede tener m·s cÛdigo al final.
+                        ' Pero si hab√≠a un comentario, no colorearla,
+                        ' aunque esta l√≠nea puede tener m√°s c√≥digo al final.
                         If esRem = False Then
                             sbRtf.Append(fontRed)
                         Else
@@ -1918,10 +1918,10 @@ Public NotInheritable Class Colorear
                             End If
                         End If
                         ' TODO: 16/Ene/07
-                        ' En SQL se permiten textos que ocupen varias lÌneas
-                        ' por tanto no se debe aÒadir directamente la comilla de cierre
-                        ' Solo deberÌa cerrarse si el siguiente elemento del array
-                        ' est· vacÌo, pero si no hay m·s elementos, dejarla sin cerrar
+                        ' En SQL se permiten textos que ocupen varias l√≠neas
+                        ' por tanto no se debe a√±adir directamente la comilla de cierre
+                        ' Solo deber√≠a cerrarse si el siguiente elemento del array
+                        ' est√° vac√≠o, pero si no hay m√°s elementos, dejarla sin cerrar
                         If lenguaje = Lenguajes.SQL Then
                             If formato = FormatosColoreado.RTF Then
                                 If arTexto.Length - 1 > i AndAlso vb.Len(arTexto(i + 1)) = 0 Then
@@ -1960,8 +1960,8 @@ Public NotInheritable Class Colorear
             Next
             If i1 < arCod.Length - 1 Then
                 If formato = FormatosColoreado.RTF Then
-                    ' AquÌ cerrar el tag al color normal
-                    ' el color rojo se aÒade en cada lÌnea
+                    ' Aqu√≠ cerrar el tag al color normal
+                    ' el color rojo se a√±ade en cada l√≠nea
                     sbRtf.AppendFormat("\cf0\par{0}", vbCr)
                 Else
                     sbRtf.AppendFormat("{0}", vbCr)
@@ -1985,9 +1985,9 @@ Public NotInheritable Class Colorear
     End Function
 
     ''' <summary>
-    ''' Devuelve la versiÛn de la DLL.
-    ''' Si completa es True, se devuelve tambiÈn el nombre de la DLL:
-    ''' gsColorearCore v 1.0.0.0 (para .NET Core 3.1 revisiÛn del dd/MMM/yyyy)
+    ''' Devuelve la versi√≥n de la DLL.
+    ''' Si completa es True, se devuelve tambi√©n el nombre de la DLL:
+    ''' gsColorearCore v 1.0.0.0 (para .NET Core 3.1 revisi√≥n del dd/MMM/yyyy)
     ''' </summary>
     Public Shared Function Version(Optional completa As Boolean = False) As String
         Dim res = ""
@@ -2007,10 +2007,10 @@ Public NotInheritable Class Colorear
             Dim producto = If(prodAttr.Length > 0, TryCast(prodAttr(0), System.Reflection.AssemblyProductAttribute).Product,
                                                     "gsColorearNET")
 
-            ' La descripciÛn, tomar solo el final                   (11/Sep/20)
+            ' La descripci√≥n, tomar solo el final                   (11/Sep/20)
             Dim descAttr = ensamblado.GetCustomAttributes(GetType(System.Reflection.AssemblyDescriptionAttribute), False)
             Dim desc = If(descAttr.Length > 0, TryCast(descAttr(0), System.Reflection.AssemblyDescriptionAttribute).Description,
-                                                "(para .NET Standard 2.0 revisiÛn del 21/Sep/2020)")
+                                                "(para .NET Standard 2.0 revisi√≥n del 21/Sep/2020)")
             desc = desc.Substring(desc.IndexOf("(para .NET"))
 
             res = $"{producto} {res} {desc}"
@@ -2018,4 +2018,51 @@ Public NotInheritable Class Colorear
         Return res
     End Function
 
+    ''' <summary>
+    ''' Genera el bloque HTML completo e interactivo (Claro y Oscuro) con cajas independientes.
+    ''' </summary>
+    Public Shared Function ObtenerCodigoDualHTML(ByVal rtfContenido As String) As String
+        ' 1. Obtener el c√≥digo coloreado llamando a tu m√©todo de 4 par√°metros
+        ' Pasamos 0 a indentar y False a quitar espacios, tal como haces t√∫ al copiar de VS.
+        Dim htmlClaroCuerpo As String = RTFaSPAN(rtfContenido, usarTemaOscuro:=False, indentar:=0, quitarEspaciosIniciales:=False)
+        Dim htmlOscuroCuerpo As String = RTFaSPAN(rtfContenido, usarTemaOscuro:=True, indentar:=0, quitarEspaciosIniciales:=False)
+
+        ' NOTA IMPORTANTE: Si tus m√©todos actuales ya devuelven el <pre> y </pre> obligatoriamente,
+        ' los limpiamos aqu√≠ r√°pidamente para quedarnos solo con el contenido coloreado:
+        If htmlClaroCuerpo.StartsWith("<pre") Then
+            htmlClaroCuerpo = htmlClaroCuerpo.Substring(htmlClaroCuerpo.IndexOf(">") + 1).Replace("</pre>", "")
+        End If
+        If htmlOscuroCuerpo.StartsWith("<pre") Then
+            htmlOscuroCuerpo = htmlOscuroCuerpo.Substring(htmlOscuroCuerpo.IndexOf(">") + 1).Replace("</pre>", "")
+        End If
+
+        ' 2. Ensamblar la plantilla con las cajas <pre> controladas al 100% por nosotros
+        Dim sb As New System.Text.StringBuilder()
+
+        ' Selector de botones superior
+        sb.AppendLine("<div class='selector-codigo'>")
+        sb.AppendLine("    <button onclick=""cambiarCodigo(this, 'claro')"" class='btn-codigo activo'>‚òÄÔ∏è Modo Claro</button>")
+        sb.AppendLine("    <button onclick=""cambiarCodigo(this, 'oscuro')"">üåô Modo Oscuro</button>")
+        sb.AppendLine("</div>")
+
+        sb.AppendLine("<div class='contenedor-codigo-dual'>")
+
+        ' --- CAJA CLARA (Fondo blanco forzado en l√≠nea) ---
+        sb.AppendLine("    <div class='codigo-version codigo-claro'>")
+        sb.AppendLine("        <pre style=""background-color: #ffffff; color: #000000; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; font-family: 'Consolas', 'Courier New', monospace; font-size: 14px; line-height: 1.5; max-width: 92%; width: 92%; margin-left: auto; margin-right: auto; display: block; overflow-x: auto; white-space: pre; word-wrap: normal; box-sizing: border-box;"">")
+        sb.AppendLine(htmlClaroCuerpo)
+        sb.AppendLine("        </pre>")
+        sb.AppendLine("    </div>")
+
+        ' --- CAJA OSCURA (Fondo oscuro VS forzado en l√≠nea) ---
+        sb.AppendLine("    <div class='codigo-version codigo-oscuro' style='display: none;'>")
+        sb.AppendLine("        <pre style=""background-color: #1e1e1e; color: #dcdcdc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; font-family: 'Consolas', 'Courier New', monospace; font-size: 14px; line-height: 1.5; max-width: 92%; width: 92%; margin-left: auto; margin-right: auto; display: block; overflow-x: auto; white-space: pre; word-wrap: normal; box-sizing: border-box;"">")
+        sb.AppendLine(htmlOscuroCuerpo)
+        sb.AppendLine("        </pre>")
+        sb.AppendLine("    </div>")
+
+        sb.AppendLine("</div>")
+
+        Return sb.ToString()
+    End Function
 End Class

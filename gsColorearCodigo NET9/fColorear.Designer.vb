@@ -22,1148 +22,1183 @@ Partial Class fColorear
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.statusInfo = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.mnuFic = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuFicAbrir = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuFicGuardar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuFicSep1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuFicVerRTF = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuFicSep2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuFicNavegar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuFicSep3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuFicAcerca = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuFicSep4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuFicSalir = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintaxColorear = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintaxColorearEnRTF = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintaxColorearDeRTF = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEdi = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEdiDeshacer = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEdiSep1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuEdiCortar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEdiCopiar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEdiPegar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEdiSep2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuEdiSeleccionarTodo = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.tpPrincipal = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnColorear = New System.Windows.Forms.Button()
-        Me.btnTextoNormal = New System.Windows.Forms.Button()
-        Me.txtIndentar = New System.Windows.Forms.NumericUpDown()
-        Me.chkIndentar = New System.Windows.Forms.CheckBox()
-        Me.chkQuitarEspacios = New System.Windows.Forms.CheckBox()
-        Me.rtEditor = New System.Windows.Forms.RichTextBox()
-        Me.tpVisor = New System.Windows.Forms.TabPage()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.tpConfig = New System.Windows.Forms.TabPage()
-        Me.btnCfgRestablecer = New System.Windows.Forms.Button()
-        Me.btnCfgDeshacer = New System.Windows.Forms.Button()
-        Me.btnCfgAplicar = New System.Windows.Forms.Button()
-        Me.tabControlCfg = New System.Windows.Forms.TabControl()
-        Me.tpColores = New System.Windows.Forms.TabPage()
-        Me.btnColorClases = New System.Windows.Forms.Button()
-        Me.LabelColorClases = New System.Windows.Forms.Label()
-        Me.txtColorClases = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.chkUsarTemaOscuro = New System.Windows.Forms.CheckBox()
-        Me.chkRecordarUltimoTexto = New System.Windows.Forms.CheckBox()
-        Me.chkNotify = New System.Windows.Forms.CheckBox()
-        Me.chkUsarSpanStyle = New System.Windows.Forms.CheckBox()
-        Me.chkSyntaxMayusc = New System.Windows.Forms.CheckBox()
-        Me.cboTamFuente = New System.Windows.Forms.ComboBox()
-        Me.cboFuentes = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.btnColorKeywords = New System.Windows.Forms.Button()
-        Me.LabelColorKeywords = New System.Windows.Forms.Label()
-        Me.txtColorKeywords = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnColorXML = New System.Windows.Forms.Button()
-        Me.LabelColorXML = New System.Windows.Forms.Label()
-        Me.txtColorXML = New System.Windows.Forms.TextBox()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.btnColorRem = New System.Windows.Forms.Button()
-        Me.LabelColorRem = New System.Windows.Forms.Label()
-        Me.txtColorRem = New System.Windows.Forms.TextBox()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.btnColorTexto = New System.Windows.Forms.Button()
-        Me.LabelColorTexto = New System.Windows.Forms.Label()
-        Me.txtColorTexto = New System.Windows.Forms.TextBox()
-        Me.cboPre = New System.Windows.Forms.ComboBox()
-        Me.cboPreContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.mnuCboPreEliminar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.mnuSintax = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintaxSep1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuSintax_Ninguno = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_dotNet = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_VB = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_CS = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_Java = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_FSharp = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_IL = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_CPP = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_Pascal = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_SQL = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_VB6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSintax_XML = New System.Windows.Forms.ToolStripMenuItem()
-        Me.toolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.tsbColorear = New System.Windows.Forms.ToolStripButton()
-        Me.tsbSep0 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbAbrir = New System.Windows.Forms.ToolStripButton()
-        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbSep1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbCortar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbCopiar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbPegar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbDeshacer = New System.Windows.Forms.ToolStripButton()
-        Me.tsbSep2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbSintax = New System.Windows.Forms.ToolStripSplitButton()
-        Me.tsbSep3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbNavegar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbSep4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbAcerca = New System.Windows.Forms.ToolStripButton()
-        Me.tsbSep5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbSalir = New System.Windows.Forms.ToolStripButton()
-        Me.statusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.statusSintax = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.toolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TabControl1.SuspendLayout()
-        Me.tpPrincipal.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.txtIndentar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tpVisor.SuspendLayout()
-        Me.tpConfig.SuspendLayout()
-        Me.tabControlCfg.SuspendLayout()
-        Me.tpColores.SuspendLayout()
-        Me.cboPreContextMenu.SuspendLayout()
-        Me.menuStrip1.SuspendLayout()
-        Me.toolStrip1.SuspendLayout()
-        Me.statusStrip1.SuspendLayout()
-        Me.SuspendLayout()
-        '
-        'statusInfo
-        '
-        Me.statusInfo.Name = "statusInfo"
-        Me.statusInfo.Size = New System.Drawing.Size(686, 17)
-        Me.statusInfo.Spring = True
-        Me.statusInfo.Text = "©Guillermo (elGuille) Som, 2006-2020"
-        Me.statusInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'mnuFic
-        '
-        Me.mnuFic.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFicAbrir, Me.mnuFicGuardar, Me.mnuFicSep1, Me.mnuFicVerRTF, Me.mnuFicSep2, Me.mnuFicNavegar, Me.mnuFicSep3, Me.mnuFicAcerca, Me.mnuFicSep4, Me.mnuFicSalir})
-        Me.mnuFic.Name = "mnuFic"
-        Me.mnuFic.Size = New System.Drawing.Size(58, 20)
-        Me.mnuFic.Text = "&Fichero"
-        '
-        'mnuFicAbrir
-        '
-        Me.mnuFicAbrir.Name = "mnuFicAbrir"
-        Me.mnuFicAbrir.Size = New System.Drawing.Size(177, 22)
-        Me.mnuFicAbrir.Text = "Abrir..."
-        Me.mnuFicAbrir.ToolTipText = " Abrir un fichero de código"
-        '
-        'mnuFicGuardar
-        '
-        Me.mnuFicGuardar.Name = "mnuFicGuardar"
-        Me.mnuFicGuardar.Size = New System.Drawing.Size(177, 22)
-        Me.mnuFicGuardar.Text = "Guardar como..."
-        Me.mnuFicGuardar.ToolTipText = " Guardar el texto actual"
-        '
-        'mnuFicSep1
-        '
-        Me.mnuFicSep1.Name = "mnuFicSep1"
-        Me.mnuFicSep1.Size = New System.Drawing.Size(174, 6)
-        '
-        'mnuFicVerRTF
-        '
-        Me.mnuFicVerRTF.Name = "mnuFicVerRTF"
-        Me.mnuFicVerRTF.Size = New System.Drawing.Size(177, 22)
-        Me.mnuFicVerRTF.Text = "Ver RTF"
-        Me.mnuFicVerRTF.ToolTipText = "Ver el RTF generado en una ventana aparte"
-        '
-        'mnuFicSep2
-        '
-        Me.mnuFicSep2.Name = "mnuFicSep2"
-        Me.mnuFicSep2.Size = New System.Drawing.Size(174, 6)
-        '
-        'mnuFicNavegar
-        '
-        Me.mnuFicNavegar.Name = "mnuFicNavegar"
-        Me.mnuFicNavegar.Size = New System.Drawing.Size(177, 22)
-        Me.mnuFicNavegar.Text = "Ver en el navegador"
-        Me.mnuFicNavegar.ToolTipText = " Ver en el navegador con los cambios realizados en el texto "
-        '
-        'mnuFicSep3
-        '
-        Me.mnuFicSep3.Name = "mnuFicSep3"
-        Me.mnuFicSep3.Size = New System.Drawing.Size(174, 6)
-        '
-        'mnuFicAcerca
-        '
-        Me.mnuFicAcerca.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mnuFicAcerca.Name = "mnuFicAcerca"
-        Me.mnuFicAcerca.Size = New System.Drawing.Size(177, 22)
-        Me.mnuFicAcerca.Text = "Acerca de..."
-        Me.mnuFicAcerca.ToolTipText = " Muestra la info del programa "
-        '
-        'mnuFicSep4
-        '
-        Me.mnuFicSep4.Name = "mnuFicSep4"
-        Me.mnuFicSep4.Size = New System.Drawing.Size(174, 6)
-        '
-        'mnuFicSalir
-        '
-        Me.mnuFicSalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mnuFicSalir.Name = "mnuFicSalir"
-        Me.mnuFicSalir.Size = New System.Drawing.Size(177, 22)
-        Me.mnuFicSalir.Text = "&Salir"
-        Me.mnuFicSalir.ToolTipText = " Terminar el programa "
-        '
-        'mnuSintaxColorear
-        '
-        Me.mnuSintaxColorear.Name = "mnuSintaxColorear"
-        Me.mnuSintaxColorear.ShortcutKeys = System.Windows.Forms.Keys.F8
-        Me.mnuSintaxColorear.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintaxColorear.Text = "Colorear"
-        Me.mnuSintaxColorear.ToolTipText = " Colorea el código usando el lenguaje y el formato indicados "
-        '
-        'mnuSintaxColorearEnRTF
-        '
-        Me.mnuSintaxColorearEnRTF.Name = "mnuSintaxColorearEnRTF"
-        Me.mnuSintaxColorearEnRTF.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintaxColorearEnRTF.Text = "Colorear en RTF (o HTML)"
-        Me.mnuSintaxColorearEnRTF.ToolTipText = " Marca esta opción para generar en formato RTF (si no lo marcas, se genera en HTM" &
-    "L) "
-        '
-        'mnuSintaxColorearDeRTF
-        '
-        Me.mnuSintaxColorearDeRTF.Name = "mnuSintaxColorearDeRTF"
-        Me.mnuSintaxColorearDeRTF.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintaxColorearDeRTF.Text = "Colorear desde RTF"
-        Me.mnuSintaxColorearDeRTF.ToolTipText = "Si el texto pegado ya tiene colores," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "usa esta opción para generar el código HTML" &
-    " con ese coloreado."
-        '
-        'mnuEdi
-        '
-        Me.mnuEdi.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuEdiDeshacer, Me.mnuEdiSep1, Me.mnuEdiCortar, Me.mnuEdiCopiar, Me.mnuEdiPegar, Me.mnuEdiSep2, Me.mnuEdiSeleccionarTodo})
-        Me.mnuEdi.Name = "mnuEdi"
-        Me.mnuEdi.Size = New System.Drawing.Size(49, 20)
-        Me.mnuEdi.Text = "&Editar"
-        '
-        'mnuEdiDeshacer
-        '
-        Me.mnuEdiDeshacer.Name = "mnuEdiDeshacer"
-        Me.mnuEdiDeshacer.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.mnuEdiDeshacer.Size = New System.Drawing.Size(204, 22)
-        Me.mnuEdiDeshacer.Text = "&Deshacer"
-        '
-        'mnuEdiSep1
-        '
-        Me.mnuEdiSep1.Name = "mnuEdiSep1"
-        Me.mnuEdiSep1.Size = New System.Drawing.Size(201, 6)
-        '
-        'mnuEdiCortar
-        '
-        Me.mnuEdiCortar.Name = "mnuEdiCortar"
-        Me.mnuEdiCortar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.mnuEdiCortar.Size = New System.Drawing.Size(204, 22)
-        Me.mnuEdiCortar.Text = "Cor&tar"
-        '
-        'mnuEdiCopiar
-        '
-        Me.mnuEdiCopiar.Name = "mnuEdiCopiar"
-        Me.mnuEdiCopiar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.mnuEdiCopiar.Size = New System.Drawing.Size(204, 22)
-        Me.mnuEdiCopiar.Text = "&Copiar"
-        '
-        'mnuEdiPegar
-        '
-        Me.mnuEdiPegar.Name = "mnuEdiPegar"
-        Me.mnuEdiPegar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.mnuEdiPegar.Size = New System.Drawing.Size(204, 22)
-        Me.mnuEdiPegar.Text = "&Pegar"
-        '
-        'mnuEdiSep2
-        '
-        Me.mnuEdiSep2.Name = "mnuEdiSep2"
-        Me.mnuEdiSep2.Size = New System.Drawing.Size(201, 6)
-        '
-        'mnuEdiSeleccionarTodo
-        '
-        Me.mnuEdiSeleccionarTodo.Name = "mnuEdiSeleccionarTodo"
-        Me.mnuEdiSeleccionarTodo.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.mnuEdiSeleccionarTodo.Size = New System.Drawing.Size(204, 22)
-        Me.mnuEdiSeleccionarTodo.Text = "Seleccionar todo"
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TabControl1.Controls.Add(Me.tpPrincipal)
-        Me.TabControl1.Controls.Add(Me.tpVisor)
-        Me.TabControl1.Controls.Add(Me.tpConfig)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 56)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(749, 476)
-        Me.TabControl1.TabIndex = 2
-        '
-        'tpPrincipal
-        '
-        Me.tpPrincipal.Controls.Add(Me.GroupBox1)
-        Me.tpPrincipal.Controls.Add(Me.rtEditor)
-        Me.tpPrincipal.Location = New System.Drawing.Point(4, 24)
-        Me.tpPrincipal.Name = "tpPrincipal"
-        Me.tpPrincipal.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpPrincipal.Size = New System.Drawing.Size(741, 448)
-        Me.tpPrincipal.TabIndex = 5
-        Me.tpPrincipal.Text = "Principal"
-        Me.tpPrincipal.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.btnColorear)
-        Me.GroupBox1.Controls.Add(Me.btnTextoNormal)
-        Me.GroupBox1.Controls.Add(Me.txtIndentar)
-        Me.GroupBox1.Controls.Add(Me.chkIndentar)
-        Me.GroupBox1.Controls.Add(Me.chkQuitarEspacios)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(725, 48)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Opciones:"
-        '
-        'btnColorear
-        '
-        Me.btnColorear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnColorear.Location = New System.Drawing.Point(366, 16)
-        Me.btnColorear.Name = "btnColorear"
-        Me.btnColorear.Size = New System.Drawing.Size(157, 23)
-        Me.btnColorear.TabIndex = 4
-        Me.btnColorear.Text = "Colorear en HTML"
-        Me.btnColorear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.toolTip1.SetToolTip(Me.btnColorear, "Colorear el código usando el lenguaje indicado")
-        Me.btnColorear.UseVisualStyleBackColor = True
-        '
-        'btnTextoNormal
-        '
-        Me.btnTextoNormal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTextoNormal.Location = New System.Drawing.Point(529, 15)
-        Me.btnTextoNormal.Name = "btnTextoNormal"
-        Me.btnTextoNormal.Size = New System.Drawing.Size(190, 23)
-        Me.btnTextoNormal.TabIndex = 5
-        Me.btnTextoNormal.Text = "Mostrar el texto sin procesar"
-        Me.toolTip1.SetToolTip(Me.btnTextoNormal, "Mostrar el último texto antes de colorear")
-        Me.btnTextoNormal.UseVisualStyleBackColor = True
-        '
-        'txtIndentar
-        '
-        Me.txtIndentar.Location = New System.Drawing.Point(277, 18)
-        Me.txtIndentar.Maximum = New Decimal(New Integer() {8, 0, 0, 0})
-        Me.txtIndentar.Minimum = New Decimal(New Integer() {2, 0, 0, 0})
-        Me.txtIndentar.Name = "txtIndentar"
-        Me.txtIndentar.Size = New System.Drawing.Size(44, 23)
-        Me.txtIndentar.TabIndex = 3
-        Me.txtIndentar.Value = New Decimal(New Integer() {4, 0, 0, 0})
-        '
-        'chkIndentar
-        '
-        Me.chkIndentar.AutoSize = True
-        Me.chkIndentar.Location = New System.Drawing.Point(206, 19)
-        Me.chkIndentar.Name = "chkIndentar"
-        Me.chkIndentar.Size = New System.Drawing.Size(70, 19)
-        Me.chkIndentar.TabIndex = 2
-        Me.chkIndentar.Text = "Indentar"
-        Me.toolTip1.SetToolTip(Me.chkIndentar, "Si se debe indentar el código al colorearlo (funciona bien en VB)")
-        Me.chkIndentar.UseVisualStyleBackColor = True
-        '
-        'chkQuitarEspacios
-        '
-        Me.chkQuitarEspacios.AutoSize = True
-        Me.chkQuitarEspacios.Location = New System.Drawing.Point(6, 19)
-        Me.chkQuitarEspacios.Name = "chkQuitarEspacios"
-        Me.chkQuitarEspacios.Size = New System.Drawing.Size(194, 19)
-        Me.chkQuitarEspacios.TabIndex = 1
-        Me.chkQuitarEspacios.Text = "Quitar los espacios del principio"
-        Me.toolTip1.SetToolTip(Me.chkQuitarEspacios, "Si se deben quitar los espacios iniciales al colorear")
-        Me.chkQuitarEspacios.UseVisualStyleBackColor = True
-        '
-        'rtEditor
-        '
-        Me.rtEditor.AcceptsTab = True
-        Me.rtEditor.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.rtEditor.DetectUrls = False
-        Me.rtEditor.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.rtEditor.HideSelection = False
-        Me.rtEditor.Location = New System.Drawing.Point(6, 60)
-        Me.rtEditor.Name = "rtEditor"
-        Me.rtEditor.Size = New System.Drawing.Size(725, 384)
-        Me.rtEditor.TabIndex = 1
-        Me.rtEditor.Text = "Algo para que cambie"
-        Me.rtEditor.WordWrap = False
-        '
-        'tpVisor
-        '
-        Me.tpVisor.Controls.Add(Me.WebBrowser1)
-        Me.tpVisor.Location = New System.Drawing.Point(4, 24)
-        Me.tpVisor.Name = "tpVisor"
-        Me.tpVisor.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpVisor.Size = New System.Drawing.Size(741, 448)
-        Me.tpVisor.TabIndex = 6
-        Me.tpVisor.Text = "Visor HTML"
-        Me.tpVisor.UseVisualStyleBackColor = True
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.WebBrowser1.Location = New System.Drawing.Point(6, 6)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(690, 438)
-        Me.WebBrowser1.TabIndex = 0
-        '
-        'tpConfig
-        '
-        Me.tpConfig.Controls.Add(Me.btnCfgRestablecer)
-        Me.tpConfig.Controls.Add(Me.btnCfgDeshacer)
-        Me.tpConfig.Controls.Add(Me.btnCfgAplicar)
-        Me.tpConfig.Controls.Add(Me.tabControlCfg)
-        Me.tpConfig.Location = New System.Drawing.Point(4, 24)
-        Me.tpConfig.Name = "tpConfig"
-        Me.tpConfig.Padding = New System.Windows.Forms.Padding(4)
-        Me.tpConfig.Size = New System.Drawing.Size(741, 448)
-        Me.tpConfig.TabIndex = 7
-        Me.tpConfig.Text = "Configuración"
-        Me.tpConfig.UseVisualStyleBackColor = True
-        '
-        'btnCfgRestablecer
-        '
-        Me.btnCfgRestablecer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCfgRestablecer.Location = New System.Drawing.Point(458, 420)
-        Me.btnCfgRestablecer.Name = "btnCfgRestablecer"
-        Me.btnCfgRestablecer.Size = New System.Drawing.Size(75, 23)
-        Me.btnCfgRestablecer.TabIndex = 3
-        Me.btnCfgRestablecer.Text = "Restablecer"
-        Me.btnCfgRestablecer.UseVisualStyleBackColor = True
-        '
-        'btnCfgDeshacer
-        '
-        Me.btnCfgDeshacer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCfgDeshacer.Location = New System.Drawing.Point(539, 420)
-        Me.btnCfgDeshacer.Name = "btnCfgDeshacer"
-        Me.btnCfgDeshacer.Size = New System.Drawing.Size(75, 23)
-        Me.btnCfgDeshacer.TabIndex = 2
-        Me.btnCfgDeshacer.Text = "Deshacer"
-        Me.btnCfgDeshacer.UseVisualStyleBackColor = True
-        '
-        'btnCfgAplicar
-        '
-        Me.btnCfgAplicar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCfgAplicar.Location = New System.Drawing.Point(620, 420)
-        Me.btnCfgAplicar.Name = "btnCfgAplicar"
-        Me.btnCfgAplicar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCfgAplicar.TabIndex = 1
-        Me.btnCfgAplicar.Text = "Aplicar"
-        Me.btnCfgAplicar.UseVisualStyleBackColor = True
-        '
-        'tabControlCfg
-        '
-        Me.tabControlCfg.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tabControlCfg.Controls.Add(Me.tpColores)
-        Me.tabControlCfg.Location = New System.Drawing.Point(12, 12)
-        Me.tabControlCfg.Margin = New System.Windows.Forms.Padding(8)
-        Me.tabControlCfg.Name = "tabControlCfg"
-        Me.tabControlCfg.SelectedIndex = 0
-        Me.tabControlCfg.Size = New System.Drawing.Size(678, 397)
-        Me.tabControlCfg.TabIndex = 0
-        '
-        'tpColores
-        '
-        Me.tpColores.AutoScroll = True
-        Me.tpColores.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.tpColores.Controls.Add(Me.btnColorClases)
-        Me.tpColores.Controls.Add(Me.LabelColorClases)
-        Me.tpColores.Controls.Add(Me.txtColorClases)
-        Me.tpColores.Controls.Add(Me.Label3)
-        Me.tpColores.Controls.Add(Me.chkUsarTemaOscuro)
-        Me.tpColores.Controls.Add(Me.chkRecordarUltimoTexto)
-        Me.tpColores.Controls.Add(Me.chkNotify)
-        Me.tpColores.Controls.Add(Me.chkUsarSpanStyle)
-        Me.tpColores.Controls.Add(Me.chkSyntaxMayusc)
-        Me.tpColores.Controls.Add(Me.cboTamFuente)
-        Me.tpColores.Controls.Add(Me.cboFuentes)
-        Me.tpColores.Controls.Add(Me.Label8)
-        Me.tpColores.Controls.Add(Me.btnColorKeywords)
-        Me.tpColores.Controls.Add(Me.LabelColorKeywords)
-        Me.tpColores.Controls.Add(Me.txtColorKeywords)
-        Me.tpColores.Controls.Add(Me.Label7)
-        Me.tpColores.Controls.Add(Me.btnColorXML)
-        Me.tpColores.Controls.Add(Me.LabelColorXML)
-        Me.tpColores.Controls.Add(Me.txtColorXML)
-        Me.tpColores.Controls.Add(Me.Label51)
-        Me.tpColores.Controls.Add(Me.btnColorRem)
-        Me.tpColores.Controls.Add(Me.LabelColorRem)
-        Me.tpColores.Controls.Add(Me.txtColorRem)
-        Me.tpColores.Controls.Add(Me.Label41)
-        Me.tpColores.Controls.Add(Me.btnColorTexto)
-        Me.tpColores.Controls.Add(Me.LabelColorTexto)
-        Me.tpColores.Controls.Add(Me.txtColorTexto)
-        Me.tpColores.Controls.Add(Me.cboPre)
-        Me.tpColores.Controls.Add(Me.Label21)
-        Me.tpColores.Controls.Add(Me.Label11)
-        Me.tpColores.Location = New System.Drawing.Point(4, 24)
-        Me.tpColores.Name = "tpColores"
-        Me.tpColores.Padding = New System.Windows.Forms.Padding(8)
-        Me.tpColores.Size = New System.Drawing.Size(670, 369)
-        Me.tpColores.TabIndex = 4
-        Me.tpColores.Text = "Colores, fuente y <pre>"
-        '
-        'btnColorClases
-        '
-        Me.btnColorClases.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnColorClases.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnColorClases.Location = New System.Drawing.Point(635, 177)
-        Me.btnColorClases.Name = "btnColorClases"
-        Me.btnColorClases.Size = New System.Drawing.Size(24, 23)
-        Me.btnColorClases.TabIndex = 32
-        Me.btnColorClases.Text = "..."
-        '
-        'LabelColorClases
-        '
-        Me.LabelColorClases.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelColorClases.BackColor = System.Drawing.Color.Transparent
-        Me.LabelColorClases.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.LabelColorClases.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.LabelColorClases.Location = New System.Drawing.Point(232, 181)
-        Me.LabelColorClases.Name = "LabelColorClases"
-        Me.LabelColorClases.Size = New System.Drawing.Size(392, 16)
-        Me.LabelColorClases.TabIndex = 31
-        Me.LabelColorClases.Text = "Color de los tipos (clases)"
-        '
-        'txtColorClases
-        '
-        Me.txtColorClases.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtColorClases.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.txtColorClases.Location = New System.Drawing.Point(140, 179)
-        Me.txtColorClases.Name = "txtColorClases"
-        Me.txtColorClases.Size = New System.Drawing.Size(80, 20)
-        Me.txtColorClases.TabIndex = 30
-        Me.txtColorClases.Text = "2B91AF"
-        '
-        'Label3
-        '
-        Me.Label3.Location = New System.Drawing.Point(13, 182)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(124, 16)
-        Me.Label3.TabIndex = 29
-        Me.Label3.Text = "Color clases (&tipos):"
-        '
-        'chkUsarTemaOscuro
-        '
-        Me.chkUsarTemaOscuro.AutoSize = True
-        Me.chkUsarTemaOscuro.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.chkUsarTemaOscuro.Location = New System.Drawing.Point(16, 16)
-        Me.chkUsarTemaOscuro.Name = "chkUsarTemaOscuro"
-        Me.chkUsarTemaOscuro.Size = New System.Drawing.Size(159, 19)
-        Me.chkUsarTemaOscuro.TabIndex = 28
-        Me.chkUsarTemaOscuro.Text = "Usar colores tema oscuro"
-        Me.toolTip1.SetToolTip(Me.chkUsarTemaOscuro, "Marca esta opción para usar los colores del tema oscuro." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "No marcado usará los co" &
-        "lores del tema claro." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Indefinido (cuadro en negro) usa los colores personalizad" &
-        "os (beta).")
-        Me.chkUsarTemaOscuro.UseVisualStyleBackColor = True
-        '
-        'chkRecordarUltimoTexto
-        '
-        Me.chkRecordarUltimoTexto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.chkRecordarUltimoTexto.AutoSize = True
-        Me.chkRecordarUltimoTexto.Checked = True
-        Me.chkRecordarUltimoTexto.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkRecordarUltimoTexto.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.chkRecordarUltimoTexto.Location = New System.Drawing.Point(321, 334)
-        Me.chkRecordarUltimoTexto.Margin = New System.Windows.Forms.Padding(8)
-        Me.chkRecordarUltimoTexto.Name = "chkRecordarUltimoTexto"
-        Me.chkRecordarUltimoTexto.Size = New System.Drawing.Size(219, 19)
-        Me.chkRecordarUltimoTexto.TabIndex = 26
-        Me.chkRecordarUltimoTexto.Text = "Recordar el último código coloreado"
-        Me.toolTip1.SetToolTip(Me.chkRecordarUltimoTexto, "Si se debe recordar el texto a colorear cada vez que se inicia la aplicación")
-        Me.chkRecordarUltimoTexto.UseVisualStyleBackColor = True
-        '
-        'chkNotify
-        '
-        Me.chkNotify.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.chkNotify.AutoSize = True
-        Me.chkNotify.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.chkNotify.Location = New System.Drawing.Point(16, 334)
-        Me.chkNotify.Margin = New System.Windows.Forms.Padding(8)
-        Me.chkNotify.Name = "chkNotify"
-        Me.chkNotify.Size = New System.Drawing.Size(270, 19)
-        Me.chkNotify.TabIndex = 25
-        Me.chkNotify.Text = "Al minimi&zar hacerlo en el área de notificación"
-        Me.toolTip1.SetToolTip(Me.chkNotify, "Cuando se minimiza la aplicación, ocultarla y mostrar solo el icono en el área de" &
-        " notificación")
-        Me.chkNotify.UseVisualStyleBackColor = True
-        '
-        'chkUsarSpanStyle
-        '
-        Me.chkUsarSpanStyle.AutoSize = True
-        Me.chkUsarSpanStyle.Checked = True
-        Me.chkUsarSpanStyle.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkUsarSpanStyle.Location = New System.Drawing.Point(16, 235)
-        Me.chkUsarSpanStyle.Margin = New System.Windows.Forms.Padding(6)
-        Me.chkUsarSpanStyle.Name = "chkUsarSpanStyle"
-        Me.chkUsarSpanStyle.Size = New System.Drawing.Size(310, 19)
-        Me.chkUsarSpanStyle.TabIndex = 21
-        Me.chkUsarSpanStyle.Text = "Usar 'span style' en lugar de 'font' para colorear HTML"
-        Me.toolTip1.SetToolTip(Me.chkUsarSpanStyle, "Si al crear el tag para el color se usa <span style en vez de <font (recomendado)" &
-        "")
-        Me.chkUsarSpanStyle.UseVisualStyleBackColor = True
-        '
-        'chkSyntaxMayusc
-        '
-        Me.chkSyntaxMayusc.AutoSize = True
-        Me.chkSyntaxMayusc.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.chkSyntaxMayusc.Location = New System.Drawing.Point(16, 261)
-        Me.chkSyntaxMayusc.Name = "chkSyntaxMayusc"
-        Me.chkSyntaxMayusc.Size = New System.Drawing.Size(345, 19)
-        Me.chkSyntaxMayusc.TabIndex = 22
-        Me.chkSyntaxMayusc.Text = "Con&vertir las palabras a mayúsculas/minúsculas del lenguaje"
-        Me.toolTip1.SetToolTip(Me.chkSyntaxMayusc, "Si al colorear se deben convertir las palabras al estado recomendado por el lengu" &
-        "aje")
-        Me.chkSyntaxMayusc.UseVisualStyleBackColor = True
-        '
-        'cboTamFuente
-        '
-        Me.cboTamFuente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboTamFuente.FormattingEnabled = True
-        Me.cboTamFuente.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "14", "16", "18"})
-        Me.cboTamFuente.Location = New System.Drawing.Point(300, 205)
-        Me.cboTamFuente.Name = "cboTamFuente"
-        Me.cboTamFuente.Size = New System.Drawing.Size(45, 23)
-        Me.cboTamFuente.TabIndex = 20
-        '
-        'cboFuentes
-        '
-        Me.cboFuentes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.cboFuentes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboFuentes.FormattingEnabled = True
-        Me.cboFuentes.Items.AddRange(New Object() {"Courier New", "Consolas", "Lucida Console", "Arial", "Courier", "Fixedsys", "Lucida Sans Typewriter", "Microsoft Sans Serif", "MS Sans Serif", "Tahoma", "Times New Roman", "Verdana"})
-        Me.cboFuentes.Location = New System.Drawing.Point(140, 205)
-        Me.cboFuentes.Name = "cboFuentes"
-        Me.cboFuentes.Size = New System.Drawing.Size(154, 23)
-        Me.cboFuentes.TabIndex = 19
-        Me.cboFuentes.Text = "Courier New"
-        '
-        'Label8
-        '
-        Me.Label8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label8.Location = New System.Drawing.Point(13, 207)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(124, 16)
-        Me.Label8.TabIndex = 18
-        Me.Label8.Text = "&Fuente:"
-        '
-        'btnColorKeywords
-        '
-        Me.btnColorKeywords.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnColorKeywords.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnColorKeywords.Location = New System.Drawing.Point(635, 151)
-        Me.btnColorKeywords.Name = "btnColorKeywords"
-        Me.btnColorKeywords.Size = New System.Drawing.Size(24, 23)
-        Me.btnColorKeywords.TabIndex = 17
-        Me.btnColorKeywords.Text = "..."
-        '
-        'LabelColorKeywords
-        '
-        Me.LabelColorKeywords.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelColorKeywords.BackColor = System.Drawing.Color.Transparent
-        Me.LabelColorKeywords.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.LabelColorKeywords.ForeColor = System.Drawing.Color.Blue
-        Me.LabelColorKeywords.Location = New System.Drawing.Point(232, 155)
-        Me.LabelColorKeywords.Name = "LabelColorKeywords"
-        Me.LabelColorKeywords.Size = New System.Drawing.Size(392, 16)
-        Me.LabelColorKeywords.TabIndex = 16
-        Me.LabelColorKeywords.Text = "Color de las instrucciones"
-        '
-        'txtColorKeywords
-        '
-        Me.txtColorKeywords.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtColorKeywords.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.txtColorKeywords.Location = New System.Drawing.Point(140, 153)
-        Me.txtColorKeywords.Name = "txtColorKeywords"
-        Me.txtColorKeywords.Size = New System.Drawing.Size(80, 20)
-        Me.txtColorKeywords.TabIndex = 15
-        Me.txtColorKeywords.Text = "0000FF"
-        '
-        'Label7
-        '
-        Me.Label7.Location = New System.Drawing.Point(13, 156)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 16)
-        Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Color &instrucciones:"
-        '
-        'btnColorXML
-        '
-        Me.btnColorXML.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnColorXML.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnColorXML.Location = New System.Drawing.Point(635, 125)
-        Me.btnColorXML.Name = "btnColorXML"
-        Me.btnColorXML.Size = New System.Drawing.Size(24, 23)
-        Me.btnColorXML.TabIndex = 13
-        Me.btnColorXML.Text = "..."
-        '
-        'LabelColorXML
-        '
-        Me.LabelColorXML.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelColorXML.BackColor = System.Drawing.Color.Transparent
-        Me.LabelColorXML.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.LabelColorXML.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LabelColorXML.Location = New System.Drawing.Point(232, 129)
-        Me.LabelColorXML.Name = "LabelColorXML"
-        Me.LabelColorXML.Size = New System.Drawing.Size(392, 16)
-        Me.LabelColorXML.TabIndex = 12
-        Me.LabelColorXML.Text = "Color de la documentación XML"
-        '
-        'txtColorXML
-        '
-        Me.txtColorXML.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtColorXML.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.txtColorXML.Location = New System.Drawing.Point(140, 127)
-        Me.txtColorXML.Name = "txtColorXML"
-        Me.txtColorXML.Size = New System.Drawing.Size(80, 20)
-        Me.txtColorXML.TabIndex = 11
-        Me.txtColorXML.Text = "5C5C5C"
-        '
-        'Label51
-        '
-        Me.Label51.Location = New System.Drawing.Point(13, 130)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(124, 16)
-        Me.Label51.TabIndex = 10
-        Me.Label51.Text = "Color &documentación:"
-        '
-        'btnColorRem
-        '
-        Me.btnColorRem.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnColorRem.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnColorRem.Location = New System.Drawing.Point(635, 99)
-        Me.btnColorRem.Name = "btnColorRem"
-        Me.btnColorRem.Size = New System.Drawing.Size(24, 23)
-        Me.btnColorRem.TabIndex = 9
-        Me.btnColorRem.Text = "..."
-        '
-        'LabelColorRem
-        '
-        Me.LabelColorRem.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelColorRem.BackColor = System.Drawing.Color.Transparent
-        Me.LabelColorRem.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.LabelColorRem.ForeColor = System.Drawing.Color.Green
-        Me.LabelColorRem.Location = New System.Drawing.Point(232, 103)
-        Me.LabelColorRem.Name = "LabelColorRem"
-        Me.LabelColorRem.Size = New System.Drawing.Size(392, 16)
-        Me.LabelColorRem.TabIndex = 8
-        Me.LabelColorRem.Text = "Color de los comentarios"
-        '
-        'txtColorRem
-        '
-        Me.txtColorRem.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtColorRem.Location = New System.Drawing.Point(140, 101)
-        Me.txtColorRem.Name = "txtColorRem"
-        Me.txtColorRem.Size = New System.Drawing.Size(80, 20)
-        Me.txtColorRem.TabIndex = 7
-        Me.txtColorRem.Text = "008000"
-        '
-        'Label41
-        '
-        Me.Label41.Location = New System.Drawing.Point(13, 105)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(124, 16)
-        Me.Label41.TabIndex = 6
-        Me.Label41.Text = "Color &comentarios:"
-        '
-        'btnColorTexto
-        '
-        Me.btnColorTexto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnColorTexto.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnColorTexto.Location = New System.Drawing.Point(635, 73)
-        Me.btnColorTexto.Name = "btnColorTexto"
-        Me.btnColorTexto.Size = New System.Drawing.Size(24, 23)
-        Me.btnColorTexto.TabIndex = 5
-        Me.btnColorTexto.Text = "..."
-        '
-        'LabelColorTexto
-        '
-        Me.LabelColorTexto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelColorTexto.BackColor = System.Drawing.Color.Transparent
-        Me.LabelColorTexto.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.LabelColorTexto.ForeColor = System.Drawing.Color.Firebrick
-        Me.LabelColorTexto.Location = New System.Drawing.Point(232, 77)
-        Me.LabelColorTexto.Name = "LabelColorTexto"
-        Me.LabelColorTexto.Size = New System.Drawing.Size(392, 16)
-        Me.LabelColorTexto.TabIndex = 4
-        Me.LabelColorTexto.Text = "Color del texto entre comillas"
-        '
-        'txtColorTexto
-        '
-        Me.txtColorTexto.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtColorTexto.Location = New System.Drawing.Point(140, 75)
-        Me.txtColorTexto.Name = "txtColorTexto"
-        Me.txtColorTexto.Size = New System.Drawing.Size(80, 20)
-        Me.txtColorTexto.TabIndex = 3
-        Me.txtColorTexto.Text = "B22222"
-        '
-        'cboPre
-        '
-        Me.cboPre.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboPre.ContextMenuStrip = Me.cboPreContextMenu
-        Me.cboPre.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.cboPre.Items.AddRange(New Object() {"<pre>", "<pre style=""background-color:black; color:#dcdcdc;"">", "<pre style=""font-size:medium;"">", "<pre style=""background-color:black; color:#dcdcdc;font-size:medium;"">", "<pre style=""white-space:pre; font-family:courier new, monospace; font-size:10pt;""" &
-                ">", "<pre style=""white-space:pre; font-family:courier new, monospace"">"})
-        Me.cboPre.Location = New System.Drawing.Point(140, 42)
-        Me.cboPre.Margin = New System.Windows.Forms.Padding(8)
-        Me.cboPre.Name = "cboPre"
-        Me.cboPre.Size = New System.Drawing.Size(519, 22)
-        Me.cboPre.TabIndex = 1
-        '
-        'cboPreContextMenu
-        '
-        Me.cboPreContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCboPreEliminar})
-        Me.cboPreContextMenu.Name = "cboPreContextMenu"
-        Me.cboPreContextMenu.Size = New System.Drawing.Size(118, 26)
-        '
-        'mnuCboPreEliminar
-        '
-        Me.mnuCboPreEliminar.Name = "mnuCboPreEliminar"
-        Me.mnuCboPreEliminar.Size = New System.Drawing.Size(117, 22)
-        Me.mnuCboPreEliminar.Text = "Eliminar"
-        '
-        'Label21
-        '
-        Me.Label21.Location = New System.Drawing.Point(13, 78)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(124, 16)
-        Me.Label21.TabIndex = 2
-        Me.Label21.Text = "Color &texto:"
-        '
-        'Label11
-        '
-        Me.Label11.Location = New System.Drawing.Point(13, 45)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(124, 20)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "Tag de formato <&pre>:"
-        '
-        'menuStrip1
-        '
-        Me.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFic, Me.mnuEdi, Me.mnuSintax})
-        Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(773, 24)
-        Me.menuStrip1.TabIndex = 0
-        Me.menuStrip1.Text = "MenuStrip1"
-        '
-        'mnuSintax
-        '
-        Me.mnuSintax.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuSintaxColorear, Me.mnuSintaxColorearEnRTF, Me.mnuSintaxColorearDeRTF, Me.mnuSintaxSep1, Me.mnuSintax_Ninguno, Me.mnuSintax_dotNet, Me.mnuSintax_VB, Me.mnuSintax_CS, Me.mnuSintax_Java, Me.mnuSintax_FSharp, Me.mnuSintax_IL, Me.mnuSintax_CPP, Me.mnuSintax_Pascal, Me.mnuSintax_SQL, Me.mnuSintax_VB6, Me.mnuSintax_XML})
-        Me.mnuSintax.Name = "mnuSintax"
-        Me.mnuSintax.Size = New System.Drawing.Size(59, 20)
-        Me.mnuSintax.Text = "&Sintaxis"
-        '
-        'mnuSintaxSep1
-        '
-        Me.mnuSintaxSep1.Name = "mnuSintaxSep1"
-        Me.mnuSintaxSep1.Size = New System.Drawing.Size(206, 6)
-        '
-        'mnuSintax_Ninguno
-        '
-        Me.mnuSintax_Ninguno.Name = "mnuSintax_Ninguno"
-        Me.mnuSintax_Ninguno.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_Ninguno.Text = "Ninguno"
-        '
-        'mnuSintax_dotNet
-        '
-        Me.mnuSintax_dotNet.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mnuSintax_dotNet.Name = "mnuSintax_dotNet"
-        Me.mnuSintax_dotNet.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_dotNet.Text = "dot&Net"
-        '
-        'mnuSintax_VB
-        '
-        Me.mnuSintax_VB.ImageTransparentColor = System.Drawing.Color.White
-        Me.mnuSintax_VB.Name = "mnuSintax_VB"
-        Me.mnuSintax_VB.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_VB.Text = "&Visual Basic"
-        '
-        'mnuSintax_CS
-        '
-        Me.mnuSintax_CS.ImageTransparentColor = System.Drawing.Color.White
-        Me.mnuSintax_CS.Name = "mnuSintax_CS"
-        Me.mnuSintax_CS.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_CS.Text = "&C#"
-        '
-        'mnuSintax_Java
-        '
-        Me.mnuSintax_Java.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mnuSintax_Java.Name = "mnuSintax_Java"
-        Me.mnuSintax_Java.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_Java.Text = "&Java (J#)"
-        '
-        'mnuSintax_FSharp
-        '
-        Me.mnuSintax_FSharp.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mnuSintax_FSharp.Name = "mnuSintax_FSharp"
-        Me.mnuSintax_FSharp.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_FSharp.Text = "&F#"
-        '
-        'mnuSintax_IL
-        '
-        Me.mnuSintax_IL.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mnuSintax_IL.Name = "mnuSintax_IL"
-        Me.mnuSintax_IL.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_IL.Text = "&IL (ILASM)"
-        '
-        'mnuSintax_CPP
-        '
-        Me.mnuSintax_CPP.ImageTransparentColor = System.Drawing.Color.White
-        Me.mnuSintax_CPP.Name = "mnuSintax_CPP"
-        Me.mnuSintax_CPP.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_CPP.Text = "C/C&++"
-        '
-        'mnuSintax_Pascal
-        '
-        Me.mnuSintax_Pascal.ImageTransparentColor = System.Drawing.Color.White
-        Me.mnuSintax_Pascal.Name = "mnuSintax_Pascal"
-        Me.mnuSintax_Pascal.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_Pascal.Text = "&Pascal (Delphi/Freya)"
-        '
-        'mnuSintax_SQL
-        '
-        Me.mnuSintax_SQL.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mnuSintax_SQL.Name = "mnuSintax_SQL"
-        Me.mnuSintax_SQL.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_SQL.Text = "&SQL"
-        '
-        'mnuSintax_VB6
-        '
-        Me.mnuSintax_VB6.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mnuSintax_VB6.Name = "mnuSintax_VB6"
-        Me.mnuSintax_VB6.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_VB6.Text = "VB&6"
-        '
-        'mnuSintax_XML
-        '
-        Me.mnuSintax_XML.Name = "mnuSintax_XML"
-        Me.mnuSintax_XML.Size = New System.Drawing.Size(209, 22)
-        Me.mnuSintax_XML.Text = "&XML (HTML, xaml)"
-        Me.mnuSintax_XML.ToolTipText = "Colorea los ficheros tipo XML y HTML "
-        '
-        'toolStrip1
-        '
-        Me.toolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbColorear, Me.tsbSep0, Me.tsbAbrir, Me.tsbGuardar, Me.tsbSep1, Me.tsbCortar, Me.tsbCopiar, Me.tsbPegar, Me.tsbDeshacer, Me.tsbSep2, Me.tsbSintax, Me.tsbSep3, Me.tsbNavegar, Me.tsbSep4, Me.tsbAcerca, Me.tsbSep5, Me.tsbSalir})
-        Me.toolStrip1.Location = New System.Drawing.Point(0, 24)
-        Me.toolStrip1.Margin = New System.Windows.Forms.Padding(4)
-        Me.toolStrip1.Name = "toolStrip1"
-        Me.toolStrip1.Size = New System.Drawing.Size(773, 25)
-        Me.toolStrip1.TabIndex = 1
-        Me.toolStrip1.Text = "ToolStrip1"
-        '
-        'tsbColorear
-        '
-        Me.tsbColorear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbColorear.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbColorear.Name = "tsbColorear"
-        Me.tsbColorear.Size = New System.Drawing.Size(23, 22)
-        Me.tsbColorear.Text = "Colorear"
-        Me.tsbColorear.ToolTipText = " Colorear el código (F8) "
-        '
-        'tsbSep0
-        '
-        Me.tsbSep0.Name = "tsbSep0"
-        Me.tsbSep0.Size = New System.Drawing.Size(6, 25)
-        '
-        'tsbAbrir
-        '
-        Me.tsbAbrir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbAbrir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbAbrir.Name = "tsbAbrir"
-        Me.tsbAbrir.Size = New System.Drawing.Size(23, 22)
-        Me.tsbAbrir.Text = "Abrir fichero"
-        '
-        'tsbGuardar
-        '
-        Me.tsbGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbGuardar.Name = "tsbGuardar"
-        Me.tsbGuardar.Size = New System.Drawing.Size(23, 22)
-        Me.tsbGuardar.Text = "Guardar"
-        '
-        'tsbSep1
-        '
-        Me.tsbSep1.Name = "tsbSep1"
-        Me.tsbSep1.Size = New System.Drawing.Size(6, 25)
-        '
-        'tsbCortar
-        '
-        Me.tsbCortar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbCortar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbCortar.Name = "tsbCortar"
-        Me.tsbCortar.Size = New System.Drawing.Size(23, 22)
-        Me.tsbCortar.Text = "Cortar"
-        '
-        'tsbCopiar
-        '
-        Me.tsbCopiar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbCopiar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbCopiar.Name = "tsbCopiar"
-        Me.tsbCopiar.Size = New System.Drawing.Size(23, 22)
-        Me.tsbCopiar.Text = "Copiar"
-        '
-        'tsbPegar
-        '
-        Me.tsbPegar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbPegar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbPegar.Name = "tsbPegar"
-        Me.tsbPegar.Size = New System.Drawing.Size(23, 22)
-        Me.tsbPegar.Text = "Pegar"
-        '
-        'tsbDeshacer
-        '
-        Me.tsbDeshacer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbDeshacer.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbDeshacer.Name = "tsbDeshacer"
-        Me.tsbDeshacer.Size = New System.Drawing.Size(23, 22)
-        Me.tsbDeshacer.Text = "Deshacer"
-        '
-        'tsbSep2
-        '
-        Me.tsbSep2.Name = "tsbSep2"
-        Me.tsbSep2.Size = New System.Drawing.Size(6, 25)
-        '
-        'tsbSintax
-        '
-        Me.tsbSintax.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbSintax.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbSintax.Name = "tsbSintax"
-        Me.tsbSintax.Size = New System.Drawing.Size(16, 22)
-        Me.tsbSintax.Text = "Sintaxis"
-        '
-        'tsbSep3
-        '
-        Me.tsbSep3.Name = "tsbSep3"
-        Me.tsbSep3.Size = New System.Drawing.Size(6, 25)
-        '
-        'tsbNavegar
-        '
-        Me.tsbNavegar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbNavegar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbNavegar.Name = "tsbNavegar"
-        Me.tsbNavegar.Size = New System.Drawing.Size(23, 22)
-        Me.tsbNavegar.Text = "Ver en el navegador"
-        Me.tsbNavegar.ToolTipText = " Actualizar el navegador con los cambios "
-        '
-        'tsbSep4
-        '
-        Me.tsbSep4.Name = "tsbSep4"
-        Me.tsbSep4.Size = New System.Drawing.Size(6, 25)
-        '
-        'tsbAcerca
-        '
-        Me.tsbAcerca.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbAcerca.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbAcerca.Name = "tsbAcerca"
-        Me.tsbAcerca.Size = New System.Drawing.Size(23, 22)
-        Me.tsbAcerca.Text = "Acerca de"
-        '
-        'tsbSep5
-        '
-        Me.tsbSep5.Name = "tsbSep5"
-        Me.tsbSep5.Size = New System.Drawing.Size(6, 25)
-        '
-        'tsbSalir
-        '
-        Me.tsbSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbSalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbSalir.Name = "tsbSalir"
-        Me.tsbSalir.Size = New System.Drawing.Size(23, 22)
-        Me.tsbSalir.Text = "Salir"
-        '
-        'statusStrip1
-        '
-        Me.statusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusInfo, Me.statusSintax})
-        Me.statusStrip1.Location = New System.Drawing.Point(0, 539)
-        Me.statusStrip1.Margin = New System.Windows.Forms.Padding(4)
-        Me.statusStrip1.Name = "statusStrip1"
-        Me.statusStrip1.Size = New System.Drawing.Size(773, 22)
-        Me.statusStrip1.TabIndex = 3
-        Me.statusStrip1.Text = "StatusStrip1"
-        '
-        'statusSintax
-        '
-        Me.statusSintax.AutoSize = False
-        Me.statusSintax.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
-        Me.statusSintax.Name = "statusSintax"
-        Me.statusSintax.Size = New System.Drawing.Size(72, 17)
-        Me.statusSintax.Text = "VB"
-        Me.statusSintax.ToolTipText = " El lenguaje seleccionado para colorear "
-        '
-        'fColorear
-        '
-        Me.AllowDrop = True
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CausesValidation = False
-        Me.ClientSize = New System.Drawing.Size(773, 561)
-        Me.Controls.Add(Me.statusStrip1)
-        Me.Controls.Add(Me.toolStrip1)
-        Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.menuStrip1)
-        Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(1600, 1000)
-        Me.MinimumSize = New System.Drawing.Size(660, 590)
-        Me.Name = "fColorear"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Utilidad para colorear el código"
-        Me.TabControl1.ResumeLayout(False)
-        Me.tpPrincipal.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.txtIndentar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tpVisor.ResumeLayout(False)
-        Me.tpConfig.ResumeLayout(False)
-        Me.tabControlCfg.ResumeLayout(False)
-        Me.tpColores.ResumeLayout(False)
-        Me.tpColores.PerformLayout()
-        Me.cboPreContextMenu.ResumeLayout(False)
-        Me.menuStrip1.ResumeLayout(False)
-        Me.menuStrip1.PerformLayout()
-        Me.toolStrip1.ResumeLayout(False)
-        Me.toolStrip1.PerformLayout()
-        Me.statusStrip1.ResumeLayout(False)
-        Me.statusStrip1.PerformLayout()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        components = New ComponentModel.Container()
+        statusInfo = New ToolStripStatusLabel()
+        mnuFic = New ToolStripMenuItem()
+        mnuFicAbrir = New ToolStripMenuItem()
+        mnuFicGuardar = New ToolStripMenuItem()
+        mnuFicSep1 = New ToolStripSeparator()
+        mnuFicVerRTF = New ToolStripMenuItem()
+        mnuFicSep2 = New ToolStripSeparator()
+        mnuFicNavegar = New ToolStripMenuItem()
+        mnuFicSep3 = New ToolStripSeparator()
+        mnuFicAcerca = New ToolStripMenuItem()
+        mnuFicSep4 = New ToolStripSeparator()
+        mnuFicSalir = New ToolStripMenuItem()
+        mnuSintaxColorear = New ToolStripMenuItem()
+        mnuSintaxColorearEnRTF = New ToolStripMenuItem()
+        mnuSintaxColorearDeRTF = New ToolStripMenuItem()
+        mnuEdi = New ToolStripMenuItem()
+        mnuEdiDeshacer = New ToolStripMenuItem()
+        mnuEdiSep1 = New ToolStripSeparator()
+        mnuEdiCortar = New ToolStripMenuItem()
+        mnuEdiCopiar = New ToolStripMenuItem()
+        mnuEdiPegar = New ToolStripMenuItem()
+        mnuEdiSep2 = New ToolStripSeparator()
+        mnuEdiSeleccionarTodo = New ToolStripMenuItem()
+        TabControl1 = New TabControl()
+        tpPrincipal = New TabPage()
+        GroupBox1 = New GroupBox()
+        btnColorear = New Button()
+        btnTextoNormal = New Button()
+        txtIndentar = New NumericUpDown()
+        chkIndentar = New CheckBox()
+        chkQuitarEspacios = New CheckBox()
+        rtEditor = New RichTextBox()
+        tpVisor = New TabPage()
+        WebBrowser1 = New WebBrowser()
+        tpConfig = New TabPage()
+        btnCfgRestablecer = New Button()
+        btnCfgDeshacer = New Button()
+        btnCfgAplicar = New Button()
+        tabControlCfg = New TabControl()
+        tpColores = New TabPage()
+        btnColorClases = New Button()
+        LabelColorClases = New Label()
+        txtColorClases = New TextBox()
+        Label3 = New Label()
+        chkUsarTemaOscuro = New CheckBox()
+        chkRecordarUltimoTexto = New CheckBox()
+        chkNotify = New CheckBox()
+        chkUsarSpanStyle = New CheckBox()
+        chkSyntaxMayusc = New CheckBox()
+        cboTamFuente = New ComboBox()
+        cboFuentes = New ComboBox()
+        Label8 = New Label()
+        btnColorKeywords = New Button()
+        LabelColorKeywords = New Label()
+        txtColorKeywords = New TextBox()
+        Label7 = New Label()
+        btnColorXML = New Button()
+        LabelColorXML = New Label()
+        txtColorXML = New TextBox()
+        Label51 = New Label()
+        btnColorRem = New Button()
+        LabelColorRem = New Label()
+        txtColorRem = New TextBox()
+        Label41 = New Label()
+        btnColorTexto = New Button()
+        LabelColorTexto = New Label()
+        txtColorTexto = New TextBox()
+        cboPre = New ComboBox()
+        cboPreContextMenu = New ContextMenuStrip(components)
+        mnuCboPreEliminar = New ToolStripMenuItem()
+        Label21 = New Label()
+        Label11 = New Label()
+        menuStrip1 = New MenuStrip()
+        mnuSintax = New ToolStripMenuItem()
+        mnuSintaxSep1 = New ToolStripSeparator()
+        mnuSintax_Ninguno = New ToolStripMenuItem()
+        mnuSintax_dotNet = New ToolStripMenuItem()
+        mnuSintax_VB = New ToolStripMenuItem()
+        mnuSintax_CS = New ToolStripMenuItem()
+        mnuSintax_Java = New ToolStripMenuItem()
+        mnuSintax_FSharp = New ToolStripMenuItem()
+        mnuSintax_IL = New ToolStripMenuItem()
+        mnuSintax_CPP = New ToolStripMenuItem()
+        mnuSintax_Pascal = New ToolStripMenuItem()
+        mnuSintax_SQL = New ToolStripMenuItem()
+        mnuSintax_VB6 = New ToolStripMenuItem()
+        mnuSintax_XML = New ToolStripMenuItem()
+        toolStrip1 = New ToolStrip()
+        tsbColorear = New ToolStripButton()
+        tsbSep0 = New ToolStripSeparator()
+        tsbAbrir = New ToolStripButton()
+        tsbGuardar = New ToolStripButton()
+        tsbSep1 = New ToolStripSeparator()
+        tsbCortar = New ToolStripButton()
+        tsbCopiar = New ToolStripButton()
+        tsbPegar = New ToolStripButton()
+        tsbDeshacer = New ToolStripButton()
+        tsbSep2 = New ToolStripSeparator()
+        tsbSintax = New ToolStripSplitButton()
+        tsbSep3 = New ToolStripSeparator()
+        tsbNavegar = New ToolStripButton()
+        tsbSep4 = New ToolStripSeparator()
+        tsbAcerca = New ToolStripButton()
+        tsbSep5 = New ToolStripSeparator()
+        tsbSalir = New ToolStripButton()
+        statusStrip1 = New StatusStrip()
+        statusSintax = New ToolStripStatusLabel()
+        toolTip1 = New ToolTip(components)
+        mnuSintaxObtenerCodigoDualHTML = New ToolStripMenuItem()
+        TabControl1.SuspendLayout()
+        tpPrincipal.SuspendLayout()
+        GroupBox1.SuspendLayout()
+        CType(txtIndentar, ComponentModel.ISupportInitialize).BeginInit()
+        tpVisor.SuspendLayout()
+        tpConfig.SuspendLayout()
+        tabControlCfg.SuspendLayout()
+        tpColores.SuspendLayout()
+        cboPreContextMenu.SuspendLayout()
+        menuStrip1.SuspendLayout()
+        toolStrip1.SuspendLayout()
+        statusStrip1.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' statusInfo
+        ' 
+        statusInfo.Name = "statusInfo"
+        statusInfo.Size = New Size(1011, 25)
+        statusInfo.Spring = True
+        statusInfo.Text = "©Guillermo (elGuille) Som, 2006-2020"
+        statusInfo.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' mnuFic
+        ' 
+        mnuFic.DropDownItems.AddRange(New ToolStripItem() {mnuFicAbrir, mnuFicGuardar, mnuFicSep1, mnuFicVerRTF, mnuFicSep2, mnuFicNavegar, mnuFicSep3, mnuFicAcerca, mnuFicSep4, mnuFicSalir})
+        mnuFic.Name = "mnuFic"
+        mnuFic.Size = New Size(85, 29)
+        mnuFic.Text = "&Fichero"
+        ' 
+        ' mnuFicAbrir
+        ' 
+        mnuFicAbrir.Name = "mnuFicAbrir"
+        mnuFicAbrir.Size = New Size(271, 34)
+        mnuFicAbrir.Text = "Abrir..."
+        mnuFicAbrir.ToolTipText = " Abrir un fichero de código"
+        ' 
+        ' mnuFicGuardar
+        ' 
+        mnuFicGuardar.Name = "mnuFicGuardar"
+        mnuFicGuardar.Size = New Size(271, 34)
+        mnuFicGuardar.Text = "Guardar como..."
+        mnuFicGuardar.ToolTipText = " Guardar el texto actual"
+        ' 
+        ' mnuFicSep1
+        ' 
+        mnuFicSep1.Name = "mnuFicSep1"
+        mnuFicSep1.Size = New Size(268, 6)
+        ' 
+        ' mnuFicVerRTF
+        ' 
+        mnuFicVerRTF.Name = "mnuFicVerRTF"
+        mnuFicVerRTF.Size = New Size(271, 34)
+        mnuFicVerRTF.Text = "Ver RTF"
+        mnuFicVerRTF.ToolTipText = "Ver el RTF generado en una ventana aparte"
+        ' 
+        ' mnuFicSep2
+        ' 
+        mnuFicSep2.Name = "mnuFicSep2"
+        mnuFicSep2.Size = New Size(268, 6)
+        ' 
+        ' mnuFicNavegar
+        ' 
+        mnuFicNavegar.Name = "mnuFicNavegar"
+        mnuFicNavegar.Size = New Size(271, 34)
+        mnuFicNavegar.Text = "Ver en el navegador"
+        mnuFicNavegar.ToolTipText = " Ver en el navegador con los cambios realizados en el texto "
+        ' 
+        ' mnuFicSep3
+        ' 
+        mnuFicSep3.Name = "mnuFicSep3"
+        mnuFicSep3.Size = New Size(268, 6)
+        ' 
+        ' mnuFicAcerca
+        ' 
+        mnuFicAcerca.ImageTransparentColor = Color.Magenta
+        mnuFicAcerca.Name = "mnuFicAcerca"
+        mnuFicAcerca.Size = New Size(271, 34)
+        mnuFicAcerca.Text = "Acerca de..."
+        mnuFicAcerca.ToolTipText = " Muestra la info del programa "
+        ' 
+        ' mnuFicSep4
+        ' 
+        mnuFicSep4.Name = "mnuFicSep4"
+        mnuFicSep4.Size = New Size(268, 6)
+        ' 
+        ' mnuFicSalir
+        ' 
+        mnuFicSalir.ImageTransparentColor = Color.Magenta
+        mnuFicSalir.Name = "mnuFicSalir"
+        mnuFicSalir.Size = New Size(271, 34)
+        mnuFicSalir.Text = "&Salir"
+        mnuFicSalir.ToolTipText = " Terminar el programa "
+        ' 
+        ' mnuSintaxColorear
+        ' 
+        mnuSintaxColorear.Name = "mnuSintaxColorear"
+        mnuSintaxColorear.ShortcutKeys = Keys.F8
+        mnuSintaxColorear.Size = New Size(335, 34)
+        mnuSintaxColorear.Text = "Colorear"
+        mnuSintaxColorear.ToolTipText = " Colorea el código usando el lenguaje y el formato indicados "
+        ' 
+        ' mnuSintaxColorearEnRTF
+        ' 
+        mnuSintaxColorearEnRTF.Name = "mnuSintaxColorearEnRTF"
+        mnuSintaxColorearEnRTF.Size = New Size(335, 34)
+        mnuSintaxColorearEnRTF.Text = "Colorear en RTF (o HTML)"
+        mnuSintaxColorearEnRTF.ToolTipText = " Marca esta opción para generar en formato RTF (si no lo marcas, se genera en HTML) "
+        ' 
+        ' mnuSintaxColorearDeRTF
+        ' 
+        mnuSintaxColorearDeRTF.Name = "mnuSintaxColorearDeRTF"
+        mnuSintaxColorearDeRTF.Size = New Size(335, 34)
+        mnuSintaxColorearDeRTF.Text = "Colorear desde RTF"
+        mnuSintaxColorearDeRTF.ToolTipText = "Si el texto pegado ya tiene colores," & vbCrLf & "usa esta opción para generar el código HTML con ese coloreado."
+        ' 
+        ' mnuEdi
+        ' 
+        mnuEdi.DropDownItems.AddRange(New ToolStripItem() {mnuEdiDeshacer, mnuEdiSep1, mnuEdiCortar, mnuEdiCopiar, mnuEdiPegar, mnuEdiSep2, mnuEdiSeleccionarTodo})
+        mnuEdi.Name = "mnuEdi"
+        mnuEdi.Size = New Size(73, 29)
+        mnuEdi.Text = "&Editar"
+        ' 
+        ' mnuEdiDeshacer
+        ' 
+        mnuEdiDeshacer.Name = "mnuEdiDeshacer"
+        mnuEdiDeshacer.ShortcutKeys = Keys.Control Or Keys.Z
+        mnuEdiDeshacer.Size = New Size(309, 34)
+        mnuEdiDeshacer.Text = "&Deshacer"
+        ' 
+        ' mnuEdiSep1
+        ' 
+        mnuEdiSep1.Name = "mnuEdiSep1"
+        mnuEdiSep1.Size = New Size(306, 6)
+        ' 
+        ' mnuEdiCortar
+        ' 
+        mnuEdiCortar.Name = "mnuEdiCortar"
+        mnuEdiCortar.ShortcutKeys = Keys.Control Or Keys.X
+        mnuEdiCortar.Size = New Size(309, 34)
+        mnuEdiCortar.Text = "Cor&tar"
+        ' 
+        ' mnuEdiCopiar
+        ' 
+        mnuEdiCopiar.Name = "mnuEdiCopiar"
+        mnuEdiCopiar.ShortcutKeys = Keys.Control Or Keys.C
+        mnuEdiCopiar.Size = New Size(309, 34)
+        mnuEdiCopiar.Text = "&Copiar"
+        ' 
+        ' mnuEdiPegar
+        ' 
+        mnuEdiPegar.Name = "mnuEdiPegar"
+        mnuEdiPegar.ShortcutKeys = Keys.Control Or Keys.V
+        mnuEdiPegar.Size = New Size(309, 34)
+        mnuEdiPegar.Text = "&Pegar"
+        ' 
+        ' mnuEdiSep2
+        ' 
+        mnuEdiSep2.Name = "mnuEdiSep2"
+        mnuEdiSep2.Size = New Size(306, 6)
+        ' 
+        ' mnuEdiSeleccionarTodo
+        ' 
+        mnuEdiSeleccionarTodo.Name = "mnuEdiSeleccionarTodo"
+        mnuEdiSeleccionarTodo.ShortcutKeys = Keys.Control Or Keys.A
+        mnuEdiSeleccionarTodo.Size = New Size(309, 34)
+        mnuEdiSeleccionarTodo.Text = "Seleccionar todo"
+        ' 
+        ' TabControl1
+        ' 
+        TabControl1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        TabControl1.Controls.Add(tpPrincipal)
+        TabControl1.Controls.Add(tpVisor)
+        TabControl1.Controls.Add(tpConfig)
+        TabControl1.Location = New Point(17, 93)
+        TabControl1.Margin = New Padding(4, 5, 4, 5)
+        TabControl1.Name = "TabControl1"
+        TabControl1.SelectedIndex = 0
+        TabControl1.Size = New Size(1070, 793)
+        TabControl1.TabIndex = 2
+        ' 
+        ' tpPrincipal
+        ' 
+        tpPrincipal.Controls.Add(GroupBox1)
+        tpPrincipal.Controls.Add(rtEditor)
+        tpPrincipal.Location = New Point(4, 34)
+        tpPrincipal.Margin = New Padding(4, 5, 4, 5)
+        tpPrincipal.Name = "tpPrincipal"
+        tpPrincipal.Padding = New Padding(4, 5, 4, 5)
+        tpPrincipal.Size = New Size(1062, 755)
+        tpPrincipal.TabIndex = 5
+        tpPrincipal.Text = "Principal"
+        tpPrincipal.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        GroupBox1.Controls.Add(btnColorear)
+        GroupBox1.Controls.Add(btnTextoNormal)
+        GroupBox1.Controls.Add(txtIndentar)
+        GroupBox1.Controls.Add(chkIndentar)
+        GroupBox1.Controls.Add(chkQuitarEspacios)
+        GroupBox1.Location = New Point(9, 10)
+        GroupBox1.Margin = New Padding(4, 5, 4, 5)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Padding = New Padding(4, 5, 4, 5)
+        GroupBox1.Size = New Size(1036, 80)
+        GroupBox1.TabIndex = 0
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Opciones:"
+        ' 
+        ' btnColorear
+        ' 
+        btnColorear.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnColorear.Location = New Point(523, 27)
+        btnColorear.Margin = New Padding(4, 5, 4, 5)
+        btnColorear.Name = "btnColorear"
+        btnColorear.Size = New Size(224, 38)
+        btnColorear.TabIndex = 4
+        btnColorear.Text = "Colorear en HTML"
+        btnColorear.TextImageRelation = TextImageRelation.ImageBeforeText
+        toolTip1.SetToolTip(btnColorear, "Colorear el código usando el lenguaje indicado")
+        btnColorear.UseVisualStyleBackColor = True
+        ' 
+        ' btnTextoNormal
+        ' 
+        btnTextoNormal.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnTextoNormal.Location = New Point(756, 25)
+        btnTextoNormal.Margin = New Padding(4, 5, 4, 5)
+        btnTextoNormal.Name = "btnTextoNormal"
+        btnTextoNormal.Size = New Size(271, 38)
+        btnTextoNormal.TabIndex = 5
+        btnTextoNormal.Text = "Mostrar el texto sin procesar"
+        toolTip1.SetToolTip(btnTextoNormal, "Mostrar el último texto antes de colorear")
+        btnTextoNormal.UseVisualStyleBackColor = True
+        ' 
+        ' txtIndentar
+        ' 
+        txtIndentar.Location = New Point(396, 30)
+        txtIndentar.Margin = New Padding(4, 5, 4, 5)
+        txtIndentar.Maximum = New Decimal(New Integer() {8, 0, 0, 0})
+        txtIndentar.Minimum = New Decimal(New Integer() {2, 0, 0, 0})
+        txtIndentar.Name = "txtIndentar"
+        txtIndentar.Size = New Size(63, 31)
+        txtIndentar.TabIndex = 3
+        txtIndentar.Value = New Decimal(New Integer() {4, 0, 0, 0})
+        ' 
+        ' chkIndentar
+        ' 
+        chkIndentar.AutoSize = True
+        chkIndentar.Location = New Point(294, 32)
+        chkIndentar.Margin = New Padding(4, 5, 4, 5)
+        chkIndentar.Name = "chkIndentar"
+        chkIndentar.Size = New Size(104, 29)
+        chkIndentar.TabIndex = 2
+        chkIndentar.Text = "Indentar"
+        toolTip1.SetToolTip(chkIndentar, "Si se debe indentar el código al colorearlo (funciona bien en VB)")
+        chkIndentar.UseVisualStyleBackColor = True
+        ' 
+        ' chkQuitarEspacios
+        ' 
+        chkQuitarEspacios.AutoSize = True
+        chkQuitarEspacios.Location = New Point(9, 32)
+        chkQuitarEspacios.Margin = New Padding(4, 5, 4, 5)
+        chkQuitarEspacios.Name = "chkQuitarEspacios"
+        chkQuitarEspacios.Size = New Size(291, 29)
+        chkQuitarEspacios.TabIndex = 1
+        chkQuitarEspacios.Text = "Quitar los espacios del principio"
+        toolTip1.SetToolTip(chkQuitarEspacios, "Si se deben quitar los espacios iniciales al colorear")
+        chkQuitarEspacios.UseVisualStyleBackColor = True
+        ' 
+        ' rtEditor
+        ' 
+        rtEditor.AcceptsTab = True
+        rtEditor.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        rtEditor.DetectUrls = False
+        rtEditor.Font = New Font("Courier New", 8.25F)
+        rtEditor.HideSelection = False
+        rtEditor.Location = New Point(9, 100)
+        rtEditor.Margin = New Padding(4, 5, 4, 5)
+        rtEditor.Name = "rtEditor"
+        rtEditor.Size = New Size(1034, 637)
+        rtEditor.TabIndex = 1
+        rtEditor.Text = "Algo para que cambie"
+        rtEditor.WordWrap = False
+        ' 
+        ' tpVisor
+        ' 
+        tpVisor.Controls.Add(WebBrowser1)
+        tpVisor.Location = New Point(4, 34)
+        tpVisor.Margin = New Padding(4, 5, 4, 5)
+        tpVisor.Name = "tpVisor"
+        tpVisor.Padding = New Padding(4, 5, 4, 5)
+        tpVisor.Size = New Size(1062, 755)
+        tpVisor.TabIndex = 6
+        tpVisor.Text = "Visor HTML"
+        tpVisor.UseVisualStyleBackColor = True
+        ' 
+        ' WebBrowser1
+        ' 
+        WebBrowser1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        WebBrowser1.Location = New Point(9, 10)
+        WebBrowser1.Margin = New Padding(4, 5, 4, 5)
+        WebBrowser1.MinimumSize = New Size(29, 33)
+        WebBrowser1.Name = "WebBrowser1"
+        WebBrowser1.Size = New Size(986, 730)
+        WebBrowser1.TabIndex = 0
+        ' 
+        ' tpConfig
+        ' 
+        tpConfig.Controls.Add(btnCfgRestablecer)
+        tpConfig.Controls.Add(btnCfgDeshacer)
+        tpConfig.Controls.Add(btnCfgAplicar)
+        tpConfig.Controls.Add(tabControlCfg)
+        tpConfig.Location = New Point(4, 34)
+        tpConfig.Margin = New Padding(4, 5, 4, 5)
+        tpConfig.Name = "tpConfig"
+        tpConfig.Padding = New Padding(6, 7, 6, 7)
+        tpConfig.Size = New Size(1062, 755)
+        tpConfig.TabIndex = 7
+        tpConfig.Text = "Configuración"
+        tpConfig.UseVisualStyleBackColor = True
+        ' 
+        ' btnCfgRestablecer
+        ' 
+        btnCfgRestablecer.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        btnCfgRestablecer.Location = New Point(654, 700)
+        btnCfgRestablecer.Margin = New Padding(4, 5, 4, 5)
+        btnCfgRestablecer.Name = "btnCfgRestablecer"
+        btnCfgRestablecer.Size = New Size(107, 38)
+        btnCfgRestablecer.TabIndex = 3
+        btnCfgRestablecer.Text = "Restablecer"
+        btnCfgRestablecer.UseVisualStyleBackColor = True
+        ' 
+        ' btnCfgDeshacer
+        ' 
+        btnCfgDeshacer.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        btnCfgDeshacer.Location = New Point(770, 700)
+        btnCfgDeshacer.Margin = New Padding(4, 5, 4, 5)
+        btnCfgDeshacer.Name = "btnCfgDeshacer"
+        btnCfgDeshacer.Size = New Size(107, 38)
+        btnCfgDeshacer.TabIndex = 2
+        btnCfgDeshacer.Text = "Deshacer"
+        btnCfgDeshacer.UseVisualStyleBackColor = True
+        ' 
+        ' btnCfgAplicar
+        ' 
+        btnCfgAplicar.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        btnCfgAplicar.Location = New Point(886, 700)
+        btnCfgAplicar.Margin = New Padding(4, 5, 4, 5)
+        btnCfgAplicar.Name = "btnCfgAplicar"
+        btnCfgAplicar.Size = New Size(107, 38)
+        btnCfgAplicar.TabIndex = 1
+        btnCfgAplicar.Text = "Aplicar"
+        btnCfgAplicar.UseVisualStyleBackColor = True
+        ' 
+        ' tabControlCfg
+        ' 
+        tabControlCfg.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        tabControlCfg.Controls.Add(tpColores)
+        tabControlCfg.Location = New Point(17, 20)
+        tabControlCfg.Margin = New Padding(11, 13, 11, 13)
+        tabControlCfg.Name = "tabControlCfg"
+        tabControlCfg.SelectedIndex = 0
+        tabControlCfg.Size = New Size(969, 662)
+        tabControlCfg.TabIndex = 0
+        ' 
+        ' tpColores
+        ' 
+        tpColores.AutoScroll = True
+        tpColores.BackColor = Color.WhiteSmoke
+        tpColores.Controls.Add(btnColorClases)
+        tpColores.Controls.Add(LabelColorClases)
+        tpColores.Controls.Add(txtColorClases)
+        tpColores.Controls.Add(Label3)
+        tpColores.Controls.Add(chkUsarTemaOscuro)
+        tpColores.Controls.Add(chkRecordarUltimoTexto)
+        tpColores.Controls.Add(chkNotify)
+        tpColores.Controls.Add(chkUsarSpanStyle)
+        tpColores.Controls.Add(chkSyntaxMayusc)
+        tpColores.Controls.Add(cboTamFuente)
+        tpColores.Controls.Add(cboFuentes)
+        tpColores.Controls.Add(Label8)
+        tpColores.Controls.Add(btnColorKeywords)
+        tpColores.Controls.Add(LabelColorKeywords)
+        tpColores.Controls.Add(txtColorKeywords)
+        tpColores.Controls.Add(Label7)
+        tpColores.Controls.Add(btnColorXML)
+        tpColores.Controls.Add(LabelColorXML)
+        tpColores.Controls.Add(txtColorXML)
+        tpColores.Controls.Add(Label51)
+        tpColores.Controls.Add(btnColorRem)
+        tpColores.Controls.Add(LabelColorRem)
+        tpColores.Controls.Add(txtColorRem)
+        tpColores.Controls.Add(Label41)
+        tpColores.Controls.Add(btnColorTexto)
+        tpColores.Controls.Add(LabelColorTexto)
+        tpColores.Controls.Add(txtColorTexto)
+        tpColores.Controls.Add(cboPre)
+        tpColores.Controls.Add(Label21)
+        tpColores.Controls.Add(Label11)
+        tpColores.Location = New Point(4, 34)
+        tpColores.Margin = New Padding(4, 5, 4, 5)
+        tpColores.Name = "tpColores"
+        tpColores.Padding = New Padding(11, 13, 11, 13)
+        tpColores.Size = New Size(961, 624)
+        tpColores.TabIndex = 4
+        tpColores.Text = "Colores, fuente y <pre>"
+        ' 
+        ' btnColorClases
+        ' 
+        btnColorClases.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnColorClases.FlatStyle = FlatStyle.System
+        btnColorClases.Location = New Point(907, 295)
+        btnColorClases.Margin = New Padding(4, 5, 4, 5)
+        btnColorClases.Name = "btnColorClases"
+        btnColorClases.Size = New Size(34, 38)
+        btnColorClases.TabIndex = 32
+        btnColorClases.Text = "..."
+        ' 
+        ' LabelColorClases
+        ' 
+        LabelColorClases.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        LabelColorClases.BackColor = Color.Transparent
+        LabelColorClases.Font = New Font("Courier New", 9F)
+        LabelColorClases.ForeColor = Color.FromArgb(CByte(43), CByte(145), CByte(175))
+        LabelColorClases.Location = New Point(331, 302)
+        LabelColorClases.Margin = New Padding(4, 0, 4, 0)
+        LabelColorClases.Name = "LabelColorClases"
+        LabelColorClases.Size = New Size(560, 27)
+        LabelColorClases.TabIndex = 31
+        LabelColorClases.Text = "Color de los tipos (clases)"
+        ' 
+        ' txtColorClases
+        ' 
+        txtColorClases.Font = New Font("Courier New", 8.25F)
+        txtColorClases.ForeColor = SystemColors.ControlText
+        txtColorClases.Location = New Point(200, 298)
+        txtColorClases.Margin = New Padding(4, 5, 4, 5)
+        txtColorClases.Name = "txtColorClases"
+        txtColorClases.Size = New Size(113, 26)
+        txtColorClases.TabIndex = 30
+        txtColorClases.Text = "2B91AF"
+        ' 
+        ' Label3
+        ' 
+        Label3.Location = New Point(19, 303)
+        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(177, 27)
+        Label3.TabIndex = 29
+        Label3.Text = "Color clases (&tipos):"
+        ' 
+        ' chkUsarTemaOscuro
+        ' 
+        chkUsarTemaOscuro.AutoSize = True
+        chkUsarTemaOscuro.ImeMode = ImeMode.NoControl
+        chkUsarTemaOscuro.Location = New Point(23, 27)
+        chkUsarTemaOscuro.Margin = New Padding(4, 5, 4, 5)
+        chkUsarTemaOscuro.Name = "chkUsarTemaOscuro"
+        chkUsarTemaOscuro.Size = New Size(239, 29)
+        chkUsarTemaOscuro.TabIndex = 28
+        chkUsarTemaOscuro.Text = "Usar colores tema oscuro"
+        toolTip1.SetToolTip(chkUsarTemaOscuro, "Marca esta opción para usar los colores del tema oscuro." & vbCrLf & "No marcado usará los colores del tema claro." & vbCrLf & "Indefinido (cuadro en negro) usa los colores personalizados (beta).")
+        chkUsarTemaOscuro.UseVisualStyleBackColor = True
+        ' 
+        ' chkRecordarUltimoTexto
+        ' 
+        chkRecordarUltimoTexto.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        chkRecordarUltimoTexto.AutoSize = True
+        chkRecordarUltimoTexto.Checked = True
+        chkRecordarUltimoTexto.CheckState = CheckState.Checked
+        chkRecordarUltimoTexto.ImeMode = ImeMode.NoControl
+        chkRecordarUltimoTexto.Location = New Point(459, 542)
+        chkRecordarUltimoTexto.Margin = New Padding(11, 13, 11, 13)
+        chkRecordarUltimoTexto.Name = "chkRecordarUltimoTexto"
+        chkRecordarUltimoTexto.Size = New Size(328, 29)
+        chkRecordarUltimoTexto.TabIndex = 26
+        chkRecordarUltimoTexto.Text = "Recordar el último código coloreado"
+        toolTip1.SetToolTip(chkRecordarUltimoTexto, "Si se debe recordar el texto a colorear cada vez que se inicia la aplicación")
+        chkRecordarUltimoTexto.UseVisualStyleBackColor = True
+        ' 
+        ' chkNotify
+        ' 
+        chkNotify.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        chkNotify.AutoSize = True
+        chkNotify.ImeMode = ImeMode.NoControl
+        chkNotify.Location = New Point(23, 542)
+        chkNotify.Margin = New Padding(11, 13, 11, 13)
+        chkNotify.Name = "chkNotify"
+        chkNotify.Size = New Size(399, 29)
+        chkNotify.TabIndex = 25
+        chkNotify.Text = "Al minimi&zar hacerlo en el área de notificación"
+        toolTip1.SetToolTip(chkNotify, "Cuando se minimiza la aplicación, ocultarla y mostrar solo el icono en el área de notificación")
+        chkNotify.UseVisualStyleBackColor = True
+        ' 
+        ' chkUsarSpanStyle
+        ' 
+        chkUsarSpanStyle.AutoSize = True
+        chkUsarSpanStyle.Checked = True
+        chkUsarSpanStyle.CheckState = CheckState.Checked
+        chkUsarSpanStyle.Location = New Point(23, 392)
+        chkUsarSpanStyle.Margin = New Padding(9, 10, 9, 10)
+        chkUsarSpanStyle.Name = "chkUsarSpanStyle"
+        chkUsarSpanStyle.Size = New Size(465, 29)
+        chkUsarSpanStyle.TabIndex = 21
+        chkUsarSpanStyle.Text = "Usar 'span style' en lugar de 'font' para colorear HTML"
+        toolTip1.SetToolTip(chkUsarSpanStyle, "Si al crear el tag para el color se usa <span style en vez de <font (recomendado)")
+        chkUsarSpanStyle.UseVisualStyleBackColor = True
+        ' 
+        ' chkSyntaxMayusc
+        ' 
+        chkSyntaxMayusc.AutoSize = True
+        chkSyntaxMayusc.ImeMode = ImeMode.NoControl
+        chkSyntaxMayusc.Location = New Point(23, 435)
+        chkSyntaxMayusc.Margin = New Padding(4, 5, 4, 5)
+        chkSyntaxMayusc.Name = "chkSyntaxMayusc"
+        chkSyntaxMayusc.Size = New Size(512, 29)
+        chkSyntaxMayusc.TabIndex = 22
+        chkSyntaxMayusc.Text = "Con&vertir las palabras a mayúsculas/minúsculas del lenguaje"
+        toolTip1.SetToolTip(chkSyntaxMayusc, "Si al colorear se deben convertir las palabras al estado recomendado por el lenguaje")
+        chkSyntaxMayusc.UseVisualStyleBackColor = True
+        ' 
+        ' cboTamFuente
+        ' 
+        cboTamFuente.DropDownStyle = ComboBoxStyle.DropDownList
+        cboTamFuente.FormattingEnabled = True
+        cboTamFuente.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "14", "16", "18"})
+        cboTamFuente.Location = New Point(429, 342)
+        cboTamFuente.Margin = New Padding(4, 5, 4, 5)
+        cboTamFuente.Name = "cboTamFuente"
+        cboTamFuente.Size = New Size(63, 33)
+        cboTamFuente.TabIndex = 20
+        ' 
+        ' cboFuentes
+        ' 
+        cboFuentes.AutoCompleteMode = AutoCompleteMode.Append
+        cboFuentes.AutoCompleteSource = AutoCompleteSource.ListItems
+        cboFuentes.FormattingEnabled = True
+        cboFuentes.Items.AddRange(New Object() {"Courier New", "Consolas", "Lucida Console", "Arial", "Courier", "Fixedsys", "Lucida Sans Typewriter", "Microsoft Sans Serif", "MS Sans Serif", "Tahoma", "Times New Roman", "Verdana"})
+        cboFuentes.Location = New Point(200, 342)
+        cboFuentes.Margin = New Padding(4, 5, 4, 5)
+        cboFuentes.Name = "cboFuentes"
+        cboFuentes.Size = New Size(218, 33)
+        cboFuentes.TabIndex = 19
+        cboFuentes.Text = "Courier New"
+        ' 
+        ' Label8
+        ' 
+        Label8.ImeMode = ImeMode.NoControl
+        Label8.Location = New Point(19, 345)
+        Label8.Margin = New Padding(4, 0, 4, 0)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(177, 27)
+        Label8.TabIndex = 18
+        Label8.Text = "&Fuente:"
+        ' 
+        ' btnColorKeywords
+        ' 
+        btnColorKeywords.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnColorKeywords.FlatStyle = FlatStyle.System
+        btnColorKeywords.Location = New Point(907, 252)
+        btnColorKeywords.Margin = New Padding(4, 5, 4, 5)
+        btnColorKeywords.Name = "btnColorKeywords"
+        btnColorKeywords.Size = New Size(34, 38)
+        btnColorKeywords.TabIndex = 17
+        btnColorKeywords.Text = "..."
+        ' 
+        ' LabelColorKeywords
+        ' 
+        LabelColorKeywords.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        LabelColorKeywords.BackColor = Color.Transparent
+        LabelColorKeywords.Font = New Font("Courier New", 9F)
+        LabelColorKeywords.ForeColor = Color.Blue
+        LabelColorKeywords.Location = New Point(331, 258)
+        LabelColorKeywords.Margin = New Padding(4, 0, 4, 0)
+        LabelColorKeywords.Name = "LabelColorKeywords"
+        LabelColorKeywords.Size = New Size(560, 27)
+        LabelColorKeywords.TabIndex = 16
+        LabelColorKeywords.Text = "Color de las instrucciones"
+        ' 
+        ' txtColorKeywords
+        ' 
+        txtColorKeywords.Font = New Font("Courier New", 8.25F)
+        txtColorKeywords.ForeColor = SystemColors.ControlText
+        txtColorKeywords.Location = New Point(200, 255)
+        txtColorKeywords.Margin = New Padding(4, 5, 4, 5)
+        txtColorKeywords.Name = "txtColorKeywords"
+        txtColorKeywords.Size = New Size(113, 26)
+        txtColorKeywords.TabIndex = 15
+        txtColorKeywords.Text = "0000FF"
+        ' 
+        ' Label7
+        ' 
+        Label7.Location = New Point(19, 260)
+        Label7.Margin = New Padding(4, 0, 4, 0)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(177, 27)
+        Label7.TabIndex = 14
+        Label7.Text = "Color &instrucciones:"
+        ' 
+        ' btnColorXML
+        ' 
+        btnColorXML.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnColorXML.FlatStyle = FlatStyle.System
+        btnColorXML.Location = New Point(907, 208)
+        btnColorXML.Margin = New Padding(4, 5, 4, 5)
+        btnColorXML.Name = "btnColorXML"
+        btnColorXML.Size = New Size(34, 38)
+        btnColorXML.TabIndex = 13
+        btnColorXML.Text = "..."
+        ' 
+        ' LabelColorXML
+        ' 
+        LabelColorXML.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        LabelColorXML.BackColor = Color.Transparent
+        LabelColorXML.Font = New Font("Courier New", 9F)
+        LabelColorXML.ForeColor = Color.FromArgb(CByte(92), CByte(92), CByte(92))
+        LabelColorXML.Location = New Point(331, 215)
+        LabelColorXML.Margin = New Padding(4, 0, 4, 0)
+        LabelColorXML.Name = "LabelColorXML"
+        LabelColorXML.Size = New Size(560, 27)
+        LabelColorXML.TabIndex = 12
+        LabelColorXML.Text = "Color de la documentación XML"
+        ' 
+        ' txtColorXML
+        ' 
+        txtColorXML.Font = New Font("Courier New", 8.25F)
+        txtColorXML.ForeColor = SystemColors.ControlText
+        txtColorXML.Location = New Point(200, 212)
+        txtColorXML.Margin = New Padding(4, 5, 4, 5)
+        txtColorXML.Name = "txtColorXML"
+        txtColorXML.Size = New Size(113, 26)
+        txtColorXML.TabIndex = 11
+        txtColorXML.Text = "5C5C5C"
+        ' 
+        ' Label51
+        ' 
+        Label51.Location = New Point(19, 217)
+        Label51.Margin = New Padding(4, 0, 4, 0)
+        Label51.Name = "Label51"
+        Label51.Size = New Size(177, 27)
+        Label51.TabIndex = 10
+        Label51.Text = "Color &documentación:"
+        ' 
+        ' btnColorRem
+        ' 
+        btnColorRem.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnColorRem.FlatStyle = FlatStyle.System
+        btnColorRem.Location = New Point(907, 165)
+        btnColorRem.Margin = New Padding(4, 5, 4, 5)
+        btnColorRem.Name = "btnColorRem"
+        btnColorRem.Size = New Size(34, 38)
+        btnColorRem.TabIndex = 9
+        btnColorRem.Text = "..."
+        ' 
+        ' LabelColorRem
+        ' 
+        LabelColorRem.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        LabelColorRem.BackColor = Color.Transparent
+        LabelColorRem.Font = New Font("Courier New", 9F)
+        LabelColorRem.ForeColor = Color.Green
+        LabelColorRem.Location = New Point(331, 172)
+        LabelColorRem.Margin = New Padding(4, 0, 4, 0)
+        LabelColorRem.Name = "LabelColorRem"
+        LabelColorRem.Size = New Size(560, 27)
+        LabelColorRem.TabIndex = 8
+        LabelColorRem.Text = "Color de los comentarios"
+        ' 
+        ' txtColorRem
+        ' 
+        txtColorRem.Font = New Font("Courier New", 8.25F)
+        txtColorRem.Location = New Point(200, 168)
+        txtColorRem.Margin = New Padding(4, 5, 4, 5)
+        txtColorRem.Name = "txtColorRem"
+        txtColorRem.Size = New Size(113, 26)
+        txtColorRem.TabIndex = 7
+        txtColorRem.Text = "008000"
+        ' 
+        ' Label41
+        ' 
+        Label41.Location = New Point(19, 175)
+        Label41.Margin = New Padding(4, 0, 4, 0)
+        Label41.Name = "Label41"
+        Label41.Size = New Size(177, 27)
+        Label41.TabIndex = 6
+        Label41.Text = "Color &comentarios:"
+        ' 
+        ' btnColorTexto
+        ' 
+        btnColorTexto.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnColorTexto.FlatStyle = FlatStyle.System
+        btnColorTexto.Location = New Point(907, 122)
+        btnColorTexto.Margin = New Padding(4, 5, 4, 5)
+        btnColorTexto.Name = "btnColorTexto"
+        btnColorTexto.Size = New Size(34, 38)
+        btnColorTexto.TabIndex = 5
+        btnColorTexto.Text = "..."
+        ' 
+        ' LabelColorTexto
+        ' 
+        LabelColorTexto.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        LabelColorTexto.BackColor = Color.Transparent
+        LabelColorTexto.Font = New Font("Courier New", 9F)
+        LabelColorTexto.ForeColor = Color.Firebrick
+        LabelColorTexto.Location = New Point(331, 128)
+        LabelColorTexto.Margin = New Padding(4, 0, 4, 0)
+        LabelColorTexto.Name = "LabelColorTexto"
+        LabelColorTexto.Size = New Size(560, 27)
+        LabelColorTexto.TabIndex = 4
+        LabelColorTexto.Text = "Color del texto entre comillas"
+        ' 
+        ' txtColorTexto
+        ' 
+        txtColorTexto.Font = New Font("Courier New", 8.25F)
+        txtColorTexto.Location = New Point(200, 125)
+        txtColorTexto.Margin = New Padding(4, 5, 4, 5)
+        txtColorTexto.Name = "txtColorTexto"
+        txtColorTexto.Size = New Size(113, 26)
+        txtColorTexto.TabIndex = 3
+        txtColorTexto.Text = "B22222"
+        ' 
+        ' cboPre
+        ' 
+        cboPre.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        cboPre.ContextMenuStrip = cboPreContextMenu
+        cboPre.Font = New Font("Courier New", 8.25F)
+        cboPre.Items.AddRange(New Object() {"<pre>", "<pre style=""background-color:black; color:#dcdcdc;"">", "<pre style=""font-size:medium;"">", "<pre style=""background-color:black; color:#dcdcdc;font-size:medium;"">", "<pre style=""white-space:pre; font-family:courier new, monospace; font-size:10pt;"">", "<pre style=""white-space:pre; font-family:courier new, monospace"">"})
+        cboPre.Location = New Point(200, 70)
+        cboPre.Margin = New Padding(11, 13, 11, 13)
+        cboPre.Name = "cboPre"
+        cboPre.Size = New Size(740, 28)
+        cboPre.TabIndex = 1
+        ' 
+        ' cboPreContextMenu
+        ' 
+        cboPreContextMenu.ImageScalingSize = New Size(24, 24)
+        cboPreContextMenu.Items.AddRange(New ToolStripItem() {mnuCboPreEliminar})
+        cboPreContextMenu.Name = "cboPreContextMenu"
+        cboPreContextMenu.Size = New Size(147, 36)
+        ' 
+        ' mnuCboPreEliminar
+        ' 
+        mnuCboPreEliminar.Name = "mnuCboPreEliminar"
+        mnuCboPreEliminar.Size = New Size(146, 32)
+        mnuCboPreEliminar.Text = "Eliminar"
+        ' 
+        ' Label21
+        ' 
+        Label21.Location = New Point(19, 130)
+        Label21.Margin = New Padding(4, 0, 4, 0)
+        Label21.Name = "Label21"
+        Label21.Size = New Size(177, 27)
+        Label21.TabIndex = 2
+        Label21.Text = "Color &texto:"
+        ' 
+        ' Label11
+        ' 
+        Label11.Location = New Point(19, 75)
+        Label11.Margin = New Padding(4, 0, 4, 0)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(177, 33)
+        Label11.TabIndex = 0
+        Label11.Text = "Tag de formato <&pre>:"
+        ' 
+        ' menuStrip1
+        ' 
+        menuStrip1.GripStyle = ToolStripGripStyle.Visible
+        menuStrip1.ImageScalingSize = New Size(24, 24)
+        menuStrip1.Items.AddRange(New ToolStripItem() {mnuFic, mnuEdi, mnuSintax})
+        menuStrip1.Location = New Point(0, 0)
+        menuStrip1.Name = "menuStrip1"
+        menuStrip1.Padding = New Padding(4, 3, 0, 3)
+        menuStrip1.Size = New Size(1104, 35)
+        menuStrip1.TabIndex = 0
+        menuStrip1.Text = "MenuStrip1"
+        ' 
+        ' mnuSintax
+        ' 
+        mnuSintax.DropDownItems.AddRange(New ToolStripItem() {mnuSintaxColorear, mnuSintaxColorearEnRTF, mnuSintaxColorearDeRTF, mnuSintaxObtenerCodigoDualHTML, mnuSintaxSep1, mnuSintax_Ninguno, mnuSintax_dotNet, mnuSintax_VB, mnuSintax_CS, mnuSintax_Java, mnuSintax_FSharp, mnuSintax_IL, mnuSintax_CPP, mnuSintax_Pascal, mnuSintax_SQL, mnuSintax_VB6, mnuSintax_XML})
+        mnuSintax.Name = "mnuSintax"
+        mnuSintax.Size = New Size(87, 29)
+        mnuSintax.Text = "&Sintaxis"
+        ' 
+        ' mnuSintaxSep1
+        ' 
+        mnuSintaxSep1.Name = "mnuSintaxSep1"
+        mnuSintaxSep1.Size = New Size(332, 6)
+        ' 
+        ' mnuSintax_Ninguno
+        ' 
+        mnuSintax_Ninguno.Name = "mnuSintax_Ninguno"
+        mnuSintax_Ninguno.Size = New Size(335, 34)
+        mnuSintax_Ninguno.Text = "Ninguno"
+        ' 
+        ' mnuSintax_dotNet
+        ' 
+        mnuSintax_dotNet.ImageTransparentColor = Color.Magenta
+        mnuSintax_dotNet.Name = "mnuSintax_dotNet"
+        mnuSintax_dotNet.Size = New Size(335, 34)
+        mnuSintax_dotNet.Text = "dot&Net"
+        ' 
+        ' mnuSintax_VB
+        ' 
+        mnuSintax_VB.ImageTransparentColor = Color.White
+        mnuSintax_VB.Name = "mnuSintax_VB"
+        mnuSintax_VB.Size = New Size(335, 34)
+        mnuSintax_VB.Text = "&Visual Basic"
+        ' 
+        ' mnuSintax_CS
+        ' 
+        mnuSintax_CS.ImageTransparentColor = Color.White
+        mnuSintax_CS.Name = "mnuSintax_CS"
+        mnuSintax_CS.Size = New Size(335, 34)
+        mnuSintax_CS.Text = "&C#"
+        ' 
+        ' mnuSintax_Java
+        ' 
+        mnuSintax_Java.ImageTransparentColor = Color.Magenta
+        mnuSintax_Java.Name = "mnuSintax_Java"
+        mnuSintax_Java.Size = New Size(335, 34)
+        mnuSintax_Java.Text = "&Java (J#)"
+        ' 
+        ' mnuSintax_FSharp
+        ' 
+        mnuSintax_FSharp.ImageTransparentColor = Color.Magenta
+        mnuSintax_FSharp.Name = "mnuSintax_FSharp"
+        mnuSintax_FSharp.Size = New Size(335, 34)
+        mnuSintax_FSharp.Text = "&F#"
+        ' 
+        ' mnuSintax_IL
+        ' 
+        mnuSintax_IL.ImageTransparentColor = Color.Magenta
+        mnuSintax_IL.Name = "mnuSintax_IL"
+        mnuSintax_IL.Size = New Size(335, 34)
+        mnuSintax_IL.Text = "&IL (ILASM)"
+        ' 
+        ' mnuSintax_CPP
+        ' 
+        mnuSintax_CPP.ImageTransparentColor = Color.White
+        mnuSintax_CPP.Name = "mnuSintax_CPP"
+        mnuSintax_CPP.Size = New Size(335, 34)
+        mnuSintax_CPP.Text = "C/C&++"
+        ' 
+        ' mnuSintax_Pascal
+        ' 
+        mnuSintax_Pascal.ImageTransparentColor = Color.White
+        mnuSintax_Pascal.Name = "mnuSintax_Pascal"
+        mnuSintax_Pascal.Size = New Size(335, 34)
+        mnuSintax_Pascal.Text = "&Pascal (Delphi/Freya)"
+        ' 
+        ' mnuSintax_SQL
+        ' 
+        mnuSintax_SQL.ImageTransparentColor = Color.Magenta
+        mnuSintax_SQL.Name = "mnuSintax_SQL"
+        mnuSintax_SQL.Size = New Size(335, 34)
+        mnuSintax_SQL.Text = "&SQL"
+        ' 
+        ' mnuSintax_VB6
+        ' 
+        mnuSintax_VB6.ImageTransparentColor = Color.Magenta
+        mnuSintax_VB6.Name = "mnuSintax_VB6"
+        mnuSintax_VB6.Size = New Size(335, 34)
+        mnuSintax_VB6.Text = "VB&6"
+        ' 
+        ' mnuSintax_XML
+        ' 
+        mnuSintax_XML.Name = "mnuSintax_XML"
+        mnuSintax_XML.Size = New Size(335, 34)
+        mnuSintax_XML.Text = "&XML (HTML, xaml)"
+        mnuSintax_XML.ToolTipText = "Colorea los ficheros tipo XML y HTML "
+        ' 
+        ' toolStrip1
+        ' 
+        toolStrip1.ImageScalingSize = New Size(24, 24)
+        toolStrip1.Items.AddRange(New ToolStripItem() {tsbColorear, tsbSep0, tsbAbrir, tsbGuardar, tsbSep1, tsbCortar, tsbCopiar, tsbPegar, tsbDeshacer, tsbSep2, tsbSintax, tsbSep3, tsbNavegar, tsbSep4, tsbAcerca, tsbSep5, tsbSalir})
+        toolStrip1.Location = New Point(0, 35)
+        toolStrip1.Margin = New Padding(6, 7, 6, 7)
+        toolStrip1.Name = "toolStrip1"
+        toolStrip1.Padding = New Padding(0, 0, 3, 0)
+        toolStrip1.Size = New Size(1104, 25)
+        toolStrip1.TabIndex = 1
+        toolStrip1.Text = "ToolStrip1"
+        ' 
+        ' tsbColorear
+        ' 
+        tsbColorear.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbColorear.ImageTransparentColor = Color.Magenta
+        tsbColorear.Name = "tsbColorear"
+        tsbColorear.Size = New Size(34, 20)
+        tsbColorear.Text = "Colorear"
+        tsbColorear.ToolTipText = " Colorear el código (F8) "
+        ' 
+        ' tsbSep0
+        ' 
+        tsbSep0.Name = "tsbSep0"
+        tsbSep0.Size = New Size(6, 25)
+        ' 
+        ' tsbAbrir
+        ' 
+        tsbAbrir.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbAbrir.ImageTransparentColor = Color.Magenta
+        tsbAbrir.Name = "tsbAbrir"
+        tsbAbrir.Size = New Size(34, 20)
+        tsbAbrir.Text = "Abrir fichero"
+        ' 
+        ' tsbGuardar
+        ' 
+        tsbGuardar.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbGuardar.ImageTransparentColor = Color.Magenta
+        tsbGuardar.Name = "tsbGuardar"
+        tsbGuardar.Size = New Size(34, 20)
+        tsbGuardar.Text = "Guardar"
+        ' 
+        ' tsbSep1
+        ' 
+        tsbSep1.Name = "tsbSep1"
+        tsbSep1.Size = New Size(6, 25)
+        ' 
+        ' tsbCortar
+        ' 
+        tsbCortar.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbCortar.ImageTransparentColor = Color.Magenta
+        tsbCortar.Name = "tsbCortar"
+        tsbCortar.Size = New Size(34, 20)
+        tsbCortar.Text = "Cortar"
+        ' 
+        ' tsbCopiar
+        ' 
+        tsbCopiar.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbCopiar.ImageTransparentColor = Color.Magenta
+        tsbCopiar.Name = "tsbCopiar"
+        tsbCopiar.Size = New Size(34, 20)
+        tsbCopiar.Text = "Copiar"
+        ' 
+        ' tsbPegar
+        ' 
+        tsbPegar.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbPegar.ImageTransparentColor = Color.Magenta
+        tsbPegar.Name = "tsbPegar"
+        tsbPegar.Size = New Size(34, 20)
+        tsbPegar.Text = "Pegar"
+        ' 
+        ' tsbDeshacer
+        ' 
+        tsbDeshacer.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbDeshacer.ImageTransparentColor = Color.Magenta
+        tsbDeshacer.Name = "tsbDeshacer"
+        tsbDeshacer.Size = New Size(34, 20)
+        tsbDeshacer.Text = "Deshacer"
+        ' 
+        ' tsbSep2
+        ' 
+        tsbSep2.Name = "tsbSep2"
+        tsbSep2.Size = New Size(6, 25)
+        ' 
+        ' tsbSintax
+        ' 
+        tsbSintax.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbSintax.ImageTransparentColor = Color.Magenta
+        tsbSintax.Name = "tsbSintax"
+        tsbSintax.Size = New Size(21, 20)
+        tsbSintax.Text = "Sintaxis"
+        ' 
+        ' tsbSep3
+        ' 
+        tsbSep3.Name = "tsbSep3"
+        tsbSep3.Size = New Size(6, 25)
+        ' 
+        ' tsbNavegar
+        ' 
+        tsbNavegar.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbNavegar.ImageTransparentColor = Color.Magenta
+        tsbNavegar.Name = "tsbNavegar"
+        tsbNavegar.Size = New Size(34, 20)
+        tsbNavegar.Text = "Ver en el navegador"
+        tsbNavegar.ToolTipText = " Actualizar el navegador con los cambios "
+        ' 
+        ' tsbSep4
+        ' 
+        tsbSep4.Name = "tsbSep4"
+        tsbSep4.Size = New Size(6, 25)
+        ' 
+        ' tsbAcerca
+        ' 
+        tsbAcerca.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbAcerca.ImageTransparentColor = Color.Magenta
+        tsbAcerca.Name = "tsbAcerca"
+        tsbAcerca.Size = New Size(34, 20)
+        tsbAcerca.Text = "Acerca de"
+        ' 
+        ' tsbSep5
+        ' 
+        tsbSep5.Name = "tsbSep5"
+        tsbSep5.Size = New Size(6, 25)
+        ' 
+        ' tsbSalir
+        ' 
+        tsbSalir.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbSalir.ImageTransparentColor = Color.Magenta
+        tsbSalir.Name = "tsbSalir"
+        tsbSalir.Size = New Size(34, 20)
+        tsbSalir.Text = "Salir"
+        ' 
+        ' statusStrip1
+        ' 
+        statusStrip1.ImageScalingSize = New Size(24, 24)
+        statusStrip1.Items.AddRange(New ToolStripItem() {statusInfo, statusSintax})
+        statusStrip1.Location = New Point(0, 903)
+        statusStrip1.Margin = New Padding(6, 7, 6, 7)
+        statusStrip1.Name = "statusStrip1"
+        statusStrip1.Padding = New Padding(1, 0, 20, 0)
+        statusStrip1.Size = New Size(1104, 32)
+        statusStrip1.TabIndex = 3
+        statusStrip1.Text = "StatusStrip1"
+        ' 
+        ' statusSintax
+        ' 
+        statusSintax.AutoSize = False
+        statusSintax.BorderSides = ToolStripStatusLabelBorderSides.Left
+        statusSintax.Name = "statusSintax"
+        statusSintax.Size = New Size(72, 25)
+        statusSintax.Text = "VB"
+        statusSintax.ToolTipText = " El lenguaje seleccionado para colorear "
+        ' 
+        ' mnuSintaxObtenerCodigoDualHTML
+        ' 
+        mnuSintaxObtenerCodigoDualHTML.Name = "mnuSintaxObtenerCodigoDualHTML"
+        mnuSintaxObtenerCodigoDualHTML.Size = New Size(335, 34)
+        mnuSintaxObtenerCodigoDualHTML.Text = "Obtener Codigo Dual HTML"
+        ' 
+        ' fColorear
+        ' 
+        AllowDrop = True
+        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleMode = AutoScaleMode.Font
+        CausesValidation = False
+        ClientSize = New Size(1104, 935)
+        Controls.Add(statusStrip1)
+        Controls.Add(toolStrip1)
+        Controls.Add(TabControl1)
+        Controls.Add(menuStrip1)
+        Margin = New Padding(4, 5, 4, 5)
+        MaximizeBox = False
+        MaximumSize = New Size(2276, 1629)
+        MinimumSize = New Size(933, 946)
+        Name = "fColorear"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Utilidad para colorear el código"
+        TabControl1.ResumeLayout(False)
+        tpPrincipal.ResumeLayout(False)
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
+        CType(txtIndentar, ComponentModel.ISupportInitialize).EndInit()
+        tpVisor.ResumeLayout(False)
+        tpConfig.ResumeLayout(False)
+        tabControlCfg.ResumeLayout(False)
+        tpColores.ResumeLayout(False)
+        tpColores.PerformLayout()
+        cboPreContextMenu.ResumeLayout(False)
+        menuStrip1.ResumeLayout(False)
+        menuStrip1.PerformLayout()
+        toolStrip1.ResumeLayout(False)
+        toolStrip1.PerformLayout()
+        statusStrip1.ResumeLayout(False)
+        statusStrip1.PerformLayout()
+        ResumeLayout(False)
+        PerformLayout()
 
     End Sub
     Private WithEvents statusInfo As System.Windows.Forms.ToolStripStatusLabel
@@ -1277,4 +1312,5 @@ Partial Class fColorear
     Private mnuSintaxSep1 As ToolStripSeparator
     Private WithEvents mnuFicVerRTF As ToolStripMenuItem
     Private WithEvents mnuFicSep3 As ToolStripSeparator
+    Friend WithEvents mnuSintaxObtenerCodigoDualHTML As ToolStripMenuItem
 End Class
