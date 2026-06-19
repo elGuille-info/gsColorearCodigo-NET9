@@ -6,7 +6,7 @@
 ' Se guardará el nombre, cadena de buscar, reemplazar y nombre de guardar como
 ' Añadido en la revisión 1.0.0.40852
 '
-' ©Guillermo 'guille' Som, 2006m 2020
+' ©Guillermo 'guille' Som, 2006m 2020, 2026
 '------------------------------------------------------------------------------
 Option Strict On
 Option Infer On
@@ -47,7 +47,7 @@ Public Class FicheroReciente
     ''' Devuelve el nombre anteriormente asignado o
     ''' el nombre del fichero si aún no se ha guardado como.
     ''' </returns>
-    Public Property Guardar_Como() As String
+    Public Property Guardar_Como As String
         Get
             If String.IsNullOrEmpty(m_Guardar_Como) = True _
                     AndAlso String.IsNullOrEmpty(Nombre) = False Then

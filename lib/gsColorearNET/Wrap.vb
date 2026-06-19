@@ -10,7 +10,7 @@
 ' Revisado el 08/Oct/2002   Algunos ajustes cuando la cadena contiene intro
 ' Revisado el 30/Nov/2005   Convertida a VB2005 y PropperText
 '
-' ©Guillermo 'guille' Som, 1998-2002, 2005, 2020
+' ©Guillermo 'guille' Som, 1998-2002, 2005, 2020, 2026
 '
 ' Esta clase tiene los siguientes métodos (funciones)
 '   Justificar      Justifica la cadena,
@@ -277,7 +277,7 @@ Public Class Wrap
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Property Separadores() As String = vbCr & vbLf & vbTab & cSeparadores & ChrW(34)
+    Public Shared Property Separadores As String = vbCr & vbLf & vbTab & cSeparadores & ChrW(34)
 
     ' Para usar LoopPropperWrap                                 (30/Nov/05)
     ' de esta forma devuelve el texto correcto de una vez

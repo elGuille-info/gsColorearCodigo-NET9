@@ -1,10 +1,10 @@
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class fAcercaDe
-    Inherits System.Windows.Forms.Form
+    Inherits Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+    Protected Overrides Sub Dispose(disposing As Boolean)
         If disposing Then
             If Not (components Is Nothing) Then
                 components.Dispose()
@@ -219,15 +219,15 @@ Partial Class fAcercaDe
         ResumeLayout(False)
 
     End Sub
-    Private WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
-    Private WithEvents btnAceptar As System.Windows.Forms.Button
-    Private WithEvents labelAutor As System.Windows.Forms.Label
-    Private WithEvents labelDescripcion As System.Windows.Forms.Label
-    Private WithEvents ToolTip1 As System.Windows.Forms.ToolTip
-    Private WithEvents linkBug As System.Windows.Forms.LinkLabel
-    Private WithEvents linkURL As System.Windows.Forms.LinkLabel
-    Private WithEvents timerWeb As System.Windows.Forms.Timer
-    Private WithEvents labelWeb As System.Windows.Forms.Label
-    Private WithEvents linkPrograma As System.Windows.Forms.LinkLabel
+    Private WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Private WithEvents btnAceptar As Button
+    Private WithEvents labelAutor As Label
+    Private WithEvents labelDescripcion As Label
+    Private WithEvents ToolTip1 As ToolTip
+    Private WithEvents linkBug As LinkLabel
+    Private WithEvents linkURL As LinkLabel
+    Private WithEvents timerWeb As Timer
+    Private WithEvents labelWeb As Label
+    Private WithEvents linkPrograma As LinkLabel
     Private WithEvents labelTitulo As Label
 End Class

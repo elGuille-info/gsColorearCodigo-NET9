@@ -90,7 +90,7 @@
 ' 1.0.0.16  28/Oct/20   Comprobación de que haya varios \lang y \line como cambio de línea.
 '
 '
-' ©Guillermo 'guille' Som, 2005-2007, 2018-2020
+' ©Guillermo 'guille' Som, 2005-2007, 2018-2020, 2026
 '------------------------------------------------------------------------------
 Option Strict On
 Option Infer On
@@ -227,7 +227,7 @@ Public NotInheritable Class Colorear
     ''' <summary>
     ''' Tamaño de la fuente
     ''' </summary>
-    Public Shared Property FuenteTam() As String
+    Public Shared Property FuenteTam As String
         Get
             Return _FuenteTam
         End Get
@@ -240,7 +240,7 @@ Public NotInheritable Class Colorear
     ''' <summary>
     ''' Nombre de la fuente
     ''' </summary>
-    Public Shared Property Fuente() As String
+    Public Shared Property Fuente As String
         Get
             Return _Fuente
         End Get
@@ -273,7 +273,8 @@ Public NotInheritable Class Colorear
             End If
         End Set
     End Property
-    Private Shared ReadOnly Property fontBlue() As String
+
+    Private Shared ReadOnly Property fontBlue As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 If UsarSpanStyle Then
@@ -292,7 +293,7 @@ Public NotInheritable Class Colorear
     ''' El color de los comentarios (verde)
     ''' El color para RTF es el \cf1
     ''' </summary>
-    Public Shared Property ColorComentarios() As String
+    Public Shared Property ColorComentarios As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 Return _ColorComentarios.Substring(2)
@@ -311,7 +312,7 @@ Public NotInheritable Class Colorear
             End If
         End Set
     End Property
-    Private Shared ReadOnly Property fontGreen() As String
+    Private Shared ReadOnly Property fontGreen As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 If UsarSpanStyle Then
@@ -326,11 +327,12 @@ Public NotInheritable Class Colorear
     End Property
 
     Private Shared _ColorDocXML As String = ColorDocXMLPre
+
     ''' <summary>
     ''' El color de los comentarios XML (gris)
     ''' El color para RTF es el \cf4
     ''' </summary>
-    Public Shared Property ColorDocXML() As String
+    Public Shared Property ColorDocXML As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 Return _ColorDocXML.Substring(2)
@@ -349,7 +351,8 @@ Public NotInheritable Class Colorear
             End If
         End Set
     End Property
-    Private Shared ReadOnly Property fontGray() As String
+
+    Private Shared ReadOnly Property fontGray As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 If UsarSpanStyle Then
@@ -364,11 +367,12 @@ Public NotInheritable Class Colorear
     End Property
 
     Private Shared _ColorTexto As String = ColorTextoPre
+
     ''' <summary>
     ''' El color de las cadenas entrecomilladas (rojo)
     ''' El color para RTF es el \cf3
     ''' </summary>
-    Public Shared Property ColorTexto() As String
+    Public Shared Property ColorTexto As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 Return _ColorTexto.Substring(2)
@@ -387,7 +391,7 @@ Public NotInheritable Class Colorear
             End If
         End Set
     End Property
-    Private Shared ReadOnly Property fontRed() As String
+    Private Shared ReadOnly Property fontRed As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 If UsarSpanStyle Then
@@ -407,7 +411,7 @@ Public NotInheritable Class Colorear
     ''' El color para RTF es el \cf5
     ''' </summary>
     ''' <remarks>08/Feb/2007</remarks>
-    Public Shared Property ColorClases() As String
+    Public Shared Property ColorClases As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 Return _ColorClases.Substring(2)
@@ -426,7 +430,8 @@ Public NotInheritable Class Colorear
             End If
         End Set
     End Property
-    Private Shared ReadOnly Property fontVerdoso() As String
+
+    Private Shared ReadOnly Property fontVerdoso As String
         Get
             If FormatoColoreado = FormatosColoreado.HTML Then
                 If UsarSpanStyle Then
@@ -448,7 +453,7 @@ Public NotInheritable Class Colorear
     ''' Si es tema oscuro debe contener el código del color de fondo
     ''' </summary>
     ''' <returns></returns>
-    Public Shared Property PreTag() As String
+    Public Shared Property PreTag As String
         Get
             Return _PreTag
         End Get
@@ -458,6 +463,7 @@ Public NotInheritable Class Colorear
     End Property
 
     Private Shared _PreFinTag As String = PreFinTagPre
+
     ''' <summary>
     ''' El tag de final del código.
     ''' De forma predeterminada es &lt;/pre&gt;
@@ -466,7 +472,7 @@ Public NotInheritable Class Colorear
     ''' <remarks>
     ''' Este tag debe estar en consonancia con <seealso cref="PreTag">PreTag</seealso>
     ''' </remarks>
-    Public Shared Property PreFinTag() As String
+    Public Shared Property PreFinTag As String
         Get
             Return _PreFinTag
         End Get
@@ -491,7 +497,7 @@ Public NotInheritable Class Colorear
 
     Public Shared ReadOnly Property FicRecursos As String = "<UsarRecurso>"
 
-    Public Shared ReadOnly Property KeyWords() As PalabrasClave
+    Public Shared ReadOnly Property KeyWords As PalabrasClave
         Get
             Return keyW
         End Get
@@ -664,14 +670,6 @@ Public NotInheritable Class Colorear
 
             j += 1
         Next
-
-        '' guardarlos en formato hexadecimal
-        'For Each m As Match In mc 're.Matches(texto)
-        '    colores(j) = CInt(m.Groups("r").Value.Substring(4)).ToString("X2") &
-        '                     CInt(m.Groups("g").Value.Substring(6)).ToString("X2") &
-        '                     CInt(m.Groups("b").Value.Substring(5)).ToString("X2")
-        '    j += 1
-        'Next
 
         ' Los colores 1 a colores.length -1 definen los colores     (12/Sep/20)
         '   \cf1 verde  (comentarios)
@@ -1991,6 +1989,11 @@ Public NotInheritable Class Colorear
     ''' gsColorearCore v 1.0.0.0 (para .NET Core 3.1 revisión del dd/MMM/yyyy)
     ''' </summary>
     Public Shared Function Version(Optional completa As Boolean = False) As String
+
+        '
+        ' Esto se puede mejorar
+        '
+
         Dim res = ""
         Dim ensamblado = System.Reflection.Assembly.GetExecutingAssembly
 
@@ -2022,7 +2025,7 @@ Public NotInheritable Class Colorear
     ''' <summary>
     ''' Genera el bloque HTML completo e interactivo (Claro y Oscuro) con cajas independientes.
     ''' </summary>
-    Public Shared Function ObtenerCodigoDualHTML(ByVal rtfContenido As String) As String
+    Public Shared Function ObtenerCodigoDualHTML(rtfContenido As String) As String
         ' 1. Obtener el código coloreado llamando a tu método de 4 parámetros
         ' Pasamos 0 a indentar y False a quitar espacios, tal como haces tú al copiar de VS.
         Dim htmlClaroCuerpo As String = RTFaSPAN(rtfContenido, usarTemaOscuro:=False, indentar:=0, quitarEspaciosIniciales:=False)

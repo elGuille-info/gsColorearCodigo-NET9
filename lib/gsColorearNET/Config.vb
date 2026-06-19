@@ -27,13 +27,13 @@
 '
 ' Nuevas sobrecargas de GetValue y SetValue para el tipo Double     (05/Sep/20)
 ' Nuevas sobrecargas de GetValue, SetValue y SetKeyValue            (10/Sep/20)
-'   para el tipo System.Windows.Forms.CheckState
+'   para el tipo CheckState
 ' .NET standard 2.0 no tiene la definción de CheckState             (11/Sep/20)
 '   comento estas definiciones.
 ' Nueva sobrecarga de SetKeyValue para el tipo Double               (11/Sep/20)
 '
 '
-' ©Guillermo 'guille' Som, 2005-2006, 2020
+' ©Guillermo 'guille' Som, 2005-2006, 2020, 2026
 '------------------------------------------------------------------------------
 Option Explicit On
 Option Strict On
@@ -71,7 +71,7 @@ Public Class Config
     ''' Si no se guarda automáticamente hay que llamar
     ''' al método Save para que se guarden en el fichero.
     ''' </remarks>
-    Public Property GuardarAlAsignar() As Boolean = True
+    Public Property GuardarAlAsignar As Boolean = True
 
     ''' <summary>
     ''' Recupera el valor de la clave y la sección indicados.
@@ -207,41 +207,41 @@ Public Class Config
         cfgSetKeyValue(seccion, clave, valor.ToString)
     End Sub
 
-#Region " En .NET Standard 2.0 no hay definición de System.Windows.Forms.CheckState "
+#Region " En .NET Standard 2.0 no hay definición de CheckState "
 
     '''' <summary>
-    '''' Devuelve el valor del tipo System.Windows.Forms.CheckState
+    '''' Devuelve el valor del tipo CheckState
     '''' Los valores pueden ser: Checked, Unchecked, Indeterminate
     '''' </summary>
     '''' <remarks>10/Sep/2020</remarks>
-    'Public Function GetValue(seccion As String, clave As String, predeterminado As System.Windows.Forms.CheckState) As System.Windows.Forms.CheckState
+    'Public Function GetValue(seccion As String, clave As String, predeterminado As CheckState) As CheckState
     '    Dim def As String = predeterminado.ToString
     '    def = cfgGetValue(seccion, clave, def)
     '    If def = "Checked" Then
     '        Return CheckState.Checked
     '    ElseIf def = "Unchecked" Then
-    '        Return System.Windows.Forms.CheckState.Unchecked
+    '        Return CheckState.Unchecked
     '    Else
-    '        Return System.Windows.Forms.CheckState.Indeterminate
+    '        Return CheckState.Indeterminate
     '    End If
     'End Function
 
     '''' <summary>
     '''' Asigna el valor en la clave y sección indicados.
-    '''' El tipo es System.Windows.Forms.CheckState
+    '''' El tipo es CheckState
     '''' </summary>
     '''' <remarks>10/Sep/2020</remarks>
-    'Public Sub SetValue(seccion As String, clave As String, valor As System.Windows.Forms.CheckState)
+    'Public Sub SetValue(seccion As String, clave As String, valor As CheckState)
     '    cfgSetValue(seccion, clave, valor.ToString)
     'End Sub
 
     '''' <summary>
     '''' Asigna el valor en la clave y la sección indicados.
     '''' Usando atributos dentro de la sección.
-    '''' El tipo es System.Windows.Forms.CheckState
+    '''' El tipo es CheckState
     '''' </summary>
     '''' <remarks>10/Sep/2020</remarks>
-    'Public Sub SetKeyValue(seccion As String, clave As String, valor As System.Windows.Forms.CheckState)
+    'Public Sub SetKeyValue(seccion As String, clave As String, valor As CheckState)
     '    cfgSetKeyValue(seccion, clave, valor.ToString)
     'End Sub
 #End Region
@@ -438,7 +438,7 @@ Public Class Config
     ''' Al asignarlo, NO se lee el contenido del fichero,
     ''' habrá que llamar al método <seealso cref="Read">Read</seealso>
     ''' </remarks>
-    Public Property FileName() As String = ""
+    Public Property FileName As String = ""
 
     ''' <summary>
     ''' Constructor indicando el nombre del fichero a usar.

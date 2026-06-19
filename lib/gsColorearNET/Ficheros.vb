@@ -6,7 +6,7 @@
 '
 ' Primera versión: 21/Dic/03
 '
-' ©Guillermo 'guille' Som, 2003-2006, 2020
+' ©Guillermo 'guille' Som, 2003-2006, 2020, 2026
 '------------------------------------------------------------------------------
 Option Explicit On
 Option Strict On

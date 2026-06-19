@@ -8,7 +8,7 @@
 ' En C# sólo se tendrá en cuenta el comentario de línea simple y
 ' los bloques encerrados entre llaves
 '
-' ©Guillermo 'guille' Som, 2004-2005, 2020
+' ©Guillermo 'guille' Som, 2004-2005, 2020, 2026
 '------------------------------------------------------------------------------
 Option Strict On
 Option Explicit On
@@ -38,6 +38,7 @@ Public NotInheritable Class Indentar
     ''' </summary>
     Public Shared EsCSharp As Boolean               ' si es un fichero C#
 
+    ' Estos tres son arrays
     Private Shared instruccionesIni() As String
     Private Shared instruccionesFin() As String
     Private Shared instrucciones() As String
@@ -51,7 +52,7 @@ Public NotInheritable Class Indentar
     ''' <value>Un valor entre 0 y 8</value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Property EspaciosIndent() As Integer
+    Public Shared Property EspaciosIndent As Integer
         Get
             Return _espaciosIndent
         End Get

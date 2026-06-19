@@ -1,10 +1,10 @@
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class fColorear
-    Inherits System.Windows.Forms.Form
+    Inherits Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+    Protected Overrides Sub Dispose(disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
         End If
@@ -1203,75 +1203,75 @@ Partial Class fColorear
         PerformLayout()
 
     End Sub
-    Private WithEvents statusInfo As System.Windows.Forms.ToolStripStatusLabel
-    Private WithEvents mnuFic As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuFicAcerca As System.Windows.Forms.ToolStripMenuItem
-    Private mnuFicSep4 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents mnuFicSalir As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuEdi As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuEdiDeshacer As System.Windows.Forms.ToolStripMenuItem
-    Private mnuEdiSep1 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents mnuEdiCortar As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuEdiCopiar As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuEdiPegar As System.Windows.Forms.ToolStripMenuItem
-    Private mnuEdiSep2 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents tpPrincipal As System.Windows.Forms.TabPage
-    Private WithEvents tpVisor As System.Windows.Forms.TabPage
-    Private WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
-    Private WithEvents mnuSintax As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_VB As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_CS As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_Java As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_FSharp As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_dotNet As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_IL As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_CPP As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_Pascal As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_SQL As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_VB6 As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_Ninguno As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintaxColorear As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents tsbColorear As System.Windows.Forms.ToolStripButton
-    Private tsbSep0 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents tsbCortar As System.Windows.Forms.ToolStripButton
-    Private WithEvents tsbCopiar As System.Windows.Forms.ToolStripButton
-    Private WithEvents tsbPegar As System.Windows.Forms.ToolStripButton
-    Private WithEvents tsbDeshacer As System.Windows.Forms.ToolStripButton
-    Private tsbSep2 As System.Windows.Forms.ToolStripSeparator
-    Private tsbSep3 As System.Windows.Forms.ToolStripSeparator
-    Private tsbSep5 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents tsbSalir As System.Windows.Forms.ToolStripButton
-    Private WithEvents tsbSintax As System.Windows.Forms.ToolStripSplitButton
-    Private WithEvents rtEditor As System.Windows.Forms.RichTextBox
-    Private WithEvents statusSintax As System.Windows.Forms.ToolStripStatusLabel
-    Private WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Private WithEvents txtIndentar As System.Windows.Forms.NumericUpDown
-    Private WithEvents chkIndentar As System.Windows.Forms.CheckBox
-    Private WithEvents chkQuitarEspacios As System.Windows.Forms.CheckBox
-    Private WithEvents tpConfig As System.Windows.Forms.TabPage
-    Private WithEvents btnCfgAplicar As System.Windows.Forms.Button
-    Private WithEvents btnCfgRestablecer As System.Windows.Forms.Button
-    Private WithEvents tabControlCfg As System.Windows.Forms.TabControl
-    Private WithEvents tpColores As System.Windows.Forms.TabPage
-    Private WithEvents btnTextoNormal As System.Windows.Forms.Button
-    Private WithEvents btnColorear As System.Windows.Forms.Button
-    Private WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
-    Private tsbSep1 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents mnuFicGuardar As System.Windows.Forms.ToolStripMenuItem
-    Private mnuFicSep2 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents tsbAbrir As System.Windows.Forms.ToolStripButton
-    Private WithEvents mnuFicAbrir As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintax_XML As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents tsbNavegar As System.Windows.Forms.ToolStripButton
-    Private tsbSep4 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents tsbAcerca As System.Windows.Forms.ToolStripButton
-    Private mnuFicSep1 As System.Windows.Forms.ToolStripSeparator
-    Private WithEvents mnuFicNavegar As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents mnuSintaxColorearDeRTF As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents toolTip1 As System.Windows.Forms.ToolTip
-    Private WithEvents menuStrip1 As System.Windows.Forms.MenuStrip
-    Private WithEvents toolStrip1 As System.Windows.Forms.ToolStrip
-    Private WithEvents statusStrip1 As System.Windows.Forms.StatusStrip
+    Private WithEvents statusInfo As ToolStripStatusLabel
+    Private WithEvents mnuFic As ToolStripMenuItem
+    Private WithEvents mnuFicAcerca As ToolStripMenuItem
+    Private mnuFicSep4 As ToolStripSeparator
+    Private WithEvents mnuFicSalir As ToolStripMenuItem
+    Private WithEvents mnuEdi As ToolStripMenuItem
+    Private WithEvents mnuEdiDeshacer As ToolStripMenuItem
+    Private mnuEdiSep1 As ToolStripSeparator
+    Private WithEvents mnuEdiCortar As ToolStripMenuItem
+    Private WithEvents mnuEdiCopiar As ToolStripMenuItem
+    Private WithEvents mnuEdiPegar As ToolStripMenuItem
+    Private mnuEdiSep2 As ToolStripSeparator
+    Private WithEvents tpPrincipal As TabPage
+    Private WithEvents tpVisor As TabPage
+    Private WithEvents WebBrowser1 As WebBrowser
+    Private WithEvents mnuSintax As ToolStripMenuItem
+    Private WithEvents mnuSintax_VB As ToolStripMenuItem
+    Private WithEvents mnuSintax_CS As ToolStripMenuItem
+    Private WithEvents mnuSintax_Java As ToolStripMenuItem
+    Private WithEvents mnuSintax_FSharp As ToolStripMenuItem
+    Private WithEvents mnuSintax_dotNet As ToolStripMenuItem
+    Private WithEvents mnuSintax_IL As ToolStripMenuItem
+    Private WithEvents mnuSintax_CPP As ToolStripMenuItem
+    Private WithEvents mnuSintax_Pascal As ToolStripMenuItem
+    Private WithEvents mnuSintax_SQL As ToolStripMenuItem
+    Private WithEvents mnuSintax_VB6 As ToolStripMenuItem
+    Private WithEvents mnuSintax_Ninguno As ToolStripMenuItem
+    Private WithEvents mnuSintaxColorear As ToolStripMenuItem
+    Private WithEvents tsbColorear As ToolStripButton
+    Private tsbSep0 As ToolStripSeparator
+    Private WithEvents tsbCortar As ToolStripButton
+    Private WithEvents tsbCopiar As ToolStripButton
+    Private WithEvents tsbPegar As ToolStripButton
+    Private WithEvents tsbDeshacer As ToolStripButton
+    Private tsbSep2 As ToolStripSeparator
+    Private tsbSep3 As ToolStripSeparator
+    Private tsbSep5 As ToolStripSeparator
+    Private WithEvents tsbSalir As ToolStripButton
+    Private WithEvents tsbSintax As ToolStripSplitButton
+    Private WithEvents rtEditor As RichTextBox
+    Private WithEvents statusSintax As ToolStripStatusLabel
+    Private WithEvents GroupBox1 As GroupBox
+    Private WithEvents txtIndentar As NumericUpDown
+    Private WithEvents chkIndentar As CheckBox
+    Private WithEvents chkQuitarEspacios As CheckBox
+    Private WithEvents tpConfig As TabPage
+    Private WithEvents btnCfgAplicar As Button
+    Private WithEvents btnCfgRestablecer As Button
+    Private WithEvents tabControlCfg As TabControl
+    Private WithEvents tpColores As TabPage
+    Private WithEvents btnTextoNormal As Button
+    Private WithEvents btnColorear As Button
+    Private WithEvents tsbGuardar As ToolStripButton
+    Private tsbSep1 As ToolStripSeparator
+    Private WithEvents mnuFicGuardar As ToolStripMenuItem
+    Private mnuFicSep2 As ToolStripSeparator
+    Private WithEvents tsbAbrir As ToolStripButton
+    Private WithEvents mnuFicAbrir As ToolStripMenuItem
+    Private WithEvents mnuSintax_XML As ToolStripMenuItem
+    Private WithEvents tsbNavegar As ToolStripButton
+    Private tsbSep4 As ToolStripSeparator
+    Private WithEvents tsbAcerca As ToolStripButton
+    Private mnuFicSep1 As ToolStripSeparator
+    Private WithEvents mnuFicNavegar As ToolStripMenuItem
+    Private WithEvents mnuSintaxColorearDeRTF As ToolStripMenuItem
+    Private WithEvents toolTip1 As ToolTip
+    Private WithEvents menuStrip1 As MenuStrip
+    Private WithEvents toolStrip1 As ToolStrip
+    Private WithEvents statusStrip1 As StatusStrip
     Private WithEvents cboPreContextMenu As ContextMenuStrip
     Private WithEvents mnuCboPreEliminar As ToolStripMenuItem
     Private WithEvents TabControl1 As TabControl

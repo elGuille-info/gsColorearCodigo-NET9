@@ -19,7 +19,7 @@
 ' Código CDATA en gris
 '   <![CDATA[ ... ]]>
 '
-' ©Guillermo 'guille' Som, 2005-2006, 2020
+' ©Guillermo 'guille' Som, 2005-2006, 2020, 2026
 '------------------------------------------------------------------------------
 Option Strict On
 Option Infer On
@@ -51,7 +51,7 @@ Public NotInheritable Class ColorearXML
     End Function
 
     Private Shared _colorTexto As String = "#0000FF" ' Textos
-    Private Shared ReadOnly Property colorTexto() As String
+    Private Shared ReadOnly Property colorTexto As String
         Get
             If FormatoColoreado = Colorear.FormatosColoreado.HTML Then
                 Return _colorTexto
@@ -73,7 +73,7 @@ Public NotInheritable Class ColorearXML
     End Property
 
     Private Shared _colorAtributo As String = "#FF0000" ' Atributos
-    Private Shared ReadOnly Property colorAtributo() As String
+    Private Shared ReadOnly Property colorAtributo As String
         Get
             If FormatoColoreado = Colorear.FormatosColoreado.HTML Then
                 Return _colorAtributo
@@ -84,7 +84,7 @@ Public NotInheritable Class ColorearXML
     End Property
 
     Private Shared _colorElemento As String = "#B22222" ' Elementos
-    Private Shared ReadOnly Property colorElemento() As String
+    Private Shared ReadOnly Property colorElemento As String
         Get
             If FormatoColoreado = Colorear.FormatosColoreado.HTML Then
                 Return _colorElemento
@@ -95,7 +95,7 @@ Public NotInheritable Class ColorearXML
     End Property
 
     Private Shared _colorCyan As String = "#2B91AF" ' Palabras clave XSLT <nnn:mmmm 
-    Private Shared ReadOnly Property colorCyan() As String
+    Private Shared ReadOnly Property colorCyan As String
         Get
             If FormatoColoreado = Colorear.FormatosColoreado.HTML Then
                 Return _colorCyan
@@ -106,7 +106,7 @@ Public NotInheritable Class ColorearXML
     End Property
 
     Private Shared _colorComentario As String = "#008000" ' Comentarios
-    Private Shared ReadOnly Property colorComentario() As String
+    Private Shared ReadOnly Property colorComentario As String
         Get
             If FormatoColoreado = Colorear.FormatosColoreado.HTML Then
                 Return _colorComentario
@@ -117,7 +117,7 @@ Public NotInheritable Class ColorearXML
     End Property
 
     Private Shared _colorCDATA As String = "#808080" ' "&H5C5C5C" ' Código CDATA
-    Private Shared ReadOnly Property colorCDATA() As String
+    Private Shared ReadOnly Property colorCDATA As String
         Get
             If FormatoColoreado = Colorear.FormatosColoreado.HTML Then
                 Return _colorCDATA
@@ -128,7 +128,7 @@ Public NotInheritable Class ColorearXML
     End Property
 
     Private Shared _colorAmarillo As String = "#FFFF00"
-    Private Shared ReadOnly Property colorAmarillo() As String
+    Private Shared ReadOnly Property colorAmarillo As String
         Get
             If FormatoColoreado = Colorear.FormatosColoreado.HTML Then
                 Return _colorAmarillo

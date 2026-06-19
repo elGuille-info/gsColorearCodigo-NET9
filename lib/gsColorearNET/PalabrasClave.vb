@@ -6,7 +6,7 @@
 '
 ' Añado/quito palabras clave/tipos del fichero de sql (.40855)      (31/Mar/06)
 '
-' ©Guillermo 'guille' Som, 2005-2006, 2020
+' ©Guillermo 'guille' Som, 2005-2006, 2020, 2026
 '------------------------------------------------------------------------------
 Option Strict On
 Option Infer On
@@ -261,7 +261,7 @@ Public Class PalabrasClave
     ''' </returns>
     ''' <remarks>
     ''' </remarks>
-    Public Shared ReadOnly Property CommentsMult1() As New Dictionary(Of Lenguajes, Comentarios)
+    Public Shared ReadOnly Property CommentsMult1 As New Dictionary(Of Lenguajes, Comentarios)
 
     ''' <summary>
     ''' Devuelve o asigna los caracteres usados para el comentario simple.
@@ -325,7 +325,7 @@ Public Class PalabrasClave
     ''' </returns>
     ''' <remarks>
     ''' </remarks>
-    Public Shared ReadOnly Property CommentsMult2() As New Dictionary(Of Lenguajes, Comentarios)
+    Public Shared ReadOnly Property CommentsMult2 As New Dictionary(Of Lenguajes, Comentarios)
 
     ''' <summary>
     ''' Devuelve o asigna los caracteres usados para el comentario simple.
@@ -389,7 +389,7 @@ Public Class PalabrasClave
     ''' </returns>
     ''' <remarks>
     ''' </remarks>
-    Public Shared ReadOnly Property ComentariosSimples() As New Dictionary(Of Lenguajes, String)
+    Public Shared ReadOnly Property ComentariosSimples As New Dictionary(Of Lenguajes, String)
 
     ''' <summary>
     ''' Devuelve o asigna los caracteres usados para el comentario simple.
@@ -454,7 +454,7 @@ Public Class PalabrasClave
     ''' <remarks>
     ''' Esta colección se usa para saber si los lenguajes son case sensitive (sensibles a mayúsculas / minúsculas).
     ''' </remarks>
-    Public Shared ReadOnly Property CaseSensitives() As New Dictionary(Of Lenguajes, Boolean)
+    Public Shared ReadOnly Property CaseSensitives As New Dictionary(Of Lenguajes, Boolean)
 
     ''' <summary>
     ''' Devuelve o asigna si el lenguajes es case sensitive.
@@ -526,7 +526,7 @@ Public Class PalabrasClave
     ''' con lenguajes, pero no tiene ninguna relación con las colecciones de instrucciones
     ''' que esta clase pueda contener.
     ''' </remarks>
-    Public Shared ReadOnly Property Extensions() As New Dictionary(Of Lenguajes, String)
+    Public Shared ReadOnly Property Extensions As New Dictionary(Of Lenguajes, String)
 
     ''' <summary>
     ''' Devuelve o asigna las extensiones a un lenguaje.
@@ -605,7 +605,7 @@ Public Class PalabrasClave
     ''' con lenguajes, pero no tiene ninguna relación con las colecciones de instrucciones
     ''' que esta clase pueda contener.
     ''' </remarks>
-    Public Shared ReadOnly Property Filenames() As New Dictionary(Of Lenguajes, String)
+    Public Shared ReadOnly Property Filenames As New Dictionary(Of Lenguajes, String)
 
     ''' <summary>
     ''' Devuelve o asigna un fichero a un lenguaje.
@@ -928,7 +928,7 @@ Public Class PalabraClave
     ''' </summary>
     ''' <value></value>
     ''' <returns></returns>
-    Public Property Instruccion() As String
+    Public Property Instruccion As String
         Get
             Return _Instruccion
         End Get
@@ -940,7 +940,7 @@ Public Class PalabraClave
     ''' Propiedad de solo lectura con la instrucción en minúsculas
     ''' </summary>
     ''' <returns></returns>
-    Public ReadOnly Property InstruccionToLower() As String
+    Public ReadOnly Property InstruccionToLower As String
         Get
             Return Instruccion.ToLower()
         End Get

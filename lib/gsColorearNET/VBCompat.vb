@@ -8,7 +8,7 @@
 ' Declaro algunas funciones de Microsoft.VisualBasic.Strings
 ' que no están en .NET Standard 2.0
 '
-' (c) Guillermo (elGuille) Som, 2020
+' (c) Guillermo (elGuille) Som, 2020, 2026
 '------------------------------------------------------------------------------
 Option Strict On
 Option Infer On

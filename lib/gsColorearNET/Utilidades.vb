@@ -4,7 +4,7 @@
 '
 ' Métodos de ayuda para las clases                                  (28/Ago/06)
 '
-' ©Guillermo 'guille' Som, 2006, 2020
+' ©Guillermo 'guille' Som, 2006, 2020, 2026
 '------------------------------------------------------------------------------
 Option Strict On
 Option Infer On

@@ -152,10 +152,6 @@ Public Class fColorear
         ' Añadir los valores predeterminados
         sincronizando = True
 
-        'Me.txtColorKeywords.AutoCompleteCustomSource = txtColorTexto.AutoCompleteCustomSource
-        'Me.txtColorRem.AutoCompleteCustomSource = txtColorTexto.AutoCompleteCustomSource
-        'Me.txtColorXML.AutoCompleteCustomSource = txtColorTexto.AutoCompleteCustomSource
-
         leerCfg()
         leerCfg_tpColores()
 
@@ -184,9 +180,8 @@ Public Class fColorear
         Me.rtEditor.SelectAll()
 
         sincronizando = False
-
-        'Me.btnTextoNormal.Enabled = False
     End Sub
+
     Private Sub fColorear_DragDrop(sender As Object,
                                    e As DragEventArgs) Handles Me.DragDrop, rtEditor.DragDrop
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
@@ -205,7 +200,7 @@ Public Class fColorear
     End Sub
 
     Private Sub fColorear_FormClosing(sender As Object,
-                                      e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+                                      e As FormClosingEventArgs) Handles Me.FormClosing
         inicializando = True
         guardarCfg()
         ni.Visible = False
@@ -224,7 +219,6 @@ Public Class fColorear
     Private Sub fColorear_Resize(sender As Object,
                                  e As EventArgs) Handles MyBase.Resize
         If Me.WindowState = FormWindowState.Minimized AndAlso minimizarTray Then
-            'ni.Visible = True
             Hide()
         Else
             If inicializando = False AndAlso Me.WindowState = FormWindowState.Normal Then
@@ -233,7 +227,6 @@ Public Class fColorear
                 cfg.SetKeyValue("Ventana", "Height", Me.Height)
                 cfg.SetKeyValue("Ventana", "Width", Me.Width)
             End If
-            'ni.Visible = False
         End If
     End Sub
 
@@ -1135,9 +1128,9 @@ Public Class fColorear
 
     Private Sub mnuSintax_Click(sender As Object,
                                 e As EventArgs) Handles mnuSintax_CPP.Click, mnuSintax_VB6.Click,
-                            mnuSintax_VB.Click, mnuSintax_SQL.Click, mnuSintax_Pascal.Click, mnuSintax_Ninguno.Click,
-                            mnuSintax_Java.Click, mnuSintax_IL.Click, mnuSintax_FSharp.Click, mnuSintax_dotNet.Click,
-                            mnuSintax_CS.Click, mnuSintax_XML.Click
+                                mnuSintax_VB.Click, mnuSintax_SQL.Click, mnuSintax_Pascal.Click, mnuSintax_Ninguno.Click,
+                                mnuSintax_Java.Click, mnuSintax_IL.Click, mnuSintax_FSharp.Click, mnuSintax_dotNet.Click,
+                                mnuSintax_CS.Click, mnuSintax_XML.Click
         Static yaEstoy As Boolean
         If yaEstoy Then Exit Sub
         yaEstoy = True
@@ -1223,14 +1216,6 @@ Public Class fColorear
     Private Sub asignarPalabrasClave()
         Colorear.AsignarPalabrasClave()
 
-        ' Esto no es necesario porque se cargan las palabras        (13/Sep/20)
-        ' directamente de las constantes de la DLL.
-        'For Each de As System.Collections.Generic.KeyValuePair(Of Lenguajes, String) In PalabrasClave.Filenames
-        '    If de.Value <> "" AndAlso de.Value <> Colorear.FicRecursos AndAlso System.IO.File.Exists(de.Value) Then
-        '        Colorear.KeyWords.CargarPalabras(de.Key, de.Value)
-        '    End If
-        'Next
-
     End Sub
 
     Private Function clonarToolStripMenuItem(mnu As ToolStripMenuItem,
@@ -1264,7 +1249,7 @@ Public Class fColorear
     End Function
 
     Private Sub StatusStrip1_MouseMove(sender As Object,
-                                       e As System.Windows.Forms.MouseEventArgs) Handles statusStrip1.MouseMove
+                                       e As MouseEventArgs) Handles statusStrip1.MouseMove
         statusInfo.Text = statusStrip1.Text
     End Sub
 
@@ -1310,7 +1295,7 @@ Public Class fColorear
 
     Private Sub chkNotify_CheckedChanged(sender As Object,
                                          e As EventArgs) Handles chkNotify.CheckedChanged, chkSyntaxMayusc.CheckedChanged,
-                                                                chkRecordarUltimoTexto.CheckedChanged
+                                                                 chkRecordarUltimoTexto.CheckedChanged
         If inicializando Then Return
 
         datosCambiados()
@@ -1571,7 +1556,8 @@ Public Class fColorear
         Me.FileVersion = fvi.FileVersion
     End Sub
 
-    Private Sub mnuSintaxObtenerCodigoDualHTML_Click(sender As Object, e As EventArgs) Handles mnuSintaxObtenerCodigoDualHTML.Click
+    Private Sub mnuSintaxObtenerCodigoDualHTML_Click(sender As Object,
+                                                     e As EventArgs) Handles mnuSintaxObtenerCodigoDualHTML.Click
         ' Convertir el código RTF en coloreado de SPAN
         Me.statusInfo.Text = "Coloreando el código..."
         Me.statusStrip1.Refresh()
